@@ -158,7 +158,7 @@
 
 ## Use Case Diagram
 
-![](media/image1.png)
+![](media/use-case-diagram.png)
 
 ## Glossary
 
