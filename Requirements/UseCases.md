@@ -5,18 +5,18 @@ Food Delivery Use Cases
 Order Process
 -------------
  
- | **Use Case Name**                | **Order Process**                                               |
- |:--------------------------------:|:----------------------------------------------------------------|
- | Actors                           | Client, Food Point                                              |
- | Pre-conditions                   | Meal plans are shown in the system                              |
- | Flow of events                   | 1\. Client browses menu                                         |
- |                                  | 2\. Client adds meals to delivery cart                          |
- |                                  | 3\. Client adds info about contacts, place and time delivery    |
- |                                  | 4\. Client makes checkout for all items in the cart             |
- |                                  | 5\. New order created and will be shown in the cafe dashboard   |
- | Post-conditions                  | Order will be processed by Food Point                           |
- | Alternative flows and exceptions | The Food Point rejects the order of the client. The client will |
- |                                  | be notified about rejection                                     |
+ | **Use Case Name**                | **Order Process**                                                  |
+ |:--------------------------------:|:-------------------------------------------------------------------|
+ | Actors                           | Client, Administrator                                              |
+ | Pre-conditions                   | Meal plans are shown in the system                                 |
+ | Flow of events                   | 1\. Client browses menu                                            |
+ |                                  | 2\. Client adds meals to delivery cart                             |
+ |                                  | 3\. Client adds info about contacts, place and time delivery       |
+ |                                  | 4\. Client makes checkout for all items in the cart                |
+ |                                  | 5\. New order created and will be shown in the cafe dashboard      |
+ | Post-conditions                  | Order will be processed by Administrator                           |
+ | Alternative flows and exceptions | The Administrator rejects the order of the client. The client will |
+ |                                  | be notified about rejection                                        |
   
 
 Order Cancellation
@@ -25,13 +25,13 @@ Order Cancellation
   
  | **Use Case Name**                | **Order Cancellation**                                             |
  |:--------------------------------:|:-------------------------------------------------------------------|
- | Actors                           | Client, Food Point                                                 |
+ | Actors                           | Client, Administrator                                              |
  | Pre-conditions                   | Order is created by client                                         |
  | Flow of events                   | 1\. Client receives unique identification № of order               |
  |                                  | 2\. Current status of order and cancel-button is displayed on page |
  |                                  | screen                                                             |
  |                                  | 3\. Client cancels order by cancel-button                          |
- |                                  | 4\. Food Point gets notification about cancelling order            |
+ |                                  | 4\. Administrator gets notification about cancelling order         |
  | Post-conditions                  | Order is cancelled                                                 |
  | Alternative flows and exceptions | Order can't be cancelled if it already has status "delivering".    |
  
@@ -77,12 +77,12 @@ Use Case Diagram
 Glossary
 ========
 
-1.  **Customer** - an entity that uses the Food Delivery system for
-    their business. Food points are customers in this case.
+1.  **Customer** - an entity that uses the Administrator system for
+    their business. Administrator are customers in this case.
 
 3.  **Client** - a person who orders food from the system.
 
 4.  **Courier** - employee of food point who delivers food to the
     clients.
-
+5.  **Administrator** - manages the system and adds new users to the system
 
