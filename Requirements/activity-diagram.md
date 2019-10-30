@@ -1,0 +1,1 @@
+![](./media/avtivity-diagram.png)

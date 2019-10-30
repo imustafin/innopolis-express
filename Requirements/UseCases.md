@@ -1,7 +1,5 @@
 
-
-# Food Delivery Use Cases #
-
+# Food Delivery Use Cases and Use Cases diagram #                                   [go to **Activity Diagram**](./activity-diagram.md)
   * [Order Process](#order-process "Goto Order Process") 
   * [Order Cancellation](#order-cancellation "Goto Order Cancellation")
   * [Checking order status](#checking-order-status "Goto Checking order status")
