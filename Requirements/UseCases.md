@@ -82,7 +82,5 @@ Glossary
 
 3.  **Client** - a person who orders food from the system.
 
-4.  **Courier** - employee of food point who delivers food to the
-    clients.
-5.  **Administrator** - manages the system and adds new users to the system
+4.  **Administrator** - manages the system and adds new users to the system
 
