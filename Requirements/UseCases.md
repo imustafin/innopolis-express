@@ -77,10 +77,7 @@ Use Case Diagram
 Glossary
 ========
 
-1.  **Customer** - an entity that uses the Administrator system for
-    their business. Administrator are customers in this case.
+1.  **Client** - a person who orders food from the system.
 
-3.  **Client** - a person who orders food from the system.
-
-4.  **Administrator** - manages the system and adds new users to the system
+2.  **Administrator** - manages the system and adds new users to the system
 
