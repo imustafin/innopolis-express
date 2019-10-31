@@ -43,7 +43,7 @@ class Admin [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5
 	+ getNotApprovedOrders()
 }
 
-class Product [[https://github.com/q-eldar/innopolis-express/blob/master/MVP%20source%20Code/app/src/main/java/mfq/com/refooddelivery2/models/product/Product.java#L13]]{
+class Product [[https://github.com/q-eldar/innopolis-express/blob/8fb099a0fc580af013832d1636f101ae15cab4d9/MVP/app/src/main/java/mfq/com/refooddelivery2/models/Product.java#L16]]{
 	- imgUrl: string
 	- name: string
 	- price: float
