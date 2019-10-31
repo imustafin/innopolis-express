@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavStyle" parent="Widget.MaterialComponents.NavigationView">
+        <item name="android:background">@color/white</item>
+        <item name="itemBackground">@drawable/nav_background_selector</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+        <item name="itemTextAppearance">@style/TextBody2</item>
+    </style>
+</resources>

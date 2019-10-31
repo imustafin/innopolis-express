@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Food Deliver</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="meals">Meals</string>
+    <string name="dessert">Dessert</string>
+    <string name="general">General</string>
+    <string name="foodle_assistant">Foodle Assistant</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="complete_order">Complete Order</string>
+    <string name="cart_qty">Quantity %d</string>
+    <string name="foodle">Foodle</string>
+    <string name="foodle_search">Foodle Search</string>
+    <string name="foodle_drive">Foodle Drive</string>
+    <string name="foodle_maps">Foodle Maps</string>
+    <string name="transition_product_image">moveMe</string>
+
+</resources>

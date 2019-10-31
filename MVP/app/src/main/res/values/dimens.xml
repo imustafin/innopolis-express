@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="brand_shape_corner_small">10dp</dimen>
+    <dimen name="brand_shape_corner_med">15dp</dimen>
+    <dimen name="brand_shape_corner_big">20dp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="app_bar_elevation">6dp</dimen>
+    <dimen name="dimen_edit_text_min_width">280dp</dimen>
+    <dimen name="dimen_edit_text_min_height">56dp</dimen>
+    <dimen name="dimen_quantity_edit_text_min_width">100dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="home_header_height">192dp</dimen>
+    <dimen name="home_list_spacing">10dp</dimen>
+
+
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html -->
+    <dimen name="icon_padding">8dp</dimen>
+
+    <!-- Dimens for staggered asymmetric grid layout cards-->
+
+
+</resources>
