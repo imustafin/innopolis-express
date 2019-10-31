@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextHeadline6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="16dp"
+            android:text="What moofi can do"/>
+
+        <TextView
+            style="@style/TextSubtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_16dp"
+            android:text="Help you order"/>
+
+        <View
+            style="@style/DividerDarkHorizontal"/>
+
+        <TextView
+            style="@style/TextSubtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_16dp"
+            android:text="Display our meals"/>
+
+        <View
+            style="@style/DividerDarkHorizontal"/>
+
+        <TextView
+            style="@style/TextSubtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_16dp"
+            android:text="Display our dessert"/>
+
+        <View
+            style="@style/DividerDarkHorizontal"/>
+
+        <TextView
+            style="@style/TextSubtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_16dp"
+            android:text="Chat with you"/>
+
+
+
+    </LinearLayout>
+</android.support.design.card.MaterialCardView>

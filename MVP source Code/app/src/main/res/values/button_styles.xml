@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!--anything you add here don't forget to add it in v-21 -->
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/btn_bg_color</item>
+        <item name="android:background">@drawable/btn_background</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+    <style name="ButtonStyleUnelevated" parent="Widget.MaterialComponents.Button.UnelevatedButton" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/un_eleveated_button_color</item>
+        <item name="android:background">@drawable/btn_background</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+    <style name="ButtonStyleUnelevated.secondery" parent="Widget.MaterialComponents.Button.UnelevatedButton" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/un_eleveated_button_color_secondry</item>
+        <item name="android:background">@drawable/btn_background</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+    <style name="ButtonStyleUnelevated.cart" parent="Widget.MaterialComponents.Button.UnelevatedButton" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/unelevated_text_color_selector</item>
+        <item name="android:background">@drawable/btn_background_secondry</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="icon">@drawable/ic_round_directions_car_24px</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+
+    <style name="Orders.ButtonStyleUnelevated" parent="ButtonStyleUnelevated" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/colorAccent_opacity</item>
+        <item name="android:background">@drawable/btn_background</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+    <style name="TextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="rippleColor">@color/txt_btn_ripple_color_primary</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+
+    <style name="ToggleButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton" >
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/btn_bg_color</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+    </style>
+
+
+
+
+</resources>

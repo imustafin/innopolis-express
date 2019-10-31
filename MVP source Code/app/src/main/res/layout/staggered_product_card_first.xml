@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true"
+    app:contentPaddingTop="@dimen/shr_staggered_product_grid_margin_top_first">
+
+    <!-- Product card layout used in MDC-103 and onward -->
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="@dimen/shr_staggered_product_grid_card_width_landscape"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/shr_staggered_product_grid_spacing_small"
+        android:layout_marginStart="@dimen/shr_staggered_product_grid_spacing_small"
+        android:orientation="vertical">
+
+        <ImageView
+            tools:src="@drawable/food2"
+            android:id="@+id/product_item_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/shr_staggered_product_grid_card_height_landscape"
+            android:background="?attr/colorPrimaryDark"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/TextHeadline5"
+                android:id="@+id/product_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                tools:text="Mandi Hot"/>
+
+            <com.mfq.foodle.coustemviews.PriceView
+                style="@style/TextHeadline6"
+                android:gravity="center"
+                android:id="@+id/product_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                tools:text="2.5JD"/>
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_gravity="top|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</android.support.design.card.MaterialCardView>

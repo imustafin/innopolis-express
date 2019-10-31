@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:id="@+id/delivery_header"
+        style="@style/TextHeadline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:drawablePadding="24dp"
+        android:drawableStart="@drawable/ic_round_local_shipping_24px"
+        android:text="Delivery"
+        android:textAllCaps="true"/>
+
+    <LinearLayout
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:id="@+id/cart_delivery_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delivery_header"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/cart_delivery_name"
+            style="@style/TextSubtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home Address"/>
+
+        <TextView
+            android:id="@+id/cart_delivery_text"
+            style="@style/TextBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cart_delivery_name"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxWidth="220dp"
+            android:text="Amman Jordan 123 Street Airport 235  Amman Jordan 123 "
+            />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:id="@+id/cart_delivery_edit"
+        style="@style/IconStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_round_edit_24px"/>
+
+
+    <View
+        style="@style/DividerDarkHorizontal"
+        android:layout_below="@+id/cart_delivery_container"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"/>
+
+
+    <android.support.design.button.MaterialButton
+        android:visibility="invisible"
+        android:id="@+id/cart_button_phone"
+        style="@style/ButtonStyleUnelevated.secondery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delivery_header"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:minWidth="220dp"
+        android:text="Add Address"/>
+
+
+</RelativeLayout>

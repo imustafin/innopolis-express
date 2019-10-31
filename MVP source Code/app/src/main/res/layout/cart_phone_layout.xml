@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/phone_header"
+        style="@style/TextHeadline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:drawablePadding="24dp"
+        android:drawableStart="@drawable/ic_round_phone_24px"
+        android:text="Phone Number"
+        android:textAllCaps="true"/>
+
+
+    <LinearLayout
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:id="@+id/phoneContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone_header"
+        android:gravity="center"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cart_promo_input_layout"
+            style="@style/TextInputOutlined"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            app:helperText="Enter promo code if you have it">
+
+            <android.support.design.widget.TextInputEditText
+                style="@style/EditTextStyle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/cart_promo_add"
+            style="@style/IconStyle"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_round_done_24px"/>
+
+
+    </LinearLayout>
+
+    <android.support.design.button.MaterialButton
+        android:minWidth="220dp"
+        android:visibility="invisible"
+        android:layout_marginStart="72dp"
+        android:id="@+id/cart_button_phone"
+        style="@style/ButtonStyleUnelevated.secondery"
+        android:layout_below="@+id/phone_header"
+        android:layout_marginTop="16dp"
+        android:text="Add Phone Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

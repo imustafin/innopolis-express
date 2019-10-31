@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="hideOnScroll">false</item>
+        <item name="navigationIcon">@drawable/ic_round_menu_24px</item>
+        <item name="android:elevation">@dimen/app_bar_elevation</item>
+    </style>
+
+    <style name="Assistant.BottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="hideOnScroll">false</item>
+        <item name="android:elevation">@dimen/app_bar_elevation</item>
+    </style>
+
+    <style name="Assistant.BottomAppBarStyle.chat" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/white</item>
+        <item name="hideOnScroll">false</item>
+        <item name="android:elevation">@dimen/app_bar_elevation</item>
+    </style>
+</resources>

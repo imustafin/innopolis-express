@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/backgroundColor"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="6dp">
+
+        <android.support.v7.widget.Toolbar
+            style="Widget.Shrine.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="On Boarding"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:text="@string/what_ingredients_do_you_like"
+            style="@style/TextHeadline5"
+            />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:paddingTop="120dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/show_vegetarian_settings"
+                    style="@style/TextHeadline6"
+                    />
+
+                <Switch
+                    android:id="@+id/vegetarianSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <View style="@style/DividerDarkHorizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/what_food_ingredients_do_you_like"
+                style="@style/TextHeadline6"
+                />
+
+            <android.support.design.chip.ChipGroup
+                android:id="@+id/food"
+                style="@style/GeneralChipGroupStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                />
+
+
+            <View style="@style/DividerDarkHorizontal"/>
+
+            <TextView
+                android:id="@+id/chickenText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_regular"
+                android:padding="16dp"
+                android:text="@string/pick_chicken_type_you_like"
+                style="@style/TextHeadline6"
+            />
+
+            <android.support.design.chip.ChipGroup
+                android:id="@+id/chicken"
+                style="@style/ChipGroupSingleSelectionStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                />
+
+            <View style="@style/DividerDarkHorizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/what_dessert_ingredients_do_you_like"
+                style="@style/TextHeadline6"
+                />
+
+            <android.support.design.chip.ChipGroup
+                android:id="@+id/dessert"
+                style="@style/GeneralChipGroupStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"/>
+
+
+
+
+            <com.mfq.foodle.coustemviews.BrandShapedButton
+                style="@style/ButtonStyle"
+                android:id="@+id/buttonDone"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/big_button_width"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                app:icon="@drawable/ic_round_check"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

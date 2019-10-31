@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax">
+
+
+                <ImageView
+                    android:id="@+id/img_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo"
+                    />
+
+
+            </FrameLayout>
+            <ImageView
+                android:id="@+id/close"
+                android:layout_gravity="start"
+                style="@style/IconStyle.onPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_round_arrow_back"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:elevation="6dp"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".profile.ProfileInfoFragment">
+
+
+
+            <TextView
+                style="@style/TextSubtitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Foodle's Information"/>
+
+
+
+
+
+
+            <TextView
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:id="@+id/profile_email"
+                style="@style/TextHeadline6"
+                android:text="info@foodle.com"
+                android:autoLink="email"
+                android:gravity="center|start"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_height="48dp"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:drawableStart="@drawable/ic_round_email_24px"
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/profile_phone"
+                style="@style/TextHeadline6"
+                android:text="+962 780051272"
+                android:textColorLink="@color/colorPrimary"
+                android:gravity="center|start"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:drawableStart="@drawable/ic_round_phone_24px"
+                android:autoLink="phone"
+                />
+
+
+            <TextView
+                style="@style/TextHeadline6"
+                android:text="V 1.0.0"
+                android:textColorLink="@color/colorPrimary"
+                android:gravity="center|start"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:drawableStart="@drawable/ic_round_android_24px"
+                android:enabled="false"
+                />
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                />
+
+            <TextView
+                style="@style/TextHeadline6"
+                android:text="Send Feedback"
+                android:textColorLink="@color/colorPrimary"
+                android:gravity="center|start"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:drawableStart="@drawable/ic_round_announcement_24px"
+                android:enabled="false"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextInputFilled"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="56dp"
+                android:hint="From"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:minWidth="320dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextInputFilledCounter"
+                app:boxCornerRadiusTopStart="@dimen/zero_dp"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="56dp"
+                android:hint="Message"
+                app:counterMaxLength="300"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:minWidth="320dp"
+                    android:inputType="textMultiLine"
+                    android:lines="7"
+                    android:gravity="top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.button.MaterialButton
+                android:layout_marginTop="16dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="34dp"
+                android:text="Send Feedback"
+                style="@style/ButtonStyleUnelevated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

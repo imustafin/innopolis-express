@@ -1,0 +1,20 @@
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+       android:insetLeft="4dp"
+       android:insetTop="6dp"
+       android:insetRight="4dp"
+       android:insetBottom="6dp">
+    <shape android:shape="rectangle"
+           android:tint="?attr/colorButtonNormal">
+        <corners
+            android:bottomLeftRadius="@dimen/zero_dp"
+            android:topRightRadius="@dimen/toggle_brand_shape_corner"
+            android:topLeftRadius="@dimen/zero_dp"
+            android:bottomRightRadius="@dimen/zero_dp"
+            />
+        <solid android:color="@color/white" />
+        <padding android:left="8dp"
+                 android:top="4dp"
+                 android:right="8dp"
+                 android:bottom="4dp" />
+    </shape>
+</inset>

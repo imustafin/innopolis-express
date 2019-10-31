@@ -1,0 +1,101 @@
+{
+  "contexts": [
+	"shop"
+  ],
+  "events": [],
+  "fallbackIntent": false,
+  "name": "add-to-list",
+  "priority": 500000,
+  "responses": [
+	{
+	  "action": "add.list",
+	  "affectedContexts": [
+		{
+		  "lifespan": 5,
+		  "name": "shop",
+		  "parameters": {}
+		},
+		{
+		  "lifespan": 5,
+		  "name": "chosen-fruit",
+		  "parameters": {}
+		}
+	  ],
+	  "defaultResponsePlatforms": {
+		"google": true
+	  },
+	  "messages": [
+		{
+		  "platform": "google",
+		  "textToSpeech": "Okay. How many $fruit?",
+		  "type": "simple_response"
+		},
+		{
+		  "speech": "Okay how many $fruit?",
+		  "type": 0
+		}
+	  ],
+	  "parameters": [
+		{
+		  "dataType": "@fruit",
+		  "isList": true,
+		  "name": "fruit",
+		  "prompts": [
+			"I didn't get that. What fruit did you want?"
+		  ],
+		  "required": true,
+		  "value": "$fruit"
+		}
+	  ],
+	  "resetContexts": false
+	}
+  ],
+  "templates": [
+	"@fruit:fruit ",
+	"Add @fruit:fruit ",
+	"I need @fruit:fruit "
+  ],
+  "userSays": [
+	{
+	  "count": 0,
+	  "data": [
+		{
+		  "alias": "fruit",
+		  "meta": "@fruit",
+		  "text": "oranges",
+		  "userDefined": true
+		}
+	  ]
+	},
+	{
+	  "count": 0,
+	  "data": [
+		{
+		  "text": "Add "
+		},
+		{
+		  "alias": "fruit",
+		  "meta": "@fruit",
+		  "text": "bananas",
+		  "userDefined": true
+		}
+	  ]
+	},
+	{
+	  "count": 0,
+	  "data": [
+		{
+		  "text": "I need "
+		},
+		{
+		  "alias": "fruit",
+		  "meta": "@fruit",
+		  "text": "apples",
+		  "userDefined": true
+		}
+	  ]
+	}
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

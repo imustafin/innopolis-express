@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="home_grid_columns">2</integer>
+    <integer name="recycler_item_anim_duration">600</integer>
+    <integer name="duration_400">400</integer>
+    <integer name="duration_Transition">350</integer>
+</resources>

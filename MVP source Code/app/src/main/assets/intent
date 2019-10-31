@@ -1,0 +1,514 @@
+{
+  "id": "7bbef642-8460-451f-84d4-0952e9c242cb",
+  "name": "foodle.order.meals",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+	{
+	  "resetContexts": false,
+	  "action": "ADD_MEALS_TO_CART",
+	  "affectedContexts": [
+		{
+		  "name": "order-food-followup",
+		  "parameters": {},
+		  "lifespan": 2
+		},
+		{
+		  "name": "foodleordermeals-followup",
+		  "parameters": {},
+		  "lifespan": 2
+		}
+	  ],
+	  "parameters": [
+		{
+		  "id": "3abf9eac-1831-436b-bf85-3e12fda59966",
+		  "required": true,
+		  "dataType": "@sys.number",
+		  "name": "number",
+		  "value": "$number",
+		  "prompts": [
+			"how many $entity-meals ?",
+			"for how many person ?"
+		  ],
+		  "isList": true
+		},
+		{
+		  "id": "11b4d621-d320-4421-9eee-7c11bdc2e1b9",
+		  "required": true,
+		  "dataType": "@entity-meals",
+		  "name": "entity-meals",
+		  "value": "$entity-meals",
+		  "prompts": [
+			"order $number what ?",
+			"what is the meals you want ?",
+			"what is the name of the meal ?"
+		  ],
+		  "isList": true
+		}
+	  ],
+	  "messages": [
+		{
+		  "type": 3,
+		  "platform": "facebook",
+		  "imageUrl": "http://media2.giphy.com/media/FiGiRei2ICzzG/200_d.gif",
+		  "lang": "en"
+		},
+		{
+		  "type": "basic_card",
+		  "platform": "google",
+		  "title": "$entity-meals",
+		  "subtitle": "3.5 jd",
+		  "formattedText": "order now",
+		  "buttons": [],
+		  "lang": "en"
+		},
+		{
+		  "type": 0,
+		  "speech": [
+			"ok got it , you ordered $number $entity-meals would you like some dessert  with it ?",
+			"you ordered $number $entity-meals would you like some dessert?",
+			"i saved your order you ordered $number $entity-meals do you want to order dessert ?"
+		  ]
+		}
+	  ],
+	  "defaultResponsePlatforms": {
+		"facebook": true,
+		"google": true
+	  },
+	  "speech": []
+	}
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+	"navigateOrService": "NAVIGATE",
+	"target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1538147609,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+	{
+	  "id": "c8787952-cd50-408a-acf7-7ee62b850618",
+	  "data": [
+		{
+		  "text": "order "
+		},
+		{
+		  "text": "1",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "mandi",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		},
+		{
+		  "text": " and "
+		},
+		{
+		  "text": "1",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "ozi",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538147609,
+	  "isAuto": false
+	},
+	{
+	  "id": "1bc0dc09-aa45-42c0-a6dd-efb3e252f4ea",
+	  "data": [
+		{
+		  "text": "i want "
+		},
+		{
+		  "text": "one",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": true
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "e4d48ec0-6031-471c-90b0-d706861e5d36",
+	  "data": [
+		{
+		  "text": "add "
+		},
+		{
+		  "text": "3",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "4cd5111c-00d8-4faa-b281-442e34c1525f",
+	  "data": [
+		{
+		  "text": "give me "
+		},
+		{
+		  "text": "2",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "007a88da-7dea-4b58-8eeb-b16d3cdf19a3",
+	  "data": [
+		{
+		  "text": "order "
+		},
+		{
+		  "text": "two",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "7fa7ce99-d28d-4d10-874d-b538e16ae5e2",
+	  "data": [
+		{
+		  "text": "order "
+		},
+		{
+		  "text": "3",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "6912d22c-a231-4f9a-9779-4dccbb25ee95",
+	  "data": [
+		{
+		  "text": "order "
+		},
+		{
+		  "text": "bryani",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		},
+		{
+		  "text": " to "
+		},
+		{
+		  "text": "3",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": true
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "e2139a2a-78bf-4711-acbc-0e5e3d0003ca",
+	  "data": [
+		{
+		  "text": "give me "
+		},
+		{
+		  "text": "burger",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		},
+		{
+		  "text": " for "
+		},
+		{
+		  "text": "two",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "96e37e57-d587-4f04-ad99-85ff20b91fcf",
+	  "data": [
+		{
+		  "text": "add more "
+		},
+		{
+		  "text": "shawerma",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "430b5527-35d1-47ca-a9e7-a2a3291781f2",
+	  "data": [
+		{
+		  "text": "please give me "
+		},
+		{
+		  "text": "3",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "bryani",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "4a38a5a8-05a6-47fc-b65f-bf040f45f328",
+	  "data": [
+		{
+		  "text": "add "
+		},
+		{
+		  "text": "two",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "zinger",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		},
+		{
+		  "text": " and "
+		},
+		{
+		  "text": "1",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "burger",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "84d23fb1-4917-4ce9-8e8f-a124f08ca6f1",
+	  "data": [
+		{
+		  "text": "add "
+		},
+		{
+		  "text": "shawerma",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "1a5479e4-160e-45e8-8168-5dddc58d68ca",
+	  "data": [
+		{
+		  "text": "shawerma",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "e636c563-9041-49ae-9bff-313536867800",
+	  "data": [
+		{
+		  "text": "zinger",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "1a331ad4-6a0d-4a63-b9d1-82e23c0d0ce5",
+	  "data": [
+		{
+		  "text": "order "
+		},
+		{
+		  "text": "3",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "zinger",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		},
+		{
+		  "text": " and "
+		},
+		{
+		  "text": "1",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " shaerma"
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "783adef5-7d57-46c0-8d04-9e43c687a9f4",
+	  "data": [
+		{
+		  "text": "order "
+		},
+		{
+		  "text": "1",
+		  "alias": "number",
+		  "meta": "@sys.number",
+		  "userDefined": false
+		},
+		{
+		  "text": " "
+		},
+		{
+		  "text": "zinger",
+		  "alias": "entity-meals",
+		  "meta": "@entity-meals",
+		  "userDefined": false
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538140347,
+	  "isAuto": false
+	},
+	{
+	  "id": "852b666f-2f04-46a6-bd6c-7751a284d736",
+	  "data": [
+		{
+		  "text": "i want food"
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538037040,
+	  "isAuto": false
+	},
+	{
+	  "id": "f680c9a3-3e77-43bb-be17-b94cbfc86010",
+	  "data": [
+		{
+		  "text": "order food"
+		}
+	  ],
+	  "isTemplate": false,
+	  "count": 0,
+	  "updated": 1538037040,
+	  "isAuto": false
+	}
+  ],
+  "followUpIntents": [],
+  "liveAgentHandoff": false,
+  "endInteraction": false,
+  "templates": []
+}

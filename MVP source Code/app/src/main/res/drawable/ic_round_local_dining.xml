@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="50dp"
+        android:height="50dp"
+        android:autoMirrored="true"
+        android:viewportHeight="24"
+        android:viewportWidth="24">
+    <group android:name="gfromDessertMeals">
+
+        <path
+            android:name="fromDessertMeals"
+            android:fillColor="#FFFFFFFF"
+            android:pathData="@string/path_local_dining"/>
+    </group>
+
+</vector>

@@ -1,0 +1,5 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/secondaryColor" android:state_selected="true"/>
+    <!-- 60% opacity white -->
+    <item android:color="#99000000"/>
+</selector>

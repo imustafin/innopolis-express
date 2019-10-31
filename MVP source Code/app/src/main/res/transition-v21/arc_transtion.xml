@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet
+    android:interpolator="@android:interpolator/linear_out_slow_in"
+    android:duration="@integer/duration_Transition"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <changeBounds/>
+    <changeTransform/>
+    <changeClipBounds/>
+    <changeImageTransform/>
+    <arcMotion android:minimumVerticalAngle="70"   />
+
+</transitionSet>

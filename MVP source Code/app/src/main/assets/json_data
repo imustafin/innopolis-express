@@ -1,0 +1,808 @@
+[
+  {
+	"product_id" : 1,
+	"name" : "Freekeh",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/freekah.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Chicken",
+		"description" : "please choose chicken type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "breast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "thigh",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "wings",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Toppings",
+		"selection_type" : "filter",
+		"name" : "Toppings",
+		"description" : "what topping you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "nuts",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "raisin",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Content",
+		"selection_type" : "filter",
+		"name" : "Content",
+		"description" : "remove what you don't like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "mayonnaise",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "tomato",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "lattice",
+			"is_selected" : true
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Ozi",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/ozi.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Chicken",
+		"description" : "please choose chicken type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "breast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "thigh",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "wings",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Toppings",
+		"selection_type" : "filter",
+		"name" : "Toppings",
+		"description" : "what topping you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "nuts",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "raisin",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Content",
+		"selection_type" : "filter",
+		"name" : "Content",
+		"description" : "remove what you don't like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "mayonnaise",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "tomato",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "lattice",
+			"is_selected" : true
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Bryani",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/bryani.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Chicken",
+		"description" : "please choose chicken type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "breast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "thigh",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "wings",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Toppings",
+		"selection_type" : "filter",
+		"name" : "Toppings",
+		"description" : "what topping you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "nuts",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "raisin",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Content",
+		"selection_type" : "filter",
+		"name" : "Content",
+		"description" : "remove what you don't like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "mayonnaise",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "tomato",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "lattice",
+			"is_selected" : true
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Zerb",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/zarb.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Chicken",
+		"description" : "please choose chicken type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "breast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "thigh",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "wings",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Toppings",
+		"selection_type" : "filter",
+		"name" : "Toppings",
+		"description" : "what topping you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "nuts",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "raisin",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Content",
+		"selection_type" : "filter",
+		"name" : "Content",
+		"description" : "remove what you don't like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "mayonnaise",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "tomato",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "lattice",
+			"is_selected" : true
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Zerbyan",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/zarbian.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Chicken",
+		"description" : "please choose chicken type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "breast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "thigh",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "wings",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Toppings",
+		"selection_type" : "filter",
+		"name" : "Toppings",
+		"description" : "what topping you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "nuts",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "raisin",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Content",
+		"selection_type" : "filter",
+		"name" : "Content",
+		"description" : "remove what you don't like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "mayonnaise",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "tomato",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "lattice",
+			"is_selected" : true
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Shawerma",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/shawerma.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Type",
+		"description" : "please choose  type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Normal",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "super",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "double",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "filter",
+		"name" : "Extras",
+		"description" : "please choose the Extras you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "Mayonnaise",
+			"is_selected" : false
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Zinger",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/zinger.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Type",
+		"description" : "what type you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "French toast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "normal bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  }
+	]
+  },
+  {
+	"product_id" : 1,
+	"name" : "Mandi",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Food/mandi.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "food",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 3,
+	  "formattedValue" : "3.0 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : [
+	  {
+		"type" : "Toppings",
+		"selection_type" : "single",
+		"name" : "Chicken",
+		"description" : "please choose chicken type you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "breast",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "thigh",
+			"is_selected" : false
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "wings",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Toppings",
+		"selection_type" : "filter",
+		"name" : "Toppings",
+		"description" : "what topping you like on your meals",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "nuts",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "raisin",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bread",
+			"is_selected" : true
+		  }
+		]
+	  },
+	  {
+		"type" : "Extras",
+		"selection_type" : "single",
+		"name" : "Sauces",
+		"description" : "please choose the sauces you like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "Mandi sauces",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "bryani sauces",
+			"is_selected" : false
+		  }
+		]
+	  },
+	  {
+		"type" : "Content",
+		"selection_type" : "filter",
+		"name" : "Content",
+		"description" : "remove what you don't like",
+		"Preference" : [
+		  {
+			"preference_id" : 1,
+			"text" : "ketchup",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "mayonnaise",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "tomato",
+			"is_selected" : true
+		  },
+		  {
+			"preference_id" : 1,
+			"text" : "lattice",
+			"is_selected" : true
+		  }
+		]
+	  }
+	]
+  }
+]
+

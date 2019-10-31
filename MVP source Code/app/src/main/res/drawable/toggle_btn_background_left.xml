@@ -1,0 +1,3 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/toggle_brand_shape_left" />
+</shape>

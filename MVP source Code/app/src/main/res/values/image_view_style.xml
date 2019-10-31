@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="IconStyle">
+        <item name="android:background">@drawable/icon_background_blue</item>
+        <item name="android:padding">@dimen/icon_padding</item>
+    </style>
+
+    <style name="IconStyle.OnToolBar">
+        <item name="android:background">@drawable/icon_background_blue</item>
+        <item name="android:paddingStart">@dimen/icon_padding</item>
+        <item name="android:paddingTop">@dimen/icon_padding</item>
+        <item name="android:paddingBottom">@dimen/icon_padding</item>
+    </style>
+
+    <style name="IconStyle.onPrimary">
+        <item name="android:background">@drawable/icon_background_white</item>
+        <item name="android:padding">@dimen/icon_padding</item>
+    </style>
+</resources>

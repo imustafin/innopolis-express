@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        app:elevation="6dp"
+        android:layout_height="56dp">
+
+       <android.support.v7.widget.Toolbar
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:id="@+id/close"
+               android:layout_marginTop="8dp"
+               style="@style/IconStyle.onPrimary"
+               android:src="@drawable/ic_round_arrow_back"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+           <TextView
+               android:layout_marginStart="24dp"
+               android:text="Edit Information"
+               style="@style/TextHeadline6"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+       </android.support.v7.widget.Toolbar>
+
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:background="@color/backgroundColor"
+        android:elevation="6dp"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".profile.ProfileInfoFragment">
+
+
+
+            <TextView
+                style="@style/TextSubtitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="24dp"
+                android:text="Optional Information"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/profile_name_container"
+                style="@style/TextInputOutlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:hint="@string/name"
+                app:counterMaxLength="30"
+                >
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/profile_name"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:maxWidth="280dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_account_circle_24px"
+                    android:inputType="textPersonName"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/profile_email_container"
+                style="@style/TextInputOutlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_16dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:hint="@string/email"
+                app:counterMaxLength="30"
+                >
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/profile_email"
+                    style="@style/EditTextStyle"
+                    android:maxWidth="280dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_email_24px"
+                    android:inputType="textEmailAddress"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/profile_gender_container"
+                style="@style/TextInputOutlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:hint="Gender"
+                app:counterMaxLength="30"
+                >
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/profile_Gender"
+                    style="@style/EditTextStyle"
+                    android:maxWidth="280dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_round_arrow_drop_down_24px"
+                    android:drawableStart="@drawable/ic_round_wc_24px"
+                    android:inputType="textEmailAddress"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                style="@style/TextSubtitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="24dp"
+                android:text="Required Information"/>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/profile_username_container"
+                style="@style/TextInputOutlinedCounter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:hint="Username"
+                app:counterMaxLength="20"
+                >
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/profile_username"
+                    style="@style/EditTextStyle"
+                    android:maxWidth="280dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_people_outline_24px"
+                    android:inputType="textPersonName"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/profile_phone_container"
+                style="@style/TextInputOutlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="16dp"
+                android:hint="Phone"
+                >
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/profile_phone"
+                    style="@style/EditTextStyle"
+                    android:maxWidth="280dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_round_done_24px"
+                    android:drawableStart="@drawable/ic_round_phone_24px"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.button.MaterialButton
+                style="@style/TextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/change_number"
+                android:textColor="@color/colorPrimary"/>
+
+            <com.mfq.foodle.coustemviews.BrandShapedButton
+                android:id="@+id/edit_info"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="@dimen/dimen_16dp"
+                android:minWidth="220dp"
+                android:text="Save information"
+                app:icon="@drawable/ic_round_done_24px"
+                />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

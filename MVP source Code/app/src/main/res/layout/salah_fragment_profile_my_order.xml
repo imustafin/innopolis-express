@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mfq.foodle.salah.Salah_ProfileMyOrderFragment">
+
+    <ImageView
+        android:id="@+id/imgMyOrders"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_header_height"
+        android:src="@drawable/food3"
+        android:scaleType="centerCrop"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mOrdersRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e9e9e9"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<shape android:shape="rectangle"
+       android:tint="@color/chat_assistant_color"
+       xmlns:android="http://schemas.android.com/apk/res/android">
+        <corners
+            android:bottomLeftRadius="@dimen/zero_dp"
+            android:topRightRadius="@dimen/brand_shape_corner_big"
+            android:topLeftRadius="@dimen/brand_shape_corner_big"
+            android:bottomRightRadius="@dimen/brand_shape_corner_big"
+            />
+        <solid android:color="@color/white" />
+        <padding android:left="16dp"
+                 android:top="16dp"
+                 android:right="16dp"
+                 android:bottom="16dp" />
+    </shape>
+

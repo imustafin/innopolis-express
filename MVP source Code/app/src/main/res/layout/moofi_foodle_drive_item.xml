@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/drive_radio_button1"
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_round_delete_forever_24px"/>
+
+
+            <TextView
+                android:id="@+id/drive_fees"
+                style="@style/TextHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/drive_radio_button1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="8dp"
+                android:text="Fees"
+                android:textAllCaps="true"/>
+
+
+            <TextView
+                android:id="@+id/drive_order_time"
+                style="@style/TextHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="Arrive time"
+                android:textAllCaps="true"/>
+
+
+            <View
+                android:id="@+id/drive_divider"
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/drive_radio_button2"
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_round_delete_forever_24px"/>
+
+
+            <TextView
+                android:id="@+id/drive_fees"
+                style="@style/TextSubtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/drive_radio_button2"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="8dp"
+                android:text="1 Jd"
+                android:textAllCaps="true"/>
+
+
+            <TextView
+                android:id="@+id/drive_order_time"
+                style="@style/TextSubtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="1:00 - 2:00 pm"
+                android:textAllCaps="true"/>
+
+
+            <View
+                android:id="@+id/drive_divider"
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/drive_radio_button3"
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_round_delete_forever_24px"/>
+
+
+            <TextView
+                android:id="@+id/drive_fees"
+                style="@style/TextSubtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/drive_radio_button3"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="8dp"
+                android:text="2 Jd"
+                android:textAllCaps="true"/>
+
+
+            <TextView
+                android:id="@+id/drive_order_time"
+                style="@style/TextSubtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="2:00 - 3:00 pm"
+                android:textAllCaps="true"/>
+
+
+            <View
+                android:id="@+id/drive_divider"
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/drive_radio_button4"
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_round_delete_forever_24px"/>
+
+
+            <TextView
+                android:id="@+id/drive_fees"
+                style="@style/TextSubtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/drive_radio_button4"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="8dp"
+                android:text="3 Jd"
+                android:textAllCaps="true"/>
+
+
+            <TextView
+                android:id="@+id/drive_order_time"
+                style="@style/TextSubtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="200dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="within 45 min"
+                android:textAllCaps="true"/>
+
+
+            <View
+                android:id="@+id/drive_divider"
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.card.MaterialCardView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <style name="TopToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:theme">@style/AppTheme</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:elevation">@dimen/app_bar_elevation</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="title">@string/app_name</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Toolbar</item>
+    </style>
+
+    <style name="TextAppearance.Toolbar" parent="TextHeadline6">
+        <item name="fontFamily">@font/font_black</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="TextAppearance.ToolbarBig" parent="TextHeadline3">
+        <item name="fontFamily">@font/font_black</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+
+    <style name="CollapsingToolbarLayoutStyle" parent="Widget.Design.CollapsingToolbar" >
+        <item name="contentScrim">?attr/colorPrimary</item>
+        <item name="expandedTitleGravity">start</item>
+        <item name="expandedTitleMarginBottom">24dp</item>
+        <item name="expandedTitleMarginStart">16dp</item>
+        <item name="layout_scrollFlags">scroll|exitUntilCollapsed|snap</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.ToolbarBig</item>
+        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Toolbar</item>
+    </style>
+
+</resources>

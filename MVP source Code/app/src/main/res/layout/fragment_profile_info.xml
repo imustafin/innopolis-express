@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <ImageView
+                android:id="@+id/img_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_img"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".profile.ProfileInfoFragment">
+
+
+            <TextView
+                style="@style/TextSubtitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="User's Information"/>
+
+
+            <TextView
+                android:id="@+id/profile_name"
+                style="@style/TextHeadline6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:drawableStart="@drawable/ic_round_account_circle_24px"
+                android:gravity="center|start"
+                android:text="Muwaffaq Imam"
+                />
+
+
+            <TextView
+                android:id="@+id/profile_email"
+                style="@style/TextHeadline6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:drawableStart="@drawable/ic_round_email_24px"
+                android:gravity="center|start"
+                android:text="muwaffaqimam@gmail.com"
+                />
+
+
+            <TextView
+                android:id="@+id/profile_Gender"
+                style="@style/TextHeadline6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:drawableStart="@drawable/ic_round_wc_24px"
+                android:gravity="center|start"
+                android:text="Male"
+                />
+
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                style="@style/TextSubtitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="24dp"
+                android:text="App's Information"/>
+
+
+            <TextView
+                style="@style/TextOverline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="56dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:gravity="center|start"
+                android:text="Username"
+                />
+
+
+            <TextView
+                android:id="@+id/profile_username"
+                style="@style/TextHeadline6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:drawableStart="@drawable/ic_round_people_outline_24px"
+                android:gravity="center|start"
+                android:text="MFQ"
+                />
+
+
+            <TextView
+                style="@style/TextOverline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:gravity="center|start"
+                android:text="Phone"
+                />
+
+
+            <TextView
+                android:id="@+id/profile_phone"
+                style="@style/TextHeadline6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:drawablePadding="@dimen/dimen_16dp"
+                android:drawableStart="@drawable/ic_round_phone_24px"
+                android:enabled="false"
+                android:gravity="center|start"
+                android:inputType="textPersonName"
+                android:text="+962 780051272"
+                />
+
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/profile_change_number_button"
+                style="@style/TextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/change_number"
+                android:textColor="@color/colorPrimary"/>
+
+            <com.mfq.foodle.coustemviews.BrandShapedButton
+                android:id="@+id/edit_info"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="@dimen/dimen_16dp"
+                android:minWidth="220dp"
+                android:text="Edit information"
+                app:icon="@drawable/ic_round_edit_24px"
+                />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

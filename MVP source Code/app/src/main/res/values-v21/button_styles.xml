@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/primary_text_color_selector</item>
+        <item name="backgroundTint">@color/btn_bg_color</item>
+        <item name="android:background">@drawable/btn_background</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="iconTint">@color/primary_text_color_selector</item>
+        <item name="android:stateListAnimator">
+            @animator/shr_next_button_state_list_anim
+        </item>
+
+    </style>
+</resources>

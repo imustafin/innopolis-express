@@ -1,0 +1,109 @@
+[
+  {
+	"product_id" : 1,
+	"name" : "Chocolate Cake",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Dessert/chcolate%20cake.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" :"dessert",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 1.80,
+	  "formattedValue" : "1.80 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : null
+  },
+  {
+	"product_id" : 1,
+	"name" : "Toffee Cake",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Dessert/niscafi%20cake.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "dessert",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 1.80,
+	  "formattedValue" : "1.80 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : null
+  },
+  {
+	"product_id" : 1,
+	"name" : "Layers Cake",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Dessert/layers%20cake.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "dessert",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 1.80,
+	  "formattedValue" : "1.80 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : null
+  },
+  {
+	"product_id" : 1,
+	"name" : "Cheese Cake",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Dessert/cheese%20cake.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "dessert",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 1.80,
+	  "formattedValue" : "1.80 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : null
+  },
+  {
+	"product_id" : 1,
+	"name" : "Despacito",
+	"imgUrl" : "https://github.com/Eng-MFQ/imges_uplader/blob/master/Dessert/decpacito.jpg?raw=true",
+	"description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	"type" : "dessert",
+	"quantity" : 1,
+	"Clap" : {
+	  "product_clap" : 150,
+	  "user_clap" : 10
+	},
+	"Price" : {
+	  "value" : 1.80,
+	  "formattedValue" : "1.80 JD",
+	  "Discounts" : {
+		"description" : "15%",
+		"priceAfterDiscount" : "2.50 JD"
+	  }
+	},
+	"MealPreferences" : null
+  }
+
+
+]

@@ -1,0 +1,107 @@
+<resources>
+
+    <!--anything you add here don't forget to add it in v-21 -->
+    <style name="ChipFilter" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chipBackgroundColor</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="checkedIcon">@drawable/ic_round_check</item>
+        <item name="android:checkMarkTint">@color/primary_text_color_selector</item>
+    </style>
+
+    <style name="ChipFilterSelected" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="checkedIcon">@drawable/ic_round_check</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="android:checkMarkTint">@color/primary_text_color_selector</item>
+        <item name="chipBackgroundColor">@color/colorPrimary</item>
+        <item name="android:checked">true</item>
+    </style>
+
+
+    <style name="ChipChoiceSelected" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/colorPrimary</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="android:checked">true</item>
+    </style>
+
+
+    <style name="ChipChoice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chipBackgroundColor</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+    </style>
+
+    <style name="ChipEntry" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipBackgroundColor">@color/chipBackgroundColor</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+        <item name="checkedIcon">@drawable/ic_round_check</item>
+        <item name="chipIconEnabled">true</item>
+        <item name="chipIcon">@drawable/ic_placeholder_circle_24</item>
+    </style>
+
+    <style name="ChipEntrySelected" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipBackgroundColor">@color/colorPrimary</item>
+        <item name="chipIconEnabled">true</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="checkedIcon">@drawable/ic_round_check</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipIcon">@drawable/ic_placeholder_circle_24</item>
+        <item name="android:checked">true</item>
+    </style>
+
+    <style name="ChipAction" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/chipBackgroundColor</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+        <item name="chipIconEnabled">true</item>
+        <item name="chipIcon">@drawable/ic_placeholder_circle_24</item>
+    </style>
+
+    <style name="ChipAction.Moofi" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/chipBackgroundColor</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="chipStartPadding">@dimen/chip_start_end_padding</item>
+        <item name="android:textAppearance">@style/ChipTextAppearance</item>
+        <item name="chipEndPadding">@dimen/chip_start_end_padding</item>
+        <item name="chipStrokeWidth">@dimen/chip_stroke_width</item>
+        <item name="chipIconEnabled">true</item>
+    </style>
+
+
+    <style name="GeneralChipGroupStyle" parent="Widget.MaterialComponents.ChipGroup">
+        <item name="chipSpacing">8dp</item>
+    </style>
+
+    <style name="ChipGroupSingleSelectionStyle" parent="Widget.MaterialComponents.ChipGroup">
+        <item name="chipSpacing">8dp</item>
+        <item name="singleSelection">true</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="ChipTextAppearance" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:fontFamily">@font/font_medium</item>
+    </style>
+
+
+
+
+
+</resources>

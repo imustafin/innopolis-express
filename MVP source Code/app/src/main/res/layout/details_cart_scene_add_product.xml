@@ -1,0 +1,26 @@
+<LinearLayout
+    android:id="@+id/cartContainer"
+    android:layout_width="100dp"
+    android:layout_height="56dp"
+    android:layout_gravity="bottom|end"
+    android:background="@drawable/cart_brand_shape_left"
+    android:elevation="13dp"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        style="@style/IconStyle"
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_shopping_cart"/>
+
+    <ImageView
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/food2"
+        android:id="@+id/small_product"
+        android:layout_width="24dp"
+        android:layout_height="24dp"/>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cart.CartFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:background="@color/backgroundColor"
+        android:layout_height="56dp"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:id="@+id/cart_close"
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_round_arrow_back"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="72dp"
+                android:text="Checkout"/>
+
+            <View
+                android:layout_alignParentBottom="true"
+                style="@style/DividerDarkHorizontal"/>
+
+        </RelativeLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <include layout="@layout/cart_recycler_layout"/>
+
+            <include layout="@layout/cart_first_total_layout"/>
+
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <include layout="@layout/cart_delivery_layout"/>
+
+            <include layout="@layout/cart_phone_layout"/>
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <include layout="@layout/foodle_drive_cart"/>
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <include layout="@layout/cart_totals_layout"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <com.mfq.foodle.coustemviews.BrandShapedButton
+        android:id="@+id/cart_order"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/dimen_16dp"
+        android:minWidth="220dp"
+        android:text="@string/complete_order"
+        app:icon="@drawable/ic_round_done_24px"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

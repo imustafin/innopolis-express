@@ -1,0 +1,29 @@
+[
+  {
+	"addressName" : "Home Address",
+	"latitude" : 1234566,
+	"longitude" : 3456788,
+	"isDefault" : "TRUE",
+	"description" : "7th Circle , behind Airbort",
+	"addressId" : 1,
+	"userId" : 1
+  },
+  {
+	"addressName" : "Work Address",
+	"latitude" : 1234566,
+	"longitude" : 3456788,
+	"isDefault" : "FALSE",
+	"description" : "Al yadoodah , 29 qbaa street",
+	"addressId" : 2,
+	"userId" : 1
+  },
+  {
+	"addressName" : "Work Address 2",
+	"latitude" : 1234566,
+	"longitude" : 3456788,
+	"isDefault" : "FALSE",
+	"description" : "Al yadoodah , 29 qbaa street, 21 goo",
+	"addressId" : 3,
+	"userId" : 1
+  }
+]

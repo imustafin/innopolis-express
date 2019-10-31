@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/backdrop_sheet"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".activities.FoodleAssistant">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/assistantRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        tools:listitem="@layout/chat_layout"/>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/FabStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottomBar"
+        app:srcCompat="@drawable/ic_round_send_24px"/>
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottomBar"
+        style="@style/Assistant.BottomAppBarStyle.chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="end"
+        app:hideOnScroll="false">
+
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/query_edit_text"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="80dp"
+            android:background="@color/transparent"
+            android:hint="type something..."
+            />
+
+
+    </android.support.design.bottomappbar.BottomAppBar>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/bottom_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom|center">
+
+        <ai.api.ui.AIButton
+            android:id="@+id/micButton"
+            style="@style/ApiAi.Microphone"
+            android:layout_height="152dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

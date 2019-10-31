@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            style="@style/TopToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="56dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/CollapsingToolbarLayoutStyle"
+      >
+
+            <android.support.v7.widget.Toolbar
+                style="@style/TopToolbarStyle"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/TextSubtitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/muwaffaq_imam"
+                />
+
+            <TextView
+                style="@style/TextHeadline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/font_regular"
+                android:text="Chips"
+                />
+
+            <android.support.design.chip.ChipGroup
+                style="@style/ChipGroupSingleSelectionStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choice"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipChoice"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choice"/>
+
+            </android.support.design.chip.ChipGroup>
+
+            <android.support.design.chip.ChipGroup
+                style="@style/GeneralChipGroupStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipFilter"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipFilter"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipChoice"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipFilter"/>
+
+            </android.support.design.chip.ChipGroup>
+
+
+            <android.support.design.chip.ChipGroup
+                style="@style/GeneralChipGroupStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipEntry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entry"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipEntry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipEntry"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipEntry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipEntry"/>
+
+            </android.support.design.chip.ChipGroup>
+
+
+            <android.support.design.chip.ChipGroup
+                style="@style/GeneralChipGroupStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Action"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipAction"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ChipAction"/>
+
+                <com.mfq.foodle.coustemviews.DynamicChip
+                    style="@style/ChipAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Action"/>
+
+            </android.support.design.chip.ChipGroup>
+
+
+            <TextView
+                style="@style/TextHeadline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/font_regular"
+                android:text="Buttons"
+                />
+
+
+            <com.mfq.foodle.coustemviews.BrandShapedButton
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Button"/>
+
+            <com.mfq.foodle.coustemviews.BrandShapedButton
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:enabled="false"
+                android:text="Button"
+                app:icon="@drawable/ic_person_black_24dp"/>
+
+
+            <com.mfq.foodle.coustemviews.BrandShapedButton
+                style="@style/ButtonStyleUnelevated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Button"
+                app:icon="@drawable/ic_person_black_24dp"/>
+
+
+            <android.support.design.button.MaterialButton
+                style="@style/TextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Text Button"/>
+
+
+            <com.mfq.foodle.coustemviews.BrandShapedToggleButtonLeft
+                style="@style/ToggleButtonStyle"
+                android:layout_marginBottom="20dp"
+                app:icon="@drawable/ic_person_black_24dp"
+                />
+
+            <com.mfq.foodle.coustemviews.BrandShapedToggleButtonRight
+                style="@style/ToggleButtonStyle"
+                android:layout_marginBottom="20dp"
+                app:icon="@drawable/ic_person_black_24dp"
+                />
+
+
+            <TextView
+                style="@style/TextHeadline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/font_regular"
+                android:text="Edit Text"
+                />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/error_pass"
+                style="@style/TextInputFilledPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Im  Password"
+                app:helperText="enter password"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:inputType="textPassword"
+                    android:text="hi"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextInputOutlinedPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Im  Password"
+                app:helperText="enter password"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text="hi w"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextInputFilledCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Im with Counter "
+                app:counterMaxLength="3"
+                app:helperText="with Counter"
+                >
+
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hi with"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextInputOutlinedCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Im  with Counter"
+                app:helperText="with Counter"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hi with"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/TextInputFilled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Im with Original"
+                app:helperText="with Original"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:text="hi with"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/error"
+                style="@style/TextInputOutlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Im with Original"
+                app:helperText="with Original"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:text="hi with"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/FabStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bar"
+        app:srcCompat="@drawable/ic_round_check"/>
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/BottomAppBarStyle"
+       />
+</android.support.design.widget.CoordinatorLayout>

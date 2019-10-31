@@ -1,0 +1,13 @@
+{
+  "moofi" : {
+	"display_prompt" : ""
+  },
+  "ui" : {
+	"chips" : [
+	  "",
+	  "",
+	  ""
+	],
+	"recycler_item_view" : ""
+  }
+}

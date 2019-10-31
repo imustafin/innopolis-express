@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_height="300dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_marginTop="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:textAllCaps="true"
+        style="@style/TextHeadline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="72dp"
+        android:text="Cart"/>
+
+
+
+
+    <TextView
+        android:id="@+id/cart_item_count"
+        style="@style/TextSubtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:text="3 Items"/>
+
+    <View
+        android:id="@+id/divider_recycler"
+        android:layout_below="@+id/cart_item_count"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="72dp"
+        style="@style/DividerDarkHorizontal"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_recycler"
+        android:layout_below="@+id/divider_recycler"
+        tools:listitem="@layout/cart_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

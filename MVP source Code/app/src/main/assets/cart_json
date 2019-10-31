@@ -1,0 +1,210 @@
+{
+  "actions": [
+	{
+	  "name":"HANDLE_MOOFI_UI",
+	  "type":"client",
+	  "parameters": {
+		"display_prompt":
+		[
+		  "قائمة الوجبات في الاسفل، ولا بتفضل تشوف الحلويات",
+		  "قائمة الوجبات في الاسفل، ولا بتفضل تشوف الحلويات"
+		],
+		"visuals":"meals-list"
+	  },
+	  "result_variable": "UI"
+	}
+	],
+
+  "cartId" : 1,
+  "productList" : [
+	{
+	  "product_id" : 1,
+	  "name" : "Zinger",
+	  "imgUrl" : "URL",
+	  "description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	  "type" : "food",
+	  "quantity" : 1,
+	  "Clap" : {
+		"product_clap" : 150,
+		"user_clap" : 10
+	  },
+	  "Price" : {
+		"value" : 3,
+		"formattedValue" : "3.0 JD",
+		"Discounts" : {
+		  "description" : "15%",
+		  "priceAfterDiscount" : "2.50 JD"
+		}
+	  },
+	  "MealPreferences" : [
+		{
+		  "type" : "Toppings",
+		  "selection_type" : "single",
+		  "name" : "Type",
+		  "description" : "what type you like on your meals",
+		  "Preference" : [
+			{
+			  "preference_id" : 1,
+			  "text" : "French toast",
+			  "is_selected" : true
+			},
+			{
+			  "preference_id" : 1,
+			  "text" : "normal bread",
+			  "is_selected" : true
+			}
+		  ]
+		},
+		{
+		  "type" : "Extras",
+		  "selection_type" : "single",
+		  "name" : "Sauces",
+		  "description" : "please choose the sauces you like",
+		  "Preference" : [
+			{
+			  "preference_id" : 1,
+			  "text" : "Mandi sauces",
+			  "is_selected" : true
+			},
+			{
+			  "preference_id" : 1,
+			  "text" : "bryani sauces",
+			  "is_selected" : false
+			}
+		  ]
+		}
+	  ]
+	},
+	{
+	  "product_id" : 1,
+	  "name" : "Shawerma",
+	  "imgUrl" : "URL",
+	  "description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	  "type" : "food",
+	  "quantity" : 1,
+	  "Clap" : {
+		"product_clap" : 150,
+		"user_clap" : 10
+	  },
+	  "Price" : {
+		"value" : 3,
+		"formattedValue" : "3.0 JD",
+		"Discounts" : {
+		  "description" : "15%",
+		  "priceAfterDiscount" : "2.50 JD"
+		}
+	  },
+	  "MealPreferences" : [
+		{
+		  "type" : "Toppings",
+		  "selection_type" : "single",
+		  "name" : "Type",
+		  "description" : "please choose  type you like",
+		  "Preference" : [
+			{
+			  "preference_id" : 1,
+			  "text" : "Normal",
+			  "is_selected" : true
+			},
+			{
+			  "preference_id" : 1,
+			  "text" : "super",
+			  "is_selected" : false
+			},
+			{
+			  "preference_id" : 1,
+			  "text" : "double",
+			  "is_selected" : false
+			}
+		  ]
+		},
+		{
+		  "type" : "Extras",
+		  "selection_type" : "filter",
+		  "name" : "Extras",
+		  "description" : "please choose the Extras you like",
+		  "Preference" : [
+			{
+			  "preference_id" : 1,
+			  "text" : "Ketchup",
+			  "is_selected" : true
+			},
+			{
+			  "preference_id" : 1,
+			  "text" : "Mayonnaise",
+			  "is_selected" : false
+			}
+		  ]
+		}
+	  ]
+	},
+	{
+	  "product_id" : 1,
+	  "name" : "Chocolate Cake",
+	  "imgUrl" : "URL",
+	  "description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	  "type" : "dessert",
+	  "quantity" : 1,
+	  "Clap" : {
+		"product_clap" : 150,
+		"user_clap" : 10
+	  },
+	  "Price" : {
+		"value" : 1.80,
+		"formattedValue" : "1.80 JD",
+		"Discounts" : {
+		  "description" : "15%",
+		  "priceAfterDiscount" : "2.50 JD"
+		}
+	  },
+	  "MealPreferences" : null
+	},
+	{
+	  "product_id" : 1,
+	  "name" : "Toffee Cake",
+	  "imgUrl" : "URL",
+	  "description" : "Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, Yummy, ",
+	  "type" : "dessert",
+	  "quantity" : 1,
+	  "Clap" : {
+		"product_clap" : 150,
+		"user_clap" : 10
+	  },
+	  "Price" : {
+		"value" : 1.80,
+		"formattedValue" : "1.80 JD",
+		"Discounts" : {
+		  "description" : "15%",
+		  "priceAfterDiscount" : "2.50 JD"
+		}
+	  },
+	  "MealPreferences" : null
+	}
+  ],
+  "User" : {
+	"phone" : 780051272,
+	"userId" : 1
+  },
+  "totals" : {
+	"subTotal" : "5 JD",
+	"grandTotal" : " 6 JD",
+	"deliveryFee" : "1 JD"
+  },
+  "foodleDrive" : [
+	{
+	  "fees" : "1 JD",
+	  "receivingTime" : "1:00 pm - 2:00 pm",
+	  "isSelected" : true
+	},
+	{
+	  "fees" : "2 JD",
+	  "receivingTime" : "2:00 pm - 3:00 pm",
+	  "isSelected" : false
+	},
+	{
+	  "fees" : "3 JD",
+	  "receivingTime" : "within 45 min",
+	  "isSelected" : false
+	}
+  ]
+}

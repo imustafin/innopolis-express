@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.mfq.foodle">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activities.OnBoardingActivity"/>
+        <activity android:name=".activities.MealSettings"/>
+        <activity android:name=".activities.HomeActivity"/>
+        <activity
+            android:name=".activities.MainActivity"
+            android:windowSoftInputMode="stateHidden">
+
+
+        </activity>
+        <activity
+            android:name=".activities.FoodDetails"
+            android:label="@string/title_activity_food_details"
+            android:parentActivityName=".activities.MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mfq.foodle.activities.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".salah.Salah_ProfileActivity"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name=".salah.Salah_StepOrderActivity">
+        </activity>
+        <activity android:name=".activities.SplashScreen">
+        </activity>
+        <activity
+            android:name=".activities.FoodleAssistant"
+            android:label="@string/title_activity_foodle_assistant">
+        </activity>
+        <activity
+            android:name=".activities.CartActivity"
+            android:label="@string/title_activity_cart">
+        </activity>
+        <activity
+            android:name=".activities.InvoiceActivity"
+            android:label="@string/title_activity_invoice">
+        </activity>
+        <activity
+            android:name=".activities.AddPhoneNumberActivity"
+            android:label="@string/title_activity_phone_number">
+        </activity>
+        <activity
+            android:name=".activities.SmsVerificationActivity"
+            android:label="@string/title_activity_sms_verification">
+        </activity>
+        <activity
+            android:name=".activities.ProfileEditInfoActivity"
+            android:label="@string/title_activity_profile_edit_info">
+        </activity>
+        <activity
+            android:name=".activities.FoodleAssistantAI"
+            android:label="@string/title_activity_foodle_assistant_ai">
+
+        </activity>
+        <activity android:name=".activities.MoofiActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

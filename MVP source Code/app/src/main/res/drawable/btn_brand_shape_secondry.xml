@@ -1,0 +1,19 @@
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+       android:insetLeft="10dp"
+       android:insetTop="10dp"
+       android:insetRight="10dp"
+       android:insetBottom="10dp">
+    <shape android:shape="rectangle"
+           android:tint="@color/secondaryColor">
+        <corners
+            android:bottomLeftRadius="@dimen/brand_shape_corner_very_big"
+            android:topRightRadius="@dimen/brand_shape_corner_very_big"
+            android:topLeftRadius="@dimen/brand_shape_corner_very_big"
+            android:bottomRightRadius="@dimen/brand_shape_corner_very_big"
+            />
+        <padding android:left="8dp"
+                 android:top="4dp"
+                 android:right="8dp"
+                 android:bottom="4dp" />
+    </shape>
+</inset>

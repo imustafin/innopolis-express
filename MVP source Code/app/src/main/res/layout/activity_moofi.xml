@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#f0f0f0"
+    android:layout_height="match_parent"
+    tools:context=".activities.MoofiActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:elevation="6dp">
+
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_margin="8dp"
+                style="@style/IconStyle.onPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_arrow_back"/>
+
+
+
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/assistantRecycler"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
+            tools:listitem="@layout/chat_layout"/>
+
+
+
+
+
+    <ImageView
+        android:elevation="8dp"
+        android:id="@+id/fab"
+        style="@style/IconStyle"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_round_send_24px"/>
+
+    <LinearLayout
+        android:elevation="6dp"
+        android:id="@+id/bottom_container"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/moofi_chip_container"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:gravity="center|start"
+            android:id="@+id/moofi_typing_container"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/moofi_is_typing"
+                style="@style/TextSubtitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/moofi_typingAnimation"
+                android:layout_marginStart="8dp"
+                app:lottie_loop="true"
+                app:lottie_fileName="moofi_typing.json"
+                app:lottie_autoPlay="false"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+
+        </LinearLayout>
+
+
+
+        <HorizontalScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content"/>
+                <android.support.design.chip.ChipGroup
+                    android:id="@+id/moofi_chip_group"
+                    app:singleLine="true"
+                    style="@style/GeneralChipGroupStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/query_edit_text"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:hint="@string/type_something"
+            android:layout_marginEnd="56dp"
+            android:layout_marginStart="16dp"
+            android:inputType="text"
+            android:lines="1"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:id="@+id/permission"
+        android:padding="16dp"
+        style="@style/TextHeadline5"
+        android:gravity="center"
+        android:background="@color/white"
+        android:text="we need permission click to enable "
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

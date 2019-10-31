@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="TextInputFilled" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+        <item name="boxCornerRadiusTopStart">@dimen/brand_shape_corner_med</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/zero_dp</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+
+    <style name="TextInputFilled.phone" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+        <item name="boxCornerRadiusTopStart">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/zero_dp</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+
+    <style name="TextInputFilledCounter" parent="TextInputFilled">
+        <item name="counterOverflowTextAppearance">@style/CounterOverflowTextAppearance</item>
+        <item name="counterTextAppearance">@style/CounterTextAppearance</item>
+        <item name="counterEnabled">true</item>
+    </style>
+
+    <style name="TextInputFilledPassword" parent="TextInputFilled">
+        <item name="passwordToggleContentDescription">@string/passwordToggleContentDescription</item>
+        <item name="passwordToggleTint">@color/iconTintColor</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+    </style>
+
+
+    <style name="TextInputOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+        <item name="boxCornerRadiusTopStart">@dimen/brand_shape_corner_med</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/zero_dp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/zero_dp</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="TextInputOutlinedCounter" parent="TextInputOutlined">
+        <item name="counterOverflowTextAppearance">@style/CounterOverflowTextAppearance</item>
+        <item name="counterTextAppearance">@style/CounterTextAppearance</item>
+        <item name="counterEnabled">true</item>
+    </style>
+
+    <style name="TextInputOutlinedPassword" parent="TextInputOutlined">
+        <item name="passwordToggleContentDescription">@string/passwordToggleContentDescription</item>
+        <item name="passwordToggleTint">@color/iconTintColor</item>
+        <item name="passwordToggleEnabled">true</item>
+    </style>
+
+
+    <style name="EditTextStyle" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:drawablePadding">@dimen/dimen_16dp</item>
+        <item name="android:minWidth">@dimen/dimen_edit_text_min_width</item>
+        <item name="android:minHeight">@dimen/dimen_edit_text_min_height</item>
+        <item name="android:textAppearance">@style/TextSubtitle1</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+    </style>
+
+
+    <style name="QuantityEditTextStyle" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:minWidth">@dimen/dimen_quantity_edit_text_min_width</item>
+        <item name="android:minHeight">@dimen/dimen_edit_text_min_height</item>
+        <item name="android:textAppearance">@style/TextHeadline5</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">3</item>
+        <item name="android:enabled">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+
+
+    <!--TextAppearance Styles-->
+    <style name="ErrorTextAppearance" parent="TextAppearance.Design.Error">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textColor">@color/secondaryDarkColor</item>
+    </style>
+
+    <style name="HelperTextAppearance" parent="TextAppearance.Design.HelperText">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="HintTextAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style>
+
+
+    <style name="CounterTextAppearance" parent="TextAppearance.Design.Counter">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="CounterOverflowTextAppearance" parent="TextAppearance.Design.Counter.Overflow">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textColor">@color/secondaryDarkColor</item>
+    </style>
+
+
+    <string name="passwordToggleContentDescription">Show password text</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextHeadline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="TextHeadline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="TextHeadline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="TextHeadline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="TextHeadline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="TextHeadline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/font_medium</item>
+    </style>
+
+    <style name="TextSubtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="TextSubtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/font_medium</item>
+    </style>
+
+    <style name="TextBody1" parent="TextAppearance.MaterialComponents.Body1">
+      <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="TextBody2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/font_medium</item>
+    </style>
+
+    <style name="TextCaption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="TextOverline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+
+    <style name="Details.Headline" parent="TextHeadline3">
+    </style>
+
+    <style name="Details.Price" parent="TextHeadline4">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:gravity">end</item>
+    </style>
+</resources>

@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/un_eleveated_button_color_secondry" android:state_enabled="true"/>
+    <item android:color="#61000000"/>
+</selector>

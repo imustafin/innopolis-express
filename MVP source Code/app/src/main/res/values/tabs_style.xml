@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Home.TabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabIndicator">@drawable/cat_tabs_rounded_line_indicator</item>
+        <item name="tabIndicatorColor">@color/white</item>
+        <item name="tabRippleColor">@color/btn_ripple</item>
+        <item name="tabTextAppearance">@style/TabLayout.Text</item>
+    </style>
+
+    <style name="TabLayout.Text" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/home_tab_text_color</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+    </style>
+
+    <style name="Profile.TabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabIndicatorColor">@color/transparent</item>
+        <item name="tabRippleColor">@color/ripple_blue</item>
+        <item name="tabIconTint">@color/profile_tab_text_color</item>
+        <item name="tabTextAppearance">@style/Profile.TabLayout.Text</item>
+    </style>
+
+    <style name="Profile.TabLayout.Text" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/profile_tab_text_color</item>
+        <item name="android:fontFamily">@font/font_medium</item>
+    </style>
+
+
+
+
+</resources>

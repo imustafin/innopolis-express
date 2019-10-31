@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryLightColor">#92cfff</color>
+    <color name="colorPrimary">#5B9EEA</color>
+    <color name="colorPrimaryDark">#1370B7</color>
+
+    <color name="colorAccent">#FFFD90</color>
+
+    <color name="secondaryColor">#F0736C</color>
+    <color name="secondaryLightColor">#ffa49a</color>
+    <color name="secondaryDarkColor">#b94341</color>
+
+    <color name="backgroundColor">#F4F4F4</color>
+
+    <color name="chipBackgroundColor">#F4F4F4</color>
+    <color name="chipBackgroundColorSelected">#5B9EEA</color>
+    <color name="chipStrokeColor">#5B9EEA</color>
+
+    <color name="scrimBackground">#82000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="green">#D3FCD2</color>
+    <color name="dividerDark">#12000000</color>
+
+    <color name="primaryTextColor">#442C2E</color>
+    <color name="secondaryTextColor">#000000</color>
+
+    <color name="colorControlActivated">#5B9EEA</color>
+    <color name="colorControlHighlight">#28000000</color>
+
+    <color name="iconTintColor">#442C2E</color>
+    <color name="btn_ripple">#99FFFD90</color>
+    <color name="black">#000000</color>
+    <color name="list_item_subtext_color">#9B9B9B</color>
+    <color name="transparent">#00000000</color>
+    <color name="ripple_blue">#5B9EEA</color>
+    <color name="un_eleveated_button_color">#995B9EEA</color>
+    <color name="un_eleveated_button_color_secondry">#99F0736C</color>
+
+    <color name="white_opacity">#99FFFFFF</color>
+    <color name="black_opacity">#99FFFFFF</color>
+    <color name="primaryTextColor_opacity">#99442C2E</color>
+    <color name="colorAccent_opacity">#BBFFFD90</color>
+    <color name="chat_assistant_color">#717CA3</color>
+    <color name="colorPrimary_op_15">#265B9EEA</color>
+    <color name="colorPrimary_op_30">#4d5B9EEA</color>
+    <color name="black_op_30">#4d000000</color>
+    <color name="colorPrimary_op">#805B9EEA</color>
+    <color name="text_color_secondary">#9B9B9B</color>
+
+
+    <!--opacity-->
+    <!--100% — FF-->
+    <!--95% — F2-->
+    <!--90% — E6-->
+    <!--85% — D9-->
+    <!--80% — CC-->
+    <!--75% — BF-->
+    <!--70% — B3-->
+    <!--65% — A6-->
+    <!--60% — 99-->
+    <!--55% — 8C-->
+    <!--50% — 80-->
+    <!--45% — 73-->
+    <!--40% — 66-->
+    <!--35% — 59-->
+    <!--30% — 4D-->
+    <!--25% — 40-->
+    <!--20% — 33-->
+    <!--15% — 26-->
+    <!--10% — 1A-->
+    <!--5% — 0D-->
+    <!--0% — 00-->
+
+
+</resources>

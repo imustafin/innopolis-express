@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mfq.foodle.salah.Salah_StepOrderActivity">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCart"
+        style="@style/FabStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottomBar"
+        app:srcCompat="@drawable/ms_ic_chevron_right"/>
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottomBar"
+        style="@style/BottomAppBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        />
+
+    <com.stepstone.stepper.StepperLayout
+        android:id="@+id/stepperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ms_showBackButtonOnFirstStep="false"
+        app:ms_stepperType="tabs"
+        android:layout_marginBottom="70dp"
+        app:ms_showBottomNavigation="false">
+
+    </com.stepstone.stepper.StepperLayout>
+
+</android.support.design.widget.CoordinatorLayout>

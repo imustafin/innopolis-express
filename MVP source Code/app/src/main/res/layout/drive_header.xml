@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+              >
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:layout_marginStart="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        style="@style/TextSubtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxWidth="200dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:text="Delivery charge"/>
+
+
+
+    <TextView
+        android:layout_centerInParent="true"
+        style="@style/TextSubtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxWidth="200dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:text="Receive order at"/>
+
+
+
+
+
+</merge>

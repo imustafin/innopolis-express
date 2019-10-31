@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<LinearLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="56dp"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:gravity="center"-->
+    <!--android:background="@drawable/qty_brand_shape"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        style="@style/IconStyle"
+        android:layout_margin="@dimen/icon_padding"
+        android:id="@+id/add"
+        android:layout_gravity="center|start"
+        android:src="@drawable/ic_round_add_24px_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+        <android.support.design.widget.TextInputEditText
+            style="@style/QuantityEditTextStyle"
+            android:id="@+id/qty_edit_text"
+            android:text="@string/qty_starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    <ImageView
+        style="@style/IconStyle"
+        android:id="@+id/remove"
+        android:layout_margin="@dimen/icon_padding"
+        android:layout_gravity="center|start"
+        android:src="@drawable/ic_round_remove_24px_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+<!--</LinearLayout>-->
+</merge>
