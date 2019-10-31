@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cart.CartFragment">
+   >
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:background="@color/backgroundColor"
@@ -51,10 +51,10 @@
         </RelativeLayout>
 
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -83,12 +83,6 @@
 
             <include layout="@layout/cart_phone_layout"/>
 
-            <View
-                style="@style/DividerDarkHorizontal"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
-
-            <include layout="@layout/foodle_drive_cart"/>
 
             <View
                 style="@style/DividerDarkHorizontal"
@@ -104,10 +98,10 @@
         </LinearLayout>
 
 
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
-    <com.mfq.foodle.coustemviews.BrandShapedButton
+    <mfq.com.refooddelivery2.helper.BrandShapedButton
         android:id="@+id/cart_order"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
@@ -119,4 +113,4 @@
         app:icon="@drawable/ic_round_done_24px"
         />
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

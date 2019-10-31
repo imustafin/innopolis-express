@@ -1,4 +1,4 @@
-<android.support.design.transformation.TransformationChildLayout
+<com.google.android.material.transformation.TransformationChildLayout
     android:id="@+id/sheet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,4 +14,4 @@
         android:id="@+id/cartFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-</android.support.design.transformation.TransformationChildLayout>
+</com.google.android.material.transformation.TransformationChildLayout>

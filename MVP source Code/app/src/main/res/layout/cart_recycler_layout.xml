@@ -38,7 +38,7 @@
         android:layout_marginStart="72dp"
         style="@style/DividerDarkHorizontal"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_recycler"
         android:layout_below="@+id/divider_recycler"
         tools:listitem="@layout/cart_item"

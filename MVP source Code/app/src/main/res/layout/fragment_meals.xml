@@ -7,7 +7,7 @@
     android:animateLayoutChanges="true">
 
 
-    <com.mfq.foodle.coustemviews.GridRecyclerView
+    <mfq.com.refooddelivery2.GridRecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/recycler"

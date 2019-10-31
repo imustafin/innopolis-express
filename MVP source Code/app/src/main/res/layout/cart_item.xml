@@ -67,7 +67,7 @@
 
 
 
-    <com.mfq.foodle.coustemviews.PriceView
+    <mfq.com.refooddelivery2.helper.PriceView
         android:id="@+id/product_item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
