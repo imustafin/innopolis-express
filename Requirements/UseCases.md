@@ -3,7 +3,6 @@
   * [Order Process](#order-process "Goto Order Process") 
   * [Order Cancellation](#order-cancellation "Goto Order Cancellation")
   * [Checking order status](#checking-order-status "Goto Checking order status")
-  * [Client feedback processing](#client-feedback-processing "Goto Client feedback processing")
   * [Login](#login "Goto Login")
   * [Sign up](#sign-up "Goto Sign up")
   * [Check out](#check-out "Goto Check out")
@@ -61,28 +60,12 @@
  | Post-conditions                  | Client gets to know about current order status                  |
  | Alternative flows and exceptions | Unique code of order was not generated.  Order can't be checked |
  |                                  |                                                                 |
- 
- 
-
-
-## Client feedback processing
- 
- | **Use Case #4**                  | **Client feedback processing**                                           |
- |:--------------------------------:|:-------------------------------------------------------------------------|
- | Actors                           | Client                                                                   |
- | Pre-conditions                   | Order in the "delivered" status, the user on the "Check Order" page      |
- | Flow of events                   | 1\. The system asks the client about the quality of food (like/dislike)  |
- |                                  | 2\. Client makes a choice (like/dislike)                                 |
- |                                  | 3\. Client leaves a comment in the textbox                               |
- |                                  | 4\. Client submits review-form                                           |
- | Post-conditions                  | Review information appears on "Order Monitor" page of the system next to |
- | Alternative flows and exceptions | the client's order. User will not provide any review about its quality   |
 
 
 ## Login
 
 
- | **Use Case #5**                  | **Login**                                                                |
+ | **Use Case #4**                  | **Login**                                                                |
  |:--------------------------------:|:-------------------------------------------------------------------------|
  | Actors                           | User                                                                     |
  | Pre-conditions                   | None                                                                     |
@@ -99,7 +82,7 @@
 
 ## Sign up
 
- | **Use Case #6**                  | **Sign up**                                                              |
+ | **Use Case #5**                  | **Sign up**                                                              |
  |:--------------------------------:|:-------------------------------------------------------------------------|
  | Actors                           | Client                                                                   |
  | Pre-conditions                   | Client is not loggged in                                                 |
@@ -121,7 +104,7 @@
 
 ## Check out
 
- | **Use Case #7**                  | **Check out**                                                 |
+ | **Use Case #6**                  | **Check out**                                                 |
  |:--------------------------------:|:--------------------------------------------------------------|
  | Actors                           | Client                                                        |
  | Precondition                     | 1\. Client has account.                                       |
@@ -139,7 +122,7 @@
 
 ## Order Detail invoice
 
- | **Use Case #8**                  | **Order Detail invoice**                             |
+ | **Use Case #7**                  | **Order Detail invoice**                             |
  |:--------------------------------:|:-----------------------------------------------------|
  | Actors                           | Client                                               |
  | Precondition                     | 1\. Client has account.                              |
