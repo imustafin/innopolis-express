@@ -1,0 +1,112 @@
+
+class Totals [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/Totals.java#L6]] {
+	- subTotal : string
+	- deliveryChange : string
+	+ getSubTotals()
+	+ getDelivery()
+}
+
+class Cart [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/Cart.java#L7]]{
+	- cartId : string
+	- productList : list
+	- totals : object
+	- user : object
+	+ addToCart()
+	+ deleteFromCart()
+	+ viewCartProducts()
+	+ getUser()
+	+ calculateTotals()
+	+ getProducts()
+}
+
+class User [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/User.java#L5]]{
+	- Id: string
+	- email: string
+	- password: string
+	- phoneNumber: string
+	- isLoggedIn: bool
+	- fullName: string
+	- address: list
+	- orders: list
+	- PaymentInfo: Object
+	+ isLoggedIn()
+	+ getName()
+	+ getPhoneNumber()
+	+ getId()
+	+ getUserAddresses()
+}
+
+class Admin [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/Admin.java#L5]]{
+	- allOrders: list
+	+ rejectOrder()
+	+ aproveOrder()
+	+ getNotApprovedOrders()
+}
+
+class Product [[https://github.com/q-eldar/innopolis-express/blob/master/MVP%20source%20Code/app/src/main/java/mfq/com/refooddelivery2/models/product/Product.java#L13]]{
+	- imgUrl: string
+	- name: string
+	- price: float
+	- quantity: int
+	- productId: string
+	- type: int
+	- description: string
+	+ getName()
+	+ getImg()
+	+ getPrice()
+	+ getQty()
+	+ getType()
+	+ getDescription()
+}
+
+class Order [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/Orders.java#L5]]{
+	- orderId: string
+	- productLlist: list
+	- date: string
+	- totals: Object
+	- User: Object
+	- isApproved: bool
+	+ placeOrder()
+}
+
+class PaymentInfo [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/PaymentInfo.java#L3]]{
+	- cardHolder: string
+	- cardnumber: string
+	- cvv: string
+	- expiredDate: date
+	+ makePayment()
+}
+
+class Address [[https://github.com/q-eldar/innopolis-express/blob/4f413819ed9084e5e0e35e6c93f7f23091b38e7a/MVP/app/src/main/java/mfq/com/refooddelivery2/models/Address.java#L3]]{
+	- name: string
+	- addressString: string
+	- isDefault: bool
+	+ isDefault()
+	+ getName()
+	+ getAddressString()
+}
+
+abstract Parcelable
+
+note left of Parcelable : " <size:18> Parcelable </size> is an Interface to unify all\n Ovjects in order to handle Object\n serialiazation between classes property, and\n  in fater way than actual Java Serialzition"
+
+note "Click on each diagram notation to see implementation" as N1 #aqua
+
+
+Parcelable <|-- Totals
+Parcelable <|-- Cart
+Parcelable <|-- Product
+Parcelable <|-- Order
+Parcelable <|-- PaymentInfo
+Parcelable <|-- Address
+Cart "1" *-- "1" Totals
+User "1" *-- "1" Cart
+User "1" *-- "0..*" Address
+User "1" *-- "0..*" Order
+User "1" *-- "0..*" PaymentInfo
+Parcelable <|-- User
+Product "0..*" <|-- "1" Cart
+Product "0..*" *-- "1" Order
+User <|-- Admin
+
+
