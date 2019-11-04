@@ -34,12 +34,14 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Phone Number"
-            app:helperText="Enter promo code if you have it">
+            android:hint="+7 8994859"
+            app:helperText="Enter a russian phone number">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cart_phone"
                 style="@style/EditTextStyle"
                 android:layout_width="200dp"
+                android:inputType="phone"
                 android:layout_height="wrap_content"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -55,16 +57,6 @@
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:minWidth="220dp"
-        android:visibility="invisible"
-        android:layout_marginStart="72dp"
-        style="@style/ButtonStyleUnelevated.secondery"
-        android:layout_below="@+id/phone_header"
-        android:layout_marginTop="16dp"
-        android:text="Add Phone Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>

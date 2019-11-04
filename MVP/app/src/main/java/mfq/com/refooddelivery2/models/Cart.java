@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Cart {
 
-    String cartId;
     List<Product> mProducts = new ArrayList<>();
+    String cartId;
     Totals totals;
     User user;
 

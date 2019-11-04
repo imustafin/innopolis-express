@@ -26,7 +26,6 @@ public class CartItemViewHolder extends FoodViewHolder {
     public void bind(Product product) {
         mQtyTextView.setText(itemView.getContext().getString(R.string.cart_qty, product.getQuantity()));
         mPriceTextView.setPrice(product.getPrice());
-        // FIXME use glide here and API
         mNameTextView.setText(product.getName());
         Glide.with(mContext).load(product.getImgUrl()).into(mImg);
     }

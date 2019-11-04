@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:id="@+id/cart_total_first"
         style="@style/TextHeadline6"
         android:text="5.50 JD"
         android:textAllCaps="true"

@@ -16,11 +16,6 @@ public class CartActivity extends AppCompatActivity {
 
         CartFragment fragment = new CartFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment, CartFragment.class.getSimpleName()).commit();
-//        new Handler().postDelayed(() -> {
-//            mFab.setExpanded(!mFab.isExpanded());
-//            mBottomBar.setVisibility(View.INVISIBLE);
-//
-//        }, 100);
 
     }
 

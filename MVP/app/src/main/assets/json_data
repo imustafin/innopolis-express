@@ -11,11 +11,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 300,
+	  "formattedValue" : "300 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "2.50 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -125,11 +125,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 250,
+	  "formattedValue" : "250 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "2.50 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -239,11 +239,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 350,
+	  "formattedValue" : "350 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "2.50 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -353,11 +353,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 300,
+	  "formattedValue" : "300 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "2.50 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -467,11 +467,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 200,
+	  "formattedValue" : "200 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "2.50 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -581,11 +581,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 200,
+	  "formattedValue" : "200 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "2.50 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -644,11 +644,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 300,
+	  "formattedValue" : "300 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "250 ₽"
 	  }
 	},
 	"MealPreferences" : [
@@ -702,11 +702,11 @@
 	  "user_clap" : 10
 	},
 	"Price" : {
-	  "value" : 3,
-	  "formattedValue" : "3.0 JD",
+	  "value" : 300,
+	  "formattedValue" : "300 ₽",
 	  "Discounts" : {
 		"description" : "15%",
-		"priceAfterDiscount" : "2.50 JD"
+		"priceAfterDiscount" : "300 ₽"
 	  }
 	},
 	"MealPreferences" : [

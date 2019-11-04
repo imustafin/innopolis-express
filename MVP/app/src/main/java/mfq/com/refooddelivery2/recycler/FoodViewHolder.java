@@ -1,7 +1,6 @@
 package mfq.com.refooddelivery2.recycler;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,7 +33,6 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         mImg = itemView.findViewById(R.id.product_item_img);
         mPriceTextView = itemView.findViewById(R.id.product_item_price);
         mDescriptionTextView = itemView.findViewById(R.id.product_item_description);
-
         itemView.setOnClickListener(this);
 
     }
@@ -43,7 +41,6 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     public void bind(Product product) {
         mProduct = product;
-        // FIXME use glide here and API
         mNameTextView.setText(product.getName());
         mPriceTextView.setPrice(product.getPrice());
         mDescriptionTextView.setText(product.getDescription());
@@ -55,7 +52,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onClick(View view) {
-        mContext.startActivity(new Intent(mContext, FoodDetails.class));
+        mContext.startActivity( FoodDetails.buildIntent(view.getContext(),mProduct));
 
     }
 

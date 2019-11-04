@@ -39,23 +39,23 @@
             android:layout_height="wrap_content"
             android:text="Home Address"/>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cart_address"
             style="@style/TextBody2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/cart_delivery_name"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxWidth="220dp"
-            android:text="Amman Jordan 123 Street Airport 235  Amman Jordan 123 "
+            android:hint="Innopolis Dorm 4 Room 404 "
             />
 
 
     </LinearLayout>
 
     <ImageView
-        android:visibility="visible"
+        android:visibility="invisible"
         tools:visibility="visible"
         style="@style/IconStyle"
         android:layout_width="wrap_content"
@@ -75,16 +75,6 @@
         android:layout_marginTop="16dp"/>
 
 
-    <com.google.android.material.button.MaterialButton
-        android:visibility="invisible"
-        style="@style/ButtonStyleUnelevated.secondery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/delivery_header"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="16dp"
-        android:minWidth="220dp"
-        android:text="Add Address"/>
 
 
 </RelativeLayout>

@@ -31,11 +31,11 @@ public class CartItemsAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-//        ((CartItemViewHolder) viewHolder).bind(mProducts.get(i));
+        ((CartItemViewHolder) viewHolder).bind(mProducts.get(i));
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return mProducts.size();
     }
 }

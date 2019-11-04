@@ -21,6 +21,7 @@
 
 
             <ImageView
+                android:id="@+id/detail_img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -44,12 +45,13 @@
 
 
                 <ImageView
+                    android:id="@+id/details_cart"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
                     style="@style/IconStyle.OnToolBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleX="0"
-                    android:scaleY="0"
-                    android:src="@drawable/ic_round_arrow_back_white"/>
+                    android:src="@drawable/ic_round_shopping_cart_white"/>
 
 
             </androidx.appcompat.widget.Toolbar>
@@ -79,22 +81,25 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/detail_title"
                     style="@style/Details.Headline"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Bryani"/>
+                    tools:text="Bryani"/>
 
                 <TextView
+                    android:id="@+id/detail_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="24sp"
-                    android:text="2.5 Rub"
+                    tools:text="2.5 Rub"
                     />
             </LinearLayout>
 
 
             <TextView
+                android:id="@+id/detail_description"
                 style="@style/TextBody2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,6 +116,7 @@
                 />
 
             <mfq.com.refooddelivery2.helper.QuantityPicker
+                android:id="@+id/detail_qty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -121,6 +127,7 @@
 
 
             <mfq.com.refooddelivery2.helper.BrandShapedButton
+                android:id="@+id/detail_add_to_cart"
                 style="@style/ButtonStyle"
                 android:layout_width="320dp"
                 android:layout_height="56dp"

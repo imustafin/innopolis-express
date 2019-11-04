@@ -3,6 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_marginTop="@dimen/dimen_16dp"
                 android:orientation="vertical">
 
@@ -11,6 +12,8 @@
         style="@style/IconStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
+        tools:visibility="visible"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
         android:layout_marginEnd="16dp"
@@ -19,6 +22,8 @@
 
 
     <ImageView
+        android:visibility="invisible"
+        tools:visibility="visible"
         android:id="@+id/cart_item_delete"
         style="@style/IconStyle"
         android:layout_width="wrap_content"

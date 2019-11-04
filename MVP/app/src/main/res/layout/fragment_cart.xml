@@ -2,15 +2,14 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
+    >
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:background="@color/backgroundColor"
         android:layout_height="56dp"
+        android:background="@color/backgroundColor"
         android:elevation="0dp"
         app:elevation="0dp"
         >
@@ -22,14 +21,14 @@
             android:layout_gravity="center">
 
             <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="@dimen/dimen_16dp"
                 style="@style/IconStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/ic_round_arrow_back"/>
 
             <TextView
@@ -43,8 +42,8 @@
                 android:text="Checkout"/>
 
             <View
-                android:layout_alignParentBottom="true"
-                style="@style/DividerDarkHorizontal"/>
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"/>
 
         </RelativeLayout>
 
@@ -74,8 +73,8 @@
 
             <View
                 style="@style/DividerDarkHorizontal"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
             <include layout="@layout/cart_delivery_layout"/>
 
@@ -84,8 +83,8 @@
 
             <View
                 style="@style/DividerDarkHorizontal"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
             <include layout="@layout/cart_totals_layout"/>
 
@@ -100,6 +99,7 @@
 
 
     <mfq.com.refooddelivery2.helper.BrandShapedButton
+        android:id="@+id/cart_order"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,5 +109,17 @@
         android:text="@string/complete_order"
         app:icon="@drawable/ic_round_done_24px"
         />
+
+    <TextView
+        android:id="@+id/cart_empty"
+        style="@style/TextAppearance.MaterialComponents.Headline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:text="Cart is Empty 🤔"
+        android:textColor="#fff"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
