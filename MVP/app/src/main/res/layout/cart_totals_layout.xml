@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <TextView
+        style="@style/TextHeadline6"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:drawablePadding="24dp"
+        android:drawableStart="@drawable/ic_round_attach_money_24px"
+        android:text="Totals"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:id="@+id/cart_total_price"
+        style="@style/TextHeadline5"
+        android:text="5.50 JD"
+        android:textAllCaps="true"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

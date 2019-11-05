@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<item name="navigationIcon">@drawable/ic_round_menu_24px</item>-->
+
+    <style name="BottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="hideOnScroll">false</item>
+        <item name="android:elevation">@dimen/app_bar_elevation</item>
+    </style>
+
+</resources>

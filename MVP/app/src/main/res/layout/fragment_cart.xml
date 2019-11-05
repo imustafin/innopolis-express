@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/backgroundColor"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_round_arrow_back"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="72dp"
+                android:text="Checkout"/>
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <include layout="@layout/cart_recycler_layout"/>
+
+            <include layout="@layout/cart_first_total_layout"/>
+
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <include layout="@layout/cart_delivery_layout"/>
+
+            <include layout="@layout/cart_phone_layout"/>
+
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <include layout="@layout/cart_totals_layout"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <mfq.com.refooddelivery2.helper.BrandShapedButton
+        android:id="@+id/cart_order"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/dimen_16dp"
+        android:minWidth="220dp"
+        android:text="@string/complete_order"
+        app:icon="@drawable/ic_round_done_24px"
+        />
+
+    <TextView
+        android:id="@+id/cart_empty"
+        style="@style/TextAppearance.MaterialComponents.Headline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:text="Cart is Empty 🤔"
+        android:textColor="#fff"
+        android:visibility="gone"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

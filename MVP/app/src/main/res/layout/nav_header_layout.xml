@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/nav_close_icon"
+        style="@style/IconStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_round_close"/>
+
+    <TextView
+        android:id="@+id/nav_header_title"
+        android:paddingTop="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        style="@style/TextHeadline6"
+        android:text="Muwaffaq Imam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textColor="@color/primaryTextColor_opacity"
+        android:layout_marginTop="8dp"
+        style="@style/TextSubtitle2"
+        android:layout_below="@+id/nav_header_title"
+        android:text="muwaffaqimam@gmail.com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

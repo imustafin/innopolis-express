@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="FabStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="fabSize">normal</item>
+        <item name="android:iconTint">@color/iconTintColor</item>
+        <item name="rippleColor">@color/txt_btn_ripple_color_black</item>
+    </style>
+</resources>
