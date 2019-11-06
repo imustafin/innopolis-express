@@ -25,10 +25,8 @@
  |                                  | 4\. Client makes checkout for all items in the cart                |
  |                                  | 5\. New order created and will be shown in the cafe dashboard      |
  | Post-conditions                  | Order will be processed by Administrator                           |
- | Alternative flows and exceptions | 1) The Administrator rejects the order of the client. The client   |
- |                                  | will be notified about rejection. 2) If the client will add the    | 
- |                                  | same product several times, only quantity will change, but not the |
- |                                  | number of the elements in the cart                                 |
+ | Alternative flows and exceptions | The Administrator rejects the order of the client. The client will |
+ |                                  | be notified about rejection.                                       |
   
 
 ## Order Cancellation
@@ -118,8 +116,8 @@
  |                                  | 4\. Client checks number or change number                     |
  |                                  | 5\. Client completes with pressing "update" button            |
  | Postcondition                    | Changes information displays on client screen                 |
- | Alternative flows and exceptions | Client has not created account. System asks to create account |
- |                                  |                                                               |
+ | Alternative flows and exceptions | 1) Client has not created account. System asks to create account |
+ |                                  | 2) If the client will add the same product several times, the quantity will change only, but not the number of the elements in the cart |
 
 
 ## Order Detail invoice
