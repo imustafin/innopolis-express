@@ -107,7 +107,17 @@ public class Product implements Parcelable {
     public Product() {
     }
 
-
+    public Product(Product p){
+        this.productId = p.productId;
+        this.name = p.name;
+        this.imgUrl = p.imgUrl;
+        this.description = p.description;
+        this.type = p.type;
+        this.price = p.price;
+        this.mealPreferences = p.mealPreferences;
+        this.quantity = p.quantity;
+        this.isSelected = p.isSelected;
+    }
 
     @Override
     public int describeContents() {

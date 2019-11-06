@@ -1,6 +1,7 @@
 package mfq.com.refooddelivery2;
 
 import org.junit.Test;
+import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +12,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
+    @Parameterized.Parameters
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
