@@ -13,7 +13,7 @@
 
 
 ## Order Process 
-
+Unit tests: [cartAddItemTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L83)
  
  | **Use Case #1**                  | **Order Process**                                                  |
  |:--------------------------------:|:-------------------------------------------------------------------|
@@ -103,6 +103,7 @@
 
 
 ## Check out
+Unit tests: [productQuantityTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L65), [cartSizeTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L90)
 
  | **Use Case #6**                  | **Check out**                                                 |
  |:--------------------------------:|:--------------------------------------------------------------|
