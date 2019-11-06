@@ -27,6 +27,8 @@ import mfq.com.refooddelivery2.models.Product;
 
 @RunWith(Parameterized.class)
 public class ParametrizedCartTest {
+    
+    //Unit test parameters
     Cart cart;
     List<Product> products;
 
@@ -35,6 +37,7 @@ public class ParametrizedCartTest {
         this.products = products;
     }
 
+    //Method to parse parameters into unit tests
     @Parameterized.Parameters
     public static Collection<Object[]> data() throws IOException {
         List<Product> products = getProducts();
@@ -50,6 +53,7 @@ public class ParametrizedCartTest {
         });
     }
 
+    
     public static List<Product> getProducts() throws IOException {
         byte[] is = Files.readAllBytes(Paths.get("src/main/assets/json_data"));
         String json = new String(is, "UTF-8");
@@ -61,6 +65,7 @@ public class ParametrizedCartTest {
         cart.getProducts().clear();
     }
 
+    // Source use-case: https://tinyurl.com/yxv3r6f3
     @Test
     public void productQuantityTest(){
         int expectedQuantity = 0;
@@ -79,13 +84,15 @@ public class ParametrizedCartTest {
         Assert.assertEquals(expectedQuantity, actualQuantity);
     }
 
+    // Source use-case: https://tinyurl.com/yxgddcgf
     @Test
     public void cartAddItemTest() {
         cart.addProduct(products.get(0));
 
         Assert.assertEquals(1, cart.getProducts().size());
     }
-
+    
+    // Source use-case: https://tinyurl.com/yxv3r6f3
     @Test
     public void cartSizeTest() {
         Set<String> uniqueNames = products.stream().map(Product::getName).collect(Collectors.toSet());
