@@ -3,10 +3,13 @@ package mfq.com.refooddelivery2.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+import java.util.Objects;
 
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.product_accessories.Clap;
@@ -160,4 +163,17 @@ public class Product implements Parcelable {
             return new Product[size];
         }
     };
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return Objects.equals(name, product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }

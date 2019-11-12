@@ -28,13 +28,11 @@ public class Cart {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public void addProduct(Product product) {
-        Optional<Product> temp = mProducts.stream().filter(x -> x.getName().equals(product.getName())).findFirst();
-        if (temp.isPresent()){
-            Product tempProduct = temp.get();
-            mProducts.get(mProducts.indexOf(tempProduct)).setQuantity(tempProduct.getQuantity() + product.getQuantity());
-        } else {
+        if (mProducts.contains(product)) {
+            Product product1 = mProducts.get(mProducts.indexOf(product));
+            product1.setQuantity(product1.getQuantity() + product.getQuantity());
+        }else{
             mProducts.add(product);
         }
     }
