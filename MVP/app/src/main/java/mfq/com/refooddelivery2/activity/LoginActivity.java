@@ -12,18 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import mfq.com.refooddelivery2.R;
+import mfq.com.refooddelivery2.utils.InMemoryStorage;
 
 /**
  * Use Case: Login Use Case
  * Link: https://tinyurl.com/taf6ca4
  */
 public class LoginActivity extends AppCompatActivity {
-
-
-
-    private static final String[] CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
 
     private UserLoginTask mAuthTask = null;
 
@@ -48,9 +43,16 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         loginButton = findViewById(R.id.login_button);
+        signUpButton = findViewById(R.id.signup_button);
+        signUpButton.setOnClickListener(view -> signUp());
         loginButton.setOnClickListener(view -> attemptLogin());
 
 
+    }
+
+    private void signUp() {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
     }
 
     private void attemptLogin() {
@@ -115,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
 
-            for (String credential : CREDENTIALS) {
+            for (String credential : InMemoryStorage.getCredentials()) {
                 int endIndex = credential.indexOf(":");
                 String email = credential.substring(0, endIndex);
                 String password = credential.substring(endIndex + 1);
