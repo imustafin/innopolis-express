@@ -33,8 +33,11 @@
         <item name="fontFamily">@font/font_regular</item>
     </style>
 
-
     <style name="Details.Headline" parent="TextHeadline3">
+    </style>
+
+    <style name="InvoiceHeadline" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/font_regular</item>
     </style>
 
 </resources>
