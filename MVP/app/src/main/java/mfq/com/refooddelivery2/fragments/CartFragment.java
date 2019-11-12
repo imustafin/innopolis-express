@@ -63,6 +63,10 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
         root.findViewById(R.id.cart_order).setOnClickListener(this);
 
+        TextView totalCount = root.findViewById(R.id.cart_item_count);
+        int totalQuantity = Cart.getInstance().getTotalQuantity();
+        totalCount.setText(totalQuantity + " item" + (totalQuantity == 1 ? "" : "s"));
+
         mProducts = Cart.getInstance().getProducts();
 
         if (mProducts.isEmpty()) {

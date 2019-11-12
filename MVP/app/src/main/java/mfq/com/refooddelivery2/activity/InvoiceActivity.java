@@ -4,9 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -19,7 +17,6 @@ import java.util.Date;
 import java.util.List;
 
 import mfq.com.refooddelivery2.R;
-import mfq.com.refooddelivery2.fragments.CartFragment;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
 
@@ -42,7 +39,7 @@ public class InvoiceActivity extends AppCompatActivity {
         mTotal = findViewById(R.id.total);
 
         Cart cart = Cart.getInstance();
-        mTotal.setText(cart.getTotal() + " \u20BD");
+        mTotal.setText(cart.getTotalSum() + " \u20BD");
 
         Date date = Calendar.getInstance().getTime();
         mOrderDate.setText(new SimpleDateFormat("dd/MM/yyyy").format(date));
