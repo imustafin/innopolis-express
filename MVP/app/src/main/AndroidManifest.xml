@@ -21,6 +21,10 @@
             android:label="Cart">
         </activity>
         <activity
+            android:name=".activity.InvoiceActivity"
+            android:label="Invoice">
+        </activity>
+        <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">

@@ -40,4 +40,20 @@ public class Cart {
     public List<Product> getProducts() {
         return mProducts;
     }
+
+    public double getTotalSum() {
+        double total = 0;
+        for (Product product : mProducts) {
+            total += product.getPrice().getValue() * product.getQuantity();
+        }
+        return total;
+    }
+
+    public int getTotalQuantity() {
+        int total = 0;
+        for (Product product : mProducts) {
+            total += product.getQuantity();
+        }
+        return total;
+    }
 }
