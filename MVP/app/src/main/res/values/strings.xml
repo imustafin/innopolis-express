@@ -17,5 +17,11 @@
     <string name="foodle_drive">Foodle Drive</string>
     <string name="foodle_maps">Foodle Maps</string>
     <string name="transition_product_image">moveMe</string>
+    <string name="invoice">INVOICE</string>
+    <string name="orderNumber">#6845</string>
+    <string name="orderStatus">PENDING</string>
+    <string name="orderDate">16/4/2020</string>
+    <string name="total">TOTAL</string>
+    <string name="cancel_order">CANCEL ORDER</string>
 
 </resources>

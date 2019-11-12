@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/colorPrimary"
+        app:elevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/IconStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_round_arrow_back_white"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:text="Admin will confirm order soon"/>
+
+            <View
+                style="@style/DividerDarkHorizontal"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:background="@color/colorPrimary"
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center|bottom"/>
+
+
+    <RelativeLayout
+        android:layout_marginTop="40dp"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+            <LinearLayout
+                android:background="@drawable/invoice_rounded_corners"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/InvoiceHeadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/invoice"
+                        android:textAllCaps="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@string/orderNumber"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/orderDate"/>
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="#F0736C"
+                        android:text="@string/orderStatus"
+                        android:textAllCaps="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/DividerDarkHorizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="17dp"/>
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2"
+                    android:gravity="center">
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="ORDERS"
+                            android:layout_column="0"
+                            android:gravity="center|start" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="QUANTITY"
+                            android:layout_column="1"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="PRICE"
+                            android:gravity="center|end"
+                            android:layout_column="2" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#000000"
+                            android:text="Beef Stragonoff"
+                            android:layout_marginTop="20dp"
+                            android:layout_column="0"
+                            android:gravity="center|start" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#000000"
+                            android:text="2"
+                            android:layout_marginTop="20dp"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#000000"
+                            android:text="350 ₽"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center|end"
+                            android:layout_column="2" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#000000"
+                            android:text="Borscht"
+                            android:layout_marginTop="20dp"
+                            android:layout_column="0"
+                            android:gravity="center|start" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#000000"
+                            android:text="1"
+                            android:layout_marginTop="20dp"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#000000"
+                            android:text="250 ₽"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center|end"
+                            android:layout_column="2" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center|bottom"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/InvoiceHeadline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:layout_weight="1"
+                                android:text="@string/total"
+                                android:textAllCaps="true"/>
+
+                            <TextView
+                                style="@style/InvoiceHeadline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:text="950 ₽"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerDarkHorizontal"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="15dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:textColor="#F0736C"
+                                android:text="@string/cancel_order"
+                                android:textAllCaps="true"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+            </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
