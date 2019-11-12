@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -86,6 +87,9 @@ public class InvoiceActivity extends AppCompatActivity {
     public void onCancelClick(View v) {
         Cart cart = Cart.getInstance();
         cart.getProducts().clear();
+
+        Toast.makeText(this, "Order was canceled", Toast.LENGTH_LONG).show();
+
         super.finish();
     }
 }
