@@ -42,4 +42,12 @@ public class Cart {
     public List<Product> getProducts() {
         return mProducts;
     }
+
+    public double getTotal() {
+        double total = 0;
+        for (Product product : mProducts) {
+            total += product.getPrice().getValue() * product.getQuantity();
+        }
+        return total;
+    }
 }
