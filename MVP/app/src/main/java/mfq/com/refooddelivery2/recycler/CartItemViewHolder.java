@@ -22,7 +22,7 @@ public class CartItemViewHolder extends FoodViewHolder {
         mQtyTextView = itemView.findViewById(R.id.cart_item_qty);
     }
 
-    public void bind(Product product) {
+    public void bind(Product product, CartItemsAdapter.CartUpdateInterface cartUpdateInterface) {
         mQtyTextView.setText(itemView.getContext().getString(R.string.cart_qty, product.getQuantity()));
         mPriceTextView.setPrice(product.getPrice());
         mNameTextView.setText(product.getName());
@@ -30,6 +30,7 @@ public class CartItemViewHolder extends FoodViewHolder {
 
         View.OnClickListener oclBtnDelete = v -> {
             Cart.getInstance().deleteProduct(product);
+            cartUpdateInterface.updateCart();
         };
 
         itemView.findViewById(R.id.cart_item_delete).setOnClickListener(oclBtnDelete);
