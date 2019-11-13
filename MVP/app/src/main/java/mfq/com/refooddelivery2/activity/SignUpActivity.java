@@ -54,19 +54,19 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private boolean isEmailValid(String email) {
-        return email.length() > 0;
+        return email.matches("\\w+@\\w+\\.\\w+");
     }
 
     private boolean isPasswordValid(String password) {
-        return password.length() > 0;
+        return password.matches("\\w\\S+");
     }
 
     private boolean isNameValid(String name){
-        return name.length() > 0;
+        return name.matches("[A-Za-z]+");
     }
 
     private boolean isPhoneValid(String phone){
-        return phone.length() > 0;
+        return phone.matches("\\d+") && phone.length() == 11;
     }
 
     private boolean isAddressValid(String address){
@@ -98,8 +98,12 @@ public class SignUpActivity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
 
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password) ) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
+            cancel = true;
+        } else if(!isPasswordValid(password)){
+            mPasswordView.setError(getString(R.string.error_incorrect_password));
             focusView = mPasswordView;
             cancel = true;
         }
