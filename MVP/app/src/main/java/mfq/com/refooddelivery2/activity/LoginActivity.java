@@ -125,6 +125,11 @@ public class LoginActivity extends AppCompatActivity {
                 if(mLogin.equals(email) && mPassword.equals(password)){
                     return true;
                 }
+
+                // stub user, delete for production
+                if(mLogin.equals("user") && mPassword.equals("pass")){
+                    return true;
+                }
             }
             return false;
 
