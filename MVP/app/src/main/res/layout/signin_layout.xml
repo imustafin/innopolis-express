@@ -33,10 +33,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
+            android:backgroundTint="#FFF"
             android:ems="10"
             android:hint="Email"
-            android:backgroundTint="#FFF"
             android:inputType="textEmailAddress"
+            android:textColor="#FFF"
             android:textColorHint="#FFFFFF" />
 
         <EditText
@@ -46,10 +47,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
+            android:backgroundTint="#FFF"
             android:ems="10"
             android:hint="Password"
-            android:backgroundTint="#FFF"
             android:inputType="textPassword"
+            android:textColor="#FFF"
             android:textColorHint="#FFFFFF" />
 
         <Button
