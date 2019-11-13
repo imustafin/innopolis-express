@@ -2,11 +2,13 @@ package mfq.com.refooddelivery2.recycler;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import mfq.com.refooddelivery2.R;
+import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
 
 public class CartItemViewHolder extends FoodViewHolder {
@@ -18,9 +20,6 @@ public class CartItemViewHolder extends FoodViewHolder {
         super(itemView);
         mContext = itemView.getContext();
         mQtyTextView = itemView.findViewById(R.id.cart_item_qty);
-        itemView.findViewById(R.id.cart_item_delete).setOnClickListener(this);
-        itemView.findViewById(R.id.cart_item_edit).setOnClickListener(this);
-
     }
 
     public void bind(Product product) {
@@ -28,6 +27,13 @@ public class CartItemViewHolder extends FoodViewHolder {
         mPriceTextView.setPrice(product.getPrice());
         mNameTextView.setText(product.getName());
         Glide.with(mContext).load(product.getImgUrl()).into(mImg);
+
+        View.OnClickListener oclBtnDelete = v -> {
+            Cart.getInstance().deleteProduct(product);
+        };
+
+        itemView.findViewById(R.id.cart_item_delete).setOnClickListener(oclBtnDelete);
+        itemView.findViewById(R.id.cart_item_edit).setOnClickListener(this);
     }
 
     @Override

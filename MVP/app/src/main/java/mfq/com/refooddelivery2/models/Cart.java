@@ -56,4 +56,8 @@ public class Cart {
         }
         return total;
     }
+
+    public void deleteProduct(Product product) {
+        sInstance.getProducts().remove(product);
+    }
 }
