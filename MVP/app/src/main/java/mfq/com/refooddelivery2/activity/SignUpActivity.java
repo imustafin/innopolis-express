@@ -1,13 +1,19 @@
 package mfq.com.refooddelivery2.activity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicReference;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private EditText mPhoneView;
     private EditText mAddressView;
+    private FirebaseAuth mAuth;
 
     private Button signUpButton;
 
@@ -54,7 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private boolean isEmailValid(String email) {
-        return email.matches("\\w+@\\w+\\.\\w+");
+        return email.matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
     }
 
     private boolean isPasswordValid(String password) {
@@ -72,8 +79,6 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean isAddressValid(String address){
         return address.length() > 0;
     }
-
-
 
     private void signUp(){
 
@@ -176,9 +181,24 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... params) {
+            AtomicReference<Boolean> result = new AtomicReference<>(false);
+            mAuth = FirebaseAuth.getInstance();
+            mAuth.createUserWithEmailAndPassword(mLogin, mPassword)
+                .addOnCompleteListener((Executor) this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("INFO", "createUserWithEmail:success");
+                        result.set(true);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("ERROR", "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(SignUpActivity.this, "Sign Up failed.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             String newCredential = mLogin + ":" + mPassword;
             InMemoryStorage.getCredentials().add(newCredential);
-            return true;
+            return result.get();
         }
 
         //server response stub

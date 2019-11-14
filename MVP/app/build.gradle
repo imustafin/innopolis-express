@@ -46,5 +46,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
-
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
 }
+apply plugin: 'com.google.gms.google-services'
