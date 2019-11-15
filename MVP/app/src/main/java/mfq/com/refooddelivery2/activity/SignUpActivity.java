@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.utils.InMemoryStorage;
+import mfq.com.refooddelivery2.utils.RequestStatus;
 
 /**
  * Source: Sign Up Use Case
@@ -61,7 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private boolean isEmailValid(String email) {
-        return email.matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+        return email.matches(".+@\\w+\\.[a-zA-Z]+");
     }
 
     private boolean isPasswordValid(String password) {
@@ -170,6 +171,7 @@ public class SignUpActivity extends AppCompatActivity {
         private final String mName;
         private final String mPhone;
         private final String mAddress;
+        private int status;
 
         UserSignUpTask(String email, String password, String name, String phone, String address) {
             mLogin = email;
@@ -182,22 +184,34 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
             AtomicReference<Boolean> result = new AtomicReference<>(false);
+            status = 0;
+
             mAuth = FirebaseAuth.getInstance();
             mAuth.createUserWithEmailAndPassword(mLogin, mPassword)
-                .addOnCompleteListener((Executor) this, task -> {
+                .addOnCompleteListener(SignUpActivity.this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
+                        status = 1;
                         Log.d("INFO", "createUserWithEmail:success");
                         result.set(true);
                     } else {
                         // If sign in fails, display a message to the user.
+                        status = -1;
                         Log.w("ERROR", "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(SignUpActivity.this, "Sign Up failed.", Toast.LENGTH_SHORT).show();
+                        result.set(false);
                     }
                 });
 
-            String newCredential = mLogin + ":" + mPassword;
-            InMemoryStorage.getCredentials().add(newCredential);
+            do{
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }while (status == 0);
+
+//            String newCredential = mLogin + ":" + mPassword;
+//            InMemoryStorage.getCredentials().add(newCredential);
             return result.get();
         }
 
@@ -205,7 +219,12 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
-            finish();
+
+            if(success){
+                finish();
+            }else{
+                Toast.makeText(SignUpActivity.this, "Sign Up failed.", Toast.LENGTH_SHORT).show();
+            }
         }
 
         @Override

@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isEmailValid(String email) {
-        return email.matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+        return email.matches(".+@\\w+\\.[a-zA-Z]+");
     }
 
     private boolean isPasswordValid(String password) {
@@ -120,6 +120,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     //stub
+
+    /**
+     * Asynchronous login task
+     */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mLogin;
@@ -137,19 +141,16 @@ public class LoginActivity extends AppCompatActivity {
             mAuth = FirebaseAuth.getInstance();
 
             mAuth.signInWithEmailAndPassword(mLogin, mPassword)
-                .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("INFO", "signInWithEmail:success");
-                            status = 1;
-                            result.set(true);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("ERROR", "signInWithEmail:failure", task.getException());
-                            status = -1;
-                        }
+                .addOnCompleteListener(LoginActivity.this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("INFO", "signInWithEmail:success");
+                        status = 1;
+                        result.set(true);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("ERROR", "signInWithEmail:failure", task.getException());
+                        status = -1;
                     }
                 });
 
