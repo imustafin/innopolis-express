@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -71,10 +72,11 @@
                         android:textAllCaps="true"/>
 
                     <TextView
+                        android:id="@+id/invoice_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="@string/orderNumber"/>
+                        android:text="@string/orderNumber" />
 
                 </RelativeLayout>
 
@@ -90,13 +92,14 @@
                         android:text="@string/orderDate"/>
 
                     <TextView
+                        android:id="@+id/status"
                         style="@style/TextAppearance.AppCompat.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:textColor="#F0736C"
                         android:text="@string/orderStatus"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:textColor="#F0736C" />
 
                 </RelativeLayout>
 
@@ -187,13 +190,13 @@
                                 style="@style/TextAppearance.AppCompat.Body2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="end"
                                 android:layout_weight="1"
-                                android:textColor="#F0736C"
+                                android:clickable="true"
+                                android:gravity="end"
+                                android:onClick="onCancelClick"
                                 android:text="@string/cancel_order"
                                 android:textAllCaps="true"
-                                android:onClick="onCancelClick"
-                                android:clickable="true"/>
+                                android:textColor="#F0736C" />
                         </LinearLayout>
 
                     </LinearLayout>
