@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (user) {
             // User is signed in.
             init();
-            console.log('User.uid:', user.uid);
         } else {
-            console.log('User is not authenticated');
             window.location.href = "/";
             return;
         }
@@ -51,6 +49,8 @@ function renderTable(orders) {
     var table = document.getElementById("orderTable");
     var coloredRow = false;
 
+    console.log('orders', orders);
+
     if (!orders || !orders.length) {
         document.getElementById("tableEmpty").style.display = "block";
         return;
@@ -59,6 +59,7 @@ function renderTable(orders) {
     }
 
     var html = '<tr>' +
+        '<th>ID</th>' +
         '<th>Name</th>' +
         '<th>Email</th>' +
         '<th>Address</th>' +
@@ -72,6 +73,7 @@ function renderTable(orders) {
     orders.forEach(order => {
         coloredRow = !coloredRow;
 
+        var id = order.data.id || '-';
         var userName = order.data.userName || '-';
         var userEmail = order.data.userEmail || '-';
         var address = order.data.address || '-';
@@ -83,7 +85,8 @@ function renderTable(orders) {
 
         html += '<tr class="' +
             (coloredRow ? 'orders__colored-row' : 'orders__ordinary-row') +
-            '"><td>' + userName;
+            '"><td>' + id;
+        html += '</td><td>' + userName;
         html += '</td><td>' + userEmail;
         html += '</td><td>' + address;
         html += '</td><td>' + phoneNumber;
@@ -92,39 +95,30 @@ function renderTable(orders) {
         html += '</td><td>' + total;
 
         var statusClass = getStatusClass(status);
-        html += '</td><td><span class="oreders__status--' + statusClass +'">' + status + '</span>';
+        html += '</td><td><span class="oreders__status--' + statusClass + '">' + status + '</span>';
         html += '</td><td>' + getActionButtons(order.id, status);
         html += '</td></tr>';
     });
 
     table.innerHTML = html;
-    table.style.display = "block";
+    table.style.display = "table";
     bindActionButtons();
 }
 
 function renderProducts(products) {
-    console.log(products);
     var html = '';
 
-    products.forEach(product => {
+    products.forEach((product, index) => {
+        if (index > 0) {
+            html += '<br>';
+        }
+        
         html += 'Name: ' + product.name + '<br>';
         html += 'Price: ' + product.price + '<br>';
-        html += 'Quantity: ' + product.quantity + '<br><br>';
+        html += 'Quantity: ' + product.quantity + '<br>';
     });
 
     return html;
-}
-
-function addOrder(order) {
-    var db = firebase.firestore();
-
-    db.collection("invoices").add(order)
-        .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function (error) {
-            console.error("Error adding document: ", error);
-        });
 }
 
 function getActionButtons(id, status) {
