@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "321885932558",
+    "firebase_url": "https://innopolis-express.firebaseio.com",
+    "project_id": "innopolis-express",
+    "storage_bucket": "innopolis-express.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321885932558:android:c9cda44b3902c7f2be405f",
+        "android_client_info": {
+          "package_name": "mfq.com.refooddelivery2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321885932558-isat08ol99i2oitk7j2jic3thg0s29jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqOL_T4rZIgfcvrm7u91uY80__yTzA0_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321885932558-isat08ol99i2oitk7j2jic3thg0s29jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
