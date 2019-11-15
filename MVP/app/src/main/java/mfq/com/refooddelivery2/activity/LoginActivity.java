@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private Button loginButton;
     private Button signUpButton;
+    private ProgressBar mProgressBar;
     private FirebaseAuth mAuth;
 
     @Override
@@ -54,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         loginButton = findViewById(R.id.login_button);
         signUpButton = findViewById(R.id.signup_button);
+        mProgressBar = findViewById(R.id.login_progress);
         signUpButton.setOnClickListener(view -> signUp());
         loginButton.setOnClickListener(view -> attemptLogin());
 
@@ -103,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
         if (cancel) {
             focusView.requestFocus();
         } else {
+            showProgressBar(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
@@ -116,6 +120,11 @@ public class LoginActivity extends AppCompatActivity {
         return password.matches("\\w\\S+");
     }
 
+    private void showProgressBar(boolean show){
+        mProgressBar.setVisibility(show ? View.VISIBLE: View.GONE);
+        loginButton.setVisibility(show ? View.GONE: View.VISIBLE);
+        signUpButton.setVisibility(show ? View.GONE: View.VISIBLE);
+    }
 
     //stub
 
@@ -137,6 +146,7 @@ public class LoginActivity extends AppCompatActivity {
         protected Boolean doInBackground(Void... params) {
             AtomicReference<Boolean> result = new AtomicReference<>(false);
             status = RequestStatus.WAIT;
+
 
             mAuth = FirebaseAuth.getInstance();
             mAuth.signInWithEmailAndPassword(mLogin, mPassword)
@@ -174,6 +184,7 @@ public class LoginActivity extends AppCompatActivity {
             if (success) {
                 finish();
             } else {
+                showProgressBar(false);
                 mPasswordView.setError("Invalid password");
                 mPasswordView.requestFocus();
             }

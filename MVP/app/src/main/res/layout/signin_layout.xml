@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -54,34 +55,65 @@
             android:textColor="#FFF"
             android:textColorHint="#FFFFFF" />
 
-        <Button
-            android:id="@+id/login_button"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="36dp"
-            android:text="Login"
-            android:textAllCaps="true"
-            android:textColor="#FFF"
-            android:textSize="17sp"
-            app:backgroundTint="#5B9EEA"
-            app:cornerRadius="23.5dp" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/signup_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="36dp"
-            android:background="#FFFFFF"
-            android:text="sign up"
-            android:textAllCaps="false"
-            android:textColor="#000"
-            android:textSize="17sp"
-            app:backgroundTint="#FFF"
-            app:cornerRadius="23.5dp" />
+            <Button
+                android:id="@+id/signup_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginRight="36dp"
+                android:background="#FFFFFF"
+                android:text="sign up"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:backgroundTint="#FFF"
+                app:cornerRadius="23.5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="61dp"
+                android:text="Login"
+                android:textAllCaps="true"
+                android:textColor="#FFF"
+                android:textSize="17sp"
+                app:backgroundTint="#5B9EEA"
+                app:cornerRadius="23.5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/login_progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </LinearLayout>
 
 </RelativeLayout>
