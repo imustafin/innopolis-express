@@ -1,18 +1,28 @@
 package mfq.com.refooddelivery2.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 import mfq.com.refooddelivery2.R;
-import mfq.com.refooddelivery2.utils.InMemoryStorage;
+import mfq.com.refooddelivery2.utils.RequestStatus;
 
 /**
  * Use Case: Login Use Case
@@ -26,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private Button loginButton;
     private Button signUpButton;
+    private ProgressBar mProgressBar;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         loginButton = findViewById(R.id.login_button);
         signUpButton = findViewById(R.id.signup_button);
+        mProgressBar = findViewById(R.id.login_progress);
         signUpButton.setOnClickListener(view -> signUp());
         loginButton.setOnClickListener(view -> attemptLogin());
 
@@ -93,25 +106,36 @@ public class LoginActivity extends AppCompatActivity {
         if (cancel) {
             focusView.requestFocus();
         } else {
+            showProgressBar(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
     }
 
     private boolean isEmailValid(String email) {
-        return email.matches("\\w+@\\w+\\.\\w+");
+        return email.matches(".+@\\w+\\.[a-zA-Z]+");
     }
 
     private boolean isPasswordValid(String password) {
         return password.matches("\\w\\S+");
     }
 
+    private void showProgressBar(boolean show){
+        mProgressBar.setVisibility(show ? View.VISIBLE: View.GONE);
+        loginButton.setVisibility(show ? View.GONE: View.VISIBLE);
+        signUpButton.setVisibility(show ? View.GONE: View.VISIBLE);
+    }
 
     //stub
+
+    /**
+     * Asynchronous login task
+     */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mLogin;
         private final String mPassword;
+        private RequestStatus status;
 
         UserLoginTask(String email, String password) {
             mLogin = email;
@@ -120,24 +144,37 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... params) {
+            AtomicReference<Boolean> result = new AtomicReference<>(false);
+            status = RequestStatus.WAIT;
 
-            for (String credential : InMemoryStorage.getCredentials()) {
-                int endIndex = credential.indexOf(":");
-                String email = credential.substring(0, endIndex);
-                String password = credential.substring(endIndex + 1);
 
-                if(mLogin.equals(email) && mPassword.equals(password)){
-                    return true;
+            mAuth = FirebaseAuth.getInstance();
+            mAuth.signInWithEmailAndPassword(mLogin, mPassword)
+                .addOnCompleteListener(LoginActivity.this,  new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("INFO", "signInWithEmail:success");
+                            status = RequestStatus.SUCCESS;
+                            result.set(true);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("ERROR", "signInWithEmail:failure", task.getException());
+                            status = RequestStatus.FAIL;
+                        }
+                    }
+                });
+
+            do {
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+            } while (status == RequestStatus.WAIT);
 
-                // stub user, delete for production
-                if(mLogin.equals("user") && mPassword.equals("pass")){
-                    return true;
-                }
-            }
-            return false;
-
-
+            return result.get();
         }
 
         @Override
@@ -147,6 +184,7 @@ public class LoginActivity extends AppCompatActivity {
             if (success) {
                 finish();
             } else {
+                showProgressBar(false);
                 mPasswordView.setError("Invalid password");
                 mPasswordView.requestFocus();
             }

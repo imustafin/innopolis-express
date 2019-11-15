@@ -1,8 +1,12 @@
 package mfq.com.refooddelivery2.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableLayout;
@@ -12,14 +16,24 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
+import mfq.com.refooddelivery2.utils.RequestStatus;
+
 
 /**
  * Use case: Order Detail invoice
@@ -29,13 +43,40 @@ public class InvoiceActivity extends AppCompatActivity {
 
     private TextView mOrderDate;
     private TextView mTotal;
-
+    private TextView mStatus;
+    private TextView mInvoiceId;
+    private String invoiceId;
+    private DocumentReference docRef;
+    private OrderCancelTask mCancelTask = null;
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoice);
+
+        mStatus = findViewById(R.id.status);
+        mInvoiceId = findViewById(R.id.invoice_id);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        docRef = db.collection("invoices").document(getIntent().getExtras().getString("invoice_key"));
+        Log.w("Info", getIntent().getExtras().getString("invoice_key"));
+        docRef.addSnapshotListener((snapshot, e) -> {
+
+            if(snapshot != null) {
+                invoiceId = snapshot.getData().get("id").toString();
+                mInvoiceId.setText("ID: " + invoiceId);
+                mStatus.setText((String)snapshot.getData().get("status"));
+            }
+
+            if (e != null) {
+                Log.w("Info", "Listen failed.", e);
+                return;
+            }
+
+        });
+
+
         mOrderDate = findViewById(R.id.date);
         mTotal = findViewById(R.id.total);
 
@@ -85,11 +126,63 @@ public class InvoiceActivity extends AppCompatActivity {
     }
 
     public void onCancelClick(View v) {
-        Cart cart = Cart.getInstance();
-        cart.getProducts().clear();
+        mCancelTask = new InvoiceActivity.OrderCancelTask(getIntent().getExtras().getString("invoice_key"));
+        mCancelTask.execute((Void) null);
+    }
 
-        Toast.makeText(this, "Order was canceled", Toast.LENGTH_LONG).show();
+    public void onStatusCheck(View v) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://admin-inno-express.firebaseapp.com/track?orderId=" + invoiceId));
+        startActivity(browserIntent);
+    }
 
-        super.finish();
+    public class OrderCancelTask extends AsyncTask<Void, Void, Boolean> {
+
+        private String invoiceKey;
+
+        public OrderCancelTask(String invoiceKey) {
+            this.invoiceKey = invoiceKey;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            AtomicReference<Boolean> result = new AtomicReference<>(false);
+
+            try {
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                Map<String, Object> data = new HashMap<>();
+                data.put("status", "Cancelled");
+
+                Task<Void> set = db.collection("invoices").document(getIntent().getExtras().getString("invoice_key")).set(data, SetOptions.merge());
+
+                do{
+                    Thread.sleep(100);
+                } while (!set.isComplete());
+
+
+                if(set.isSuccessful()){
+                    result.set(true);
+                }
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+
+            return result.get();
+        }
+
+        @Override
+        protected void onPostExecute(Boolean status) {
+            if (status) {
+                Cart cart = Cart.getInstance();
+                cart.getProducts().clear();
+
+                Toast.makeText(InvoiceActivity.this, "Order was canceled", Toast.LENGTH_LONG).show();
+
+                InvoiceActivity.super.finish();
+            } else {
+                Toast.makeText(InvoiceActivity.this, "Something went wrong. Try again", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
