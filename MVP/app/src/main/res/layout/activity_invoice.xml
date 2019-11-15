@@ -193,6 +193,17 @@
                                 android:layout_weight="1"
                                 android:clickable="true"
                                 android:gravity="end"
+                                android:onClick="onStatusCheck"
+                                android:text="@string/status_check"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorPrimary" />
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:gravity="end"
                                 android:onClick="onCancelClick"
                                 android:text="@string/cancel_order"
                                 android:textAllCaps="true"
