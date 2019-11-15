@@ -1,5 +1,9 @@
 @import "../common/css/layout.css";
 
+body {
+    min-width: 900px;
+}
+
 .orders__wrapper {
     padding: 0 4% 20px;
 }

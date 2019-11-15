@@ -1,7 +1,7 @@
 @import "../common/css/layout.css";
 
 .track__wrapper {
-    padding: 0 40px;
+    padding: 0 4%;
 }
 
 .track__title {
@@ -59,8 +59,9 @@
 }
 
 .track__result-table {
-    margin-bottom: 30px;
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto 30px;
     text-align: center;
 }
 
