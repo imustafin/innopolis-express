@@ -1,19 +1,30 @@
 package mfq.com.refooddelivery2.activity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+
+import java.util.concurrent.atomic.AtomicReference;
+
 import mfq.com.refooddelivery2.R;
-import mfq.com.refooddelivery2.utils.InMemoryStorage;
+import mfq.com.refooddelivery2.utils.RequestStatus;
 
 /**
  * Source: Sign Up Use Case
@@ -28,6 +39,8 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private EditText mPhoneView;
     private EditText mAddressView;
+    private ProgressBar mProgressBar;
+    private FirebaseAuth mAuth;
 
     private Button signUpButton;
 
@@ -41,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         mNameView = findViewById(R.id.name);
         mAddressView = findViewById(R.id.address);
         mPhoneView = findViewById(R.id.phone);
+        mProgressBar = findViewById(R.id.signup_progress);
         mAddressView.setOnEditorActionListener((textView, id, keyEvent) -> {
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                 signUp();
@@ -54,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private boolean isEmailValid(String email) {
-        return email.matches("\\w+@\\w+\\.\\w+");
+        return email.matches(".+@\\w+\\.[a-zA-Z]+");
     }
 
     private boolean isPasswordValid(String password) {
@@ -73,7 +87,10 @@ public class SignUpActivity extends AppCompatActivity {
         return address.length() > 0;
     }
 
-
+    private void showProgressBar(boolean show){
+        mProgressBar.setVisibility(show ? View.VISIBLE: View.GONE);
+        signUpButton.setVisibility(show ? View.GONE: View.VISIBLE);
+    }
 
     private void signUp(){
 
@@ -152,6 +169,7 @@ public class SignUpActivity extends AppCompatActivity {
         if (cancel) {
             focusView.requestFocus();
         } else {
+            showProgressBar(true);
             mAuthTask = new UserSignUpTask(email, password, name, phone,address );
             mAuthTask.execute((Void) null);
         }
@@ -165,6 +183,7 @@ public class SignUpActivity extends AppCompatActivity {
         private final String mName;
         private final String mPhone;
         private final String mAddress;
+        private RequestStatus status;
 
         UserSignUpTask(String email, String password, String name, String phone, String address) {
             mLogin = email;
@@ -176,16 +195,62 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            String newCredential = mLogin + ":" + mPassword;
-            InMemoryStorage.getCredentials().add(newCredential);
-            return true;
+            AtomicReference<Boolean> result = new AtomicReference<>(false);
+            status = RequestStatus.WAIT;
+
+            mAuth = FirebaseAuth.getInstance();
+            mAuth.createUserWithEmailAndPassword(mLogin, mPassword)
+                .addOnCompleteListener(SignUpActivity.this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        status = RequestStatus.SUCCESS;
+                        Log.d("INFO", "createUserWithEmail:success");
+
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(mName).build();
+
+                        user.updateProfile(profileUpdates)
+                            .addOnCompleteListener(task1 -> {
+                                if (task1.isSuccessful()) {
+                                    Log.d("INFO", "User profile updated.");
+                                }
+                            });
+
+                        result.set(true);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        status = RequestStatus.FAIL;
+                        Log.w("ERROR", "createUserWithEmail:failure", task.getException());
+                        result.set(false);
+                    }
+                });
+
+            do{
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }while (status == RequestStatus.WAIT);
+
+//            String newCredential = mLogin + ":" + mPassword;
+//            InMemoryStorage.getCredentials().add(newCredential);
+            return result.get();
         }
 
         //server response stub
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
-            finish();
+
+            if(success){
+                finish();
+            }else{
+                showProgressBar(false);
+                Toast.makeText(SignUpActivity.this, "Sign Up failed.", Toast.LENGTH_SHORT).show();
+            }
         }
 
         @Override

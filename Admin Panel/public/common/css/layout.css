@@ -1,0 +1,53 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ECEFF1;
+}
+
+.header {
+    padding: 20px 30px;
+    background: #3f51b5;
+    height: 28px;
+}
+
+.header__logo {
+    float: left;
+}
+
+.header__logo-name {
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.header__nav {
+    padding: 6px 0 0;
+    float: right;
+}
+
+.header__nav-item {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: all .2s ease-in-out
+}
+
+.header__nav-item:hover, .header__nav-item:active, .header__nav-item:focus {
+    color: #ECEFF1;
+}
+
+.main {
+    padding: 40px 0 0;
+}
+
+.main--dashboard {
+    padding: 20px 0 0;
+}

@@ -3,7 +3,9 @@ package mfq.com.refooddelivery2.fragments;
 
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Random;
+import java.util.SimpleTimeZone;
+import java.util.concurrent.ThreadLocalRandom;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,15 +43,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.activity.CartActivity;
 import mfq.com.refooddelivery2.activity.InvoiceActivity;
+import mfq.com.refooddelivery2.helper.RandomString;
 import mfq.com.refooddelivery2.models.Cart;
+import mfq.com.refooddelivery2.models.Invoices;
 import mfq.com.refooddelivery2.models.Product;
 import mfq.com.refooddelivery2.recycler.CartItemsAdapter;
+import mfq.com.refooddelivery2.utils.RequestStatus;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CartFragment extends Fragment implements View.OnClickListener {
+public class CartFragment extends Fragment {
 
+    private CartCompleteOrderTask mCartTask;
 
     private RecyclerView mCartItemsRecycler;
     private CartItemsAdapter mCartItemsAdapter;
@@ -62,7 +85,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         mTotals1 = root.findViewById(R.id.cart_total_first);
         mEmpty = root.findViewById(R.id.cart_empty);
 
-        root.findViewById(R.id.cart_order).setOnClickListener(this);
+        root.findViewById(R.id.cart_order).setOnClickListener(view -> attemptProcess());
 
         totalCount = root.findViewById(R.id.cart_item_count);
         int totalQuantity = Cart.getInstance().getTotalQuantity();
@@ -117,26 +140,147 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         mCartItemsAdapter.setProductList(Cart.getInstance().getProducts());
     }
 
+    public void attemptProcess(){
 
-    @Override
-    public void onClick(View v) {
-        String message = "Order is successful 😘 , Admin will call you to confirm the order, be polite 😜 ";
-        if (mPhone.getText().toString().isEmpty()) {
-            message = "Please Enter your phone number correctly 😡";
-            Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+        if (mCartTask != null) {
             return;
         }
-        if (mAddress.getText().toString().isEmpty()) {
-            message = "Please Enter your Address Dorm number and room number 🧐";
-            Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
-            return;
 
+        mAddress.setError(null);
+        mPhone.setError(null);
+
+        String address = mAddress.getText().toString();
+        String phone = mPhone.getText().toString();
+
+        boolean cancel = false;
+        View focusView = null;
+
+        if (TextUtils.isEmpty(address)) {
+            mAddress.setError(getString(R.string.error_field_required));
+            focusView = mAddress;
+            cancel = true;
+        }else if(!isAddressValid(address)){
+            mAddress.setError(getString(R.string.error_invalid_address));
+            focusView = mAddress;
+            cancel = true;
         }
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(getActivity(), InvoiceActivity.class);
-        getActivity().finish();
-        startActivity(intent);
+        if (TextUtils.isEmpty(phone)) {
+            mPhone.setError(getString(R.string.error_field_required));
+            focusView = mPhone;
+            cancel = true;
+        }else if(!isPhoneValid(phone)){
+            mPhone.setError(getString(R.string.error_invalid_phone));
+            focusView = mPhone;
+            cancel = true;
+        }
+
+        if(cancel){
+            focusView.requestFocus();
+        } else {
+            mCartTask = new CartCompleteOrderTask(phone, address, Cart.getInstance().getProducts());
+            mCartTask.execute((Void) null);
+        }
     }
+
+    private boolean isAddressValid(String address){
+        return address.length() > 0;
+    }
+
+    private boolean isPhoneValid(String phone){
+        return phone.matches("\\d+") && phone.length() == 11;
+    }
+
+    public class CartCompleteOrderTask extends AsyncTask<Void, Void, DocumentReference>{
+
+        private String phone;
+        private String address;
+        private List<Product> products;
+
+        public CartCompleteOrderTask(String phone, String address, List<Product> products) {
+            this.phone = phone;
+            this.address = address;
+            this.products = products;
+        }
+
+        @Override
+        protected DocumentReference doInBackground(Void... voids) {
+
+            RequestStatus status;
+            Task<DocumentReference> invoices = null;
+
+            try {
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                List<Map<String, Object>> products = new ArrayList<>();
+
+                for (Product product : this.products) {
+                    Map<String, Object> newProduct = new HashMap<>();
+
+                    newProduct.put("name", product.getName());
+                    newProduct.put("price", product.getPrice().getValue());
+                    newProduct.put("quantity", product.getQuantity());
+
+                    products.add(newProduct);
+                }
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                assert user != null;
+
+                Date currentDate = Calendar.getInstance().getTime();
+                SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
+                String strDate = formatter.format(currentDate);
+
+                Invoices newInvoice = new Invoices(new RandomString(5, new Random()).nextString().toUpperCase(), strDate, "Pending", user.getEmail(), user.getDisplayName(), products, address, phone);
+
+                invoices = db.collection("invoices").add(newInvoice);
+
+                do{
+                    Thread.sleep(100);
+
+                }while (!invoices.isComplete());
+
+                if(invoices.isSuccessful()){
+                    status = RequestStatus.SUCCESS;
+                }else{
+                    status = RequestStatus.FAIL;
+                }
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+                status = RequestStatus.FAIL;
+            }
+
+            return invoices.getResult();
+        }
+
+        @Override
+        protected void onPostExecute(DocumentReference documentReference) {
+
+            mCartTask = null;
+
+            if (documentReference != null) {
+                String message = "Order is successful 😘 , Admin will call you to confirm the order, be polite 😜 ";
+                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), InvoiceActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("invoice_key", documentReference.getId());
+                intent.putExtras(bundle);
+                Objects.requireNonNull(getActivity()).finish();
+                startActivity(intent);
+            } else {
+                System.out.println("Error has occurred");
+            }
+            
+        }
+
+        @Override
+        protected void onCancelled() {
+            mCartTask = null;
+        }
+    }
+
+
 }
 

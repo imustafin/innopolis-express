@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Track your order | Innopolis Express</title>
+
+    <link type="text/css" rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <span class="header__logo-name">Innopolis Express</span>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="track__wrapper">
+
+            <div class="track__result">
+                <h2 class="track__title">Result</h2>
+                <div id="Result"></div>
+            </div>
+
+            <h2 class="track__title">Track your order</h2>
+            <form id="TrackForm" class="track__form">
+                <div class="track__input-group">
+                    <label class="track__label" for="orderIdInput">Order ID:</label>
+                    <input class="track__input" id="TrackInput" type="text" />
+                </div>
+                <button class="track__submit" type="submit">Find Order</button>
+            </form>
+
+            <div id="loader" class="track__loader">Loading...</div>
+
+            <div id="notFound" class="track__not-found-message">
+                Order with ID <span id="orderId"></span> was not found
+            </div>
+        </div>
+    </main>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.4.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.4.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

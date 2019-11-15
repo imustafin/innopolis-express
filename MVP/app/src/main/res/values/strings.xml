@@ -23,6 +23,7 @@
     <string name="orderDate">16/4/2020</string>
     <string name="total">TOTAL</string>
     <string name="cancel_order">CANCEL ORDER</string>
+    <string name="status_check">CHECK STATUS</string>
 
 
     <!-- Strings related to login -->
