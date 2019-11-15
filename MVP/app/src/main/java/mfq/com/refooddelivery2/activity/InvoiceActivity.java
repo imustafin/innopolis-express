@@ -3,6 +3,7 @@ package mfq.com.refooddelivery2.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +45,7 @@ public class InvoiceActivity extends AppCompatActivity {
     private TextView mTotal;
     private TextView mStatus;
     private TextView mInvoiceId;
+    private String invoiceId;
     private DocumentReference docRef;
     private OrderCancelTask mCancelTask = null;
 
@@ -62,7 +64,8 @@ public class InvoiceActivity extends AppCompatActivity {
         docRef.addSnapshotListener((snapshot, e) -> {
 
             if(snapshot != null) {
-                mInvoiceId.setText("ID: "+ snapshot.getData().get("id").toString());
+                invoiceId = snapshot.getData().get("id").toString();
+                mInvoiceId.setText("ID: " + invoiceId);
                 mStatus.setText((String)snapshot.getData().get("status"));
             }
 
@@ -125,6 +128,11 @@ public class InvoiceActivity extends AppCompatActivity {
     public void onCancelClick(View v) {
         mCancelTask = new InvoiceActivity.OrderCancelTask(getIntent().getExtras().getString("invoice_key"));
         mCancelTask.execute((Void) null);
+    }
+
+    public void onStatusCheck(View v) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://admin-inno-express.firebaseapp.com/track?orderId=" + invoiceId));
+        startActivity(browserIntent);
     }
 
     public class OrderCancelTask extends AsyncTask<Void, Void, Boolean> {
