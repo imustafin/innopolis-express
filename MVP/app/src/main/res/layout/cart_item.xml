@@ -10,10 +10,10 @@
     <ImageView
         android:id="@+id/cart_item_edit"
         style="@style/IconStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:visibility="invisible"
         tools:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
         android:layout_marginEnd="16dp"
@@ -22,8 +22,6 @@
 
 
     <ImageView
-        android:visibility="invisible"
-        tools:visibility="visible"
         android:id="@+id/cart_item_delete"
         style="@style/IconStyle"
         android:layout_width="wrap_content"

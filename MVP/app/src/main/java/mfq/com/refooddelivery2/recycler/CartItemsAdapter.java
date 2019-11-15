@@ -15,13 +15,16 @@ import mfq.com.refooddelivery2.models.Product;
 public class CartItemsAdapter extends RecyclerView.Adapter {
 
     List<Product> mProducts = new ArrayList<>();
+    private CartUpdateInterface cartUpdateInterface;
 
     public void setProductList(List<Product> mealList) {
         mProducts = mealList;
         notifyDataSetChanged();
     }
 
-
+    public CartItemsAdapter(CartUpdateInterface cartUpdateInterface) {
+        this.cartUpdateInterface = cartUpdateInterface;
+    }
 
     @NonNull
     @Override
@@ -31,11 +34,15 @@ public class CartItemsAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        ((CartItemViewHolder) viewHolder).bind(mProducts.get(i));
+        ((CartItemViewHolder) viewHolder).bind(mProducts.get(i), cartUpdateInterface);
     }
 
     @Override
     public int getItemCount() {
         return mProducts.size();
+    }
+
+    public interface CartUpdateInterface {
+        void updateCart();
     }
 }

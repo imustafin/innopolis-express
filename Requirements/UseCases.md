@@ -13,7 +13,7 @@
 
 
 ## Order Process 
-
+Unit tests: [cartAddItemTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L83)
  
  | **Use Case #1**                  | **Order Process**                                                  |
  |:--------------------------------:|:-------------------------------------------------------------------|
@@ -26,7 +26,7 @@
  |                                  | 5\. New order created and will be shown in the cafe dashboard      |
  | Post-conditions                  | Order will be processed by Administrator                           |
  | Alternative flows and exceptions | The Administrator rejects the order of the client. The client will |
- |                                  | be notified about rejection                                        |
+ |                                  | be notified about rejection.                                       |
   
 
 ## Order Cancellation
@@ -103,6 +103,7 @@
 
 
 ## Check out
+Unit tests: [productQuantityTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L65), [cartSizeTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L90)
 
  | **Use Case #6**                  | **Check out**                                                 |
  |:--------------------------------:|:--------------------------------------------------------------|
@@ -116,8 +117,8 @@
  |                                  | 4\. Client checks number or change number                     |
  |                                  | 5\. Client completes with pressing "update" button            |
  | Postcondition                    | Changes information displays on client screen                 |
- | Alternative flows and exceptions | Client has not created account. System asks to create account |
- |                                  |                                                               |
+ | Alternative flows and exceptions | 1) Client has not created account. System asks to create account |
+ |                                  | 2) If the client will add the same product several times, the quantity will change only, but not the number of the elements in the cart |
 
 
 ## Order Detail invoice
@@ -136,6 +137,19 @@
  | Alternative flows and exceptions | User cancels order.                                  |
  |                                  |                                                      |
 
+## Change order status
+
+ | **Use Case #8**                  | **Change order status**                              |
+ |:--------------------------------:|:-----------------------------------------------------|
+ | Actors                           | Administrator                                        |
+ | Precondition                     | 1\. Administrator is signed in to the Admin Panel.   |
+ | Flow of enents                   | 1\. Administrator sees the list of orders            |
+ |                                  | 2\. Administrator picks the order which status must  |
+ |                                  | be changed                                           |
+ |                                  | 4\. Administrator changes the status of the order    |
+ | Postcondition                    | Status of the order is changed and user is notified  | 
+ |                                  | by email                                             |
+
 
 ## Use Case Diagram
 
@@ -147,4 +161,7 @@
 1.  **Client** - a person who orders food from the system.
 
 2.  **Administrator** - manages the system and adds new users to the system
+
+3.  **Status** - state of the order. Possible values - Pending, Delivering, Delivered
+
 

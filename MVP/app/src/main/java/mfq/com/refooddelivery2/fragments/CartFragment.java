@@ -2,7 +2,9 @@ package mfq.com.refooddelivery2.fragments;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +17,13 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import mfq.com.refooddelivery2.R;
+import mfq.com.refooddelivery2.activity.CartActivity;
+import mfq.com.refooddelivery2.activity.InvoiceActivity;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
 import mfq.com.refooddelivery2.recycler.CartItemsAdapter;
@@ -37,6 +42,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
     private TextView mTotals1;
     private List<Product> mProducts;
     private View mEmpty;
+    private TextView totalCount;
 
     public CartFragment() {
         // Required empty public constructor
@@ -58,6 +64,10 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
         root.findViewById(R.id.cart_order).setOnClickListener(this);
 
+        totalCount = root.findViewById(R.id.cart_item_count);
+        int totalQuantity = Cart.getInstance().getTotalQuantity();
+        totalCount.setText(totalQuantity + " item" + (totalQuantity == 1 ? "" : "s"));
+
         mProducts = Cart.getInstance().getProducts();
 
         if (mProducts.isEmpty()) {
@@ -74,6 +84,10 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         for (Product product : mProducts) {
             totals += product.getPrice().getValue() * product.getQuantity();
         }
+
+        int totalQuantity = Cart.getInstance().getTotalQuantity();
+        totalCount.setText(totalQuantity + " item" + (totalQuantity == 1 ? "" : "s"));
+
         mTotals1.setText(String.valueOf(totals));
         mTotals2.setText(String.valueOf(totals));
         mTotals1.append(" \u20BD");
@@ -92,7 +106,13 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         mCartItemsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         mCartItemsRecycler.setItemAnimator(new DefaultItemAnimator());
         mCartItemsRecycler.setHasFixedSize(true);
-        mCartItemsAdapter = new CartItemsAdapter();
+        mCartItemsAdapter = new CartItemsAdapter(() -> {
+            mCartItemsAdapter.notifyDataSetChanged();
+            if (mProducts.isEmpty()) {
+                mEmpty.setVisibility(View.VISIBLE);
+            } else checkPrice();
+
+        });
         mCartItemsRecycler.setAdapter(mCartItemsAdapter);
         mCartItemsAdapter.setProductList(Cart.getInstance().getProducts());
     }
@@ -113,7 +133,10 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
         }
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(getActivity(), InvoiceActivity.class);
         getActivity().finish();
+        startActivity(intent);
     }
 }
 
