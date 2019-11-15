@@ -14,8 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -181,7 +183,7 @@ public class CartFragment extends Fragment {
         return phone.matches("\\d+") && phone.length() == 11;
     }
 
-    public class CartCompleteOrderTask extends AsyncTask<Void, Void, Boolean>{
+    public class CartCompleteOrderTask extends AsyncTask<Void, Void, DocumentReference>{
 
         private String phone;
         private String address;
@@ -194,9 +196,10 @@ public class CartFragment extends Fragment {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected DocumentReference doInBackground(Void... voids) {
 
             RequestStatus status;
+            Task<DocumentReference> invoices = null;
 
             try {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -217,25 +220,40 @@ public class CartFragment extends Fragment {
                 assert user != null;
                 Invoices newInvoice = new Invoices("Pending", user.getEmail(), user.getDisplayName(), products, address, phone);
 
-                db.collection("invoices").add(newInvoice);
-                status = RequestStatus.SUCCESS;
+                invoices = db.collection("invoices").add(newInvoice);
+
+                do{
+                    Thread.sleep(100);
+
+                }while (!invoices.isComplete());
+
+                if(invoices.isSuccessful()){
+                    status = RequestStatus.SUCCESS;
+                }else{
+                    status = RequestStatus.FAIL;
+                }
+
+
             }catch (Exception e){
                 e.printStackTrace();
                 status = RequestStatus.FAIL;
             }
 
-            return status == RequestStatus.SUCCESS;
+            return invoices.getResult();
         }
 
         @Override
-        protected void onPostExecute(Boolean success) {
+        protected void onPostExecute(DocumentReference documentReference) {
 
             mCartTask = null;
 
-            if (success) {
+            if (documentReference != null) {
                 String message = "Order is successful 😘 , Admin will call you to confirm the order, be polite 😜 ";
                 Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getActivity(), InvoiceActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("invoice_key", documentReference.getId());
+                intent.putExtras(bundle);
                 Objects.requireNonNull(getActivity()).finish();
                 startActivity(intent);
             } else {
