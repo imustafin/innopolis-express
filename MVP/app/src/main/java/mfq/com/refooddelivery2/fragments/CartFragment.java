@@ -18,11 +18,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
+import java.util.SimpleTimeZone;
+import java.util.concurrent.ThreadLocalRandom;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +41,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.activity.CartActivity;
 import mfq.com.refooddelivery2.activity.InvoiceActivity;
+import mfq.com.refooddelivery2.helper.RandomString;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Invoices;
 import mfq.com.refooddelivery2.models.Product;
@@ -215,7 +223,12 @@ public class CartFragment extends Fragment {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                 assert user != null;
-                Invoices newInvoice = new Invoices("Pending", user.getEmail(), user.getDisplayName(), products, address, phone);
+
+                Date currentDate = Calendar.getInstance().getTime();
+                SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
+                String strDate = formatter.format(currentDate);
+
+                Invoices newInvoice = new Invoices(new RandomString(5, new Random()).nextString().toUpperCase(), strDate, "Pending", user.getEmail(), user.getDisplayName(), products, address, phone);
 
                 db.collection("invoices").add(newInvoice);
                 status = RequestStatus.SUCCESS;
