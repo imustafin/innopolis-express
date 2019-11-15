@@ -18,6 +18,7 @@ Prerequisites: Android Studio
 8. Click on the Run button (green triangle)  
 
 # How to run admin web panel web app locally: 
+Prerequisites: you need to create an account using mobile application ("Sign Up" use case). Use credentials from the sign up in web admin panel. 
 1. If you don't have Node.js and npm installed on your computer, please download it and install according to the instructions on https://nodejs.org/en/download/
 2. Run this command in terminal: npm install -g firebase-tools
 3. After successful installation, navigate in terminal to the root project directory, open the folder "Admin panel". Your should be in folder “../innopolis-express/Admn Panel”
