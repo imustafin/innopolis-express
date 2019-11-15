@@ -1,8 +1,5 @@
 package mfq.com.refooddelivery2.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,18 +9,19 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
 import mfq.com.refooddelivery2.R;
-import mfq.com.refooddelivery2.utils.InMemoryStorage;
+import mfq.com.refooddelivery2.utils.RequestStatus;
 
 /**
  * Use Case: Login Use Case
@@ -128,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
 
         private final String mLogin;
         private final String mPassword;
-        private int status = 0;
+        private RequestStatus status;
 
         UserLoginTask(String email, String password) {
             mLogin = email;
@@ -138,19 +136,23 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
             AtomicReference<Boolean> result = new AtomicReference<>(false);
-            mAuth = FirebaseAuth.getInstance();
+            status = RequestStatus.WAIT;
 
+            mAuth = FirebaseAuth.getInstance();
             mAuth.signInWithEmailAndPassword(mLogin, mPassword)
-                .addOnCompleteListener(LoginActivity.this, task -> {
-                    if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d("INFO", "signInWithEmail:success");
-                        status = 1;
-                        result.set(true);
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w("ERROR", "signInWithEmail:failure", task.getException());
-                        status = -1;
+                .addOnCompleteListener(LoginActivity.this,  new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("INFO", "signInWithEmail:success");
+                            status = RequestStatus.SUCCESS;
+                            result.set(true);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("ERROR", "signInWithEmail:failure", task.getException());
+                            status = RequestStatus.FAIL;
+                        }
                     }
                 });
 
@@ -160,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            } while (status == 0);
+            } while (status == RequestStatus.WAIT);
 
             return result.get();
         }

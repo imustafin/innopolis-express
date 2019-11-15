@@ -10,16 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicReference;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.concurrent.atomic.AtomicReference;
+
 import mfq.com.refooddelivery2.R;
-import mfq.com.refooddelivery2.utils.InMemoryStorage;
 import mfq.com.refooddelivery2.utils.RequestStatus;
 
 /**
@@ -171,7 +169,7 @@ public class SignUpActivity extends AppCompatActivity {
         private final String mName;
         private final String mPhone;
         private final String mAddress;
-        private int status;
+        private RequestStatus status;
 
         UserSignUpTask(String email, String password, String name, String phone, String address) {
             mLogin = email;
@@ -184,19 +182,19 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
             AtomicReference<Boolean> result = new AtomicReference<>(false);
-            status = 0;
+            status = RequestStatus.WAIT;
 
             mAuth = FirebaseAuth.getInstance();
             mAuth.createUserWithEmailAndPassword(mLogin, mPassword)
                 .addOnCompleteListener(SignUpActivity.this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
-                        status = 1;
+                        status = RequestStatus.SUCCESS;
                         Log.d("INFO", "createUserWithEmail:success");
                         result.set(true);
                     } else {
                         // If sign in fails, display a message to the user.
-                        status = -1;
+                        status = RequestStatus.FAIL;
                         Log.w("ERROR", "createUserWithEmail:failure", task.getException());
                         result.set(false);
                     }
@@ -208,7 +206,7 @@ public class SignUpActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }while (status == 0);
+            }while (status == RequestStatus.WAIT);
 
 //            String newCredential = mLogin + ":" + mPassword;
 //            InMemoryStorage.getCredentials().add(newCredential);
