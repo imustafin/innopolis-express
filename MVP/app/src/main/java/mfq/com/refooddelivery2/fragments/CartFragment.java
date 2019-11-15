@@ -12,7 +12,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +32,7 @@ import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.activity.CartActivity;
 import mfq.com.refooddelivery2.activity.InvoiceActivity;
 import mfq.com.refooddelivery2.models.Cart;
+import mfq.com.refooddelivery2.models.Invoices;
 import mfq.com.refooddelivery2.models.Product;
 import mfq.com.refooddelivery2.recycler.CartItemsAdapter;
 
@@ -130,9 +138,29 @@ public class CartFragment extends Fragment implements View.OnClickListener {
             message = "Please Enter your Address Dorm number and room number 🧐";
             Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
             return;
-
         }
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        List<Map<String, Object>> products = new ArrayList<>();
+
+        for (Product product : Cart.getInstance().getProducts()) {
+            Map<String, Object> newProduct = new HashMap<>();
+
+            newProduct.put("name", product.getName());
+            newProduct.put("price", product.getPrice().getValue());
+            newProduct.put("quantity", product.getQuantity());
+
+            products.add(newProduct);
+        }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        assert user != null;
+        Invoices newInvoice = new Invoices("Pending", user.getEmail(), user.getDisplayName(), products, mAddress.getText().toString(), mPhone.getText().toString());
+
+        db.collection("invoices").add(newInvoice);
 
         Intent intent = new Intent(getActivity(), InvoiceActivity.class);
         getActivity().finish();
