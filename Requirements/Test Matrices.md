@@ -52,7 +52,7 @@
         <tr>
             <td>S1</td>
             <td>Order status</td>
-            <td>Regular</td>
+            <td>Pending</td>
             <td>Delivering</td>
         </tr>
         <tr>
@@ -69,4 +69,72 @@
         </tr>
     </tbody>
 </table>
+
+## Checking order status
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-6</th>
+            <th>TC-7</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Order ID</td>
+            <td>Existing</td>
+            <td>Nonexisting</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>Input field</td>
+            <td>Filled</td>
+            <td>Filled</td>
+        </tr>
+        <tr>
+            <td>S3</td>
+            <td>Order Status</td>
+            <td>Regular</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+## Login
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-8</th>
+            <th>TC-9</th>
+            <th>TC-10</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Login and password fields</td>
+            <td>Exist</td>
+            <td>Exist</td>
+            <td>Exist</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>Login and password</td>
+            <td>Regular</td>
+            <td>Empty (one/both)</td>
+            <td>Incorrect</td>
+        </tr>
+        <tr>
+            <td>A3</td>
+            <td>Login Button</td>
+            <td>Pressed</td>
+            <td>Pressed</td>
+        </tr>
+    </tbody>
+</table>
+
 
