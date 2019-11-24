@@ -62,7 +62,7 @@ Unit tests: [cartAddItemTest](https://github.com/BatyrSeven/innopolis-express/bl
  |:--------------------------------:|:-------------------------------------------------------------------------|
  | Actors                           | Client                                                                   |
  | Pre-conditions                   | None                                                                     |
- | Flow of events                   | S1\. The system requests that the actor enter email                      |
+ | Flow of events                   | S1\. The system requests that the actor enter email and login            |
  |                                  | A2\. Client enters password and login.                                   |
  |                                  | A3\. Client press login button                                           |
  | Alternative flows and exceptions | SE1\. Client leaves one or both of the fields empty or incorrect - gets  |
