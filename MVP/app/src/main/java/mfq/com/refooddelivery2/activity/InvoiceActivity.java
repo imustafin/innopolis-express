@@ -236,9 +236,15 @@ public class InvoiceActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent a = new Intent(Intent.ACTION_MAIN);
-        a.addCategory(Intent.CATEGORY_HOME);
-        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(a);
+        if(!mStatus.getText().toString().equals("Delivered")) {
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
+        }else{
+            Intent intent = new Intent(InvoiceActivity.this, MainActivity.class);
+            startActivity(intent);
+            InvoiceActivity.super.finish();
+        }
     }
 }

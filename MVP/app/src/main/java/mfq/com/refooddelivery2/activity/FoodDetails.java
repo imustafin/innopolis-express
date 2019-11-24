@@ -18,7 +18,7 @@ import mfq.com.refooddelivery2.helper.QuantityPicker;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
 
-public class FoodDetails extends AppCompatActivity implements View.OnClickListener, QuantityPicker.OnQtyChangedListener {
+public class FoodDetails extends AppCompatActivity implements View.OnClickListener{
     private static final String KEY_PRODUCT = "PRODUCT";
     private View mAddToCartButton;
     private TextView mDescription;
@@ -55,8 +55,6 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
         mPrice.setText(mProduct.getPrice().getFormattedValue());
         mAddToCartButton.setOnClickListener(this);
         findViewById(R.id.details_cart).setOnClickListener(this);
-        mQty.setOnQtyChangedListener(this);
-
     }
 
     @Override
@@ -65,22 +63,10 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
             startActivity(new Intent(this, CartActivity.class));
             return;
         }
+        mProduct.setQuantity(mQty.getQuantity());
         Cart.getInstance().addProduct(mProduct);
-        Toast.makeText(this, mProduct.getQuantity() + " " + mProduct.getName() + " is added to cart", Toast.LENGTH_SHORT).show();
+        System.out.println(Cart.getInstance().getProducts().size());
+        Toast.makeText(this, mQty.getQuantity() + " " + mProduct.getName() + " is added to cart", Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onQtyChanged(int qty) {
-        mProduct.setQuantity(qty);
-    }
-
-    @Override
-    public void onQtyIncreased(int qty) {
-
-    }
-
-    @Override
-    public void onQtyDecreased(int qty) {
-
-    }
 }

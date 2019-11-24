@@ -22,6 +22,7 @@ import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.fragments.CartFragment;
 import mfq.com.refooddelivery2.fragments.HomeFragment;
 import mfq.com.refooddelivery2.helper.TransitionHelper;
+import mfq.com.refooddelivery2.models.Cart;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -195,4 +196,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+    
 }
