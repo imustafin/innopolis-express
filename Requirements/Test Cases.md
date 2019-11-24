@@ -487,12 +487,12 @@
 
 ## Signup with existing email
 
-| **Test case name** | Login                                                         |
+| **Test case name** | Sign up                                                         |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-14 |
-| **Test suite**     | Login | 
+| **Test suite**     | Sign up | 
 | **Set up**         | Exisiting email of an acocunt |
-| **Status** | Passed | 
+| **Status** | Warning | 
 | **Date complete** | 24-11-19 |
 
 <table>
@@ -501,23 +501,56 @@
             <th>Step</th>
             <th>Description</th>
             <th>Result</th>
+            <th>Error</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>TC-14-A1 ... TC-14-A6</td>
-            <td>Client enters everything correctly </td>
+            <td>TC-14-A1</td>
+            <td>Client enters name correctly </td>
+            <td>Passed</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TC-14-A2</td>
+            <td>Client enters existing email correctly </td>
+            <td>Passed</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TC-14-A3</td>
+            <td>Client enters password correctly </td>
+            <td>Passed</td>
+            <td></td>
+        </tr>
+         <tr>
+            <td>TC-14-A4</td>
+            <td>Client enters password confirmation correctly </td>
+            <td>Failed</td>
+            <td>The password confiramtion field does not exist</td>
+        </tr>
+        <tr>
+            <td>TC-14-A5</td>
+            <td>Client enters phone number correctly </td>
+            <td>Passed</td>
+        </tr>
+        <tr>
+            <td>TC-14-A6</td>
+            <td>Client enters address correctly </td>
+            <td>Passed</td>
             <td></td>
         </tr>
         <tr>
             <td>TC-14-A7</td>
             <td>Clients clicks on submit button</td>
+            <td>Passed</td>
             <td></td>
         </tr>
         <tr>
             <td>TC-14-SE1</td>
             <td>System shows that enterred email exists</td>
-            <td></td>
+            <td>Warning</td>
+            <td>The system shows message "Sign Up failed"</td>
         </tr>
     </tbody>
 </table>
