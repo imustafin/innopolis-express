@@ -18,22 +18,6 @@
 | A1       | Meal list                 | Not available | Meal list is not displayed | Meal list is not displayed |
 
 
-
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-existing-order">TC-6: Checking the status of an existing order</a>
-
-| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
-|----------|---------------------------|-----------|---------------------|--------------|
-| S1       | Order ID                  | Existing  | Navigate to Track order | Navigate to Track order |
-| A2       | Input field               | Filled    | Display order information | Display order information |
-| S3       | Order Status              | Pending   | -                   | -            |
-
-
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-nonexisting-order">TC-7: Checking the status of a non-existing order</a>
-
-| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
-|----------|---------------------------|-----------|---------------------|--------------|
-| S1       | Order ID                  | Nonexisting | Navigate to Track order | Navigate to Track order |
-| A2       | Input field               | Filled    | Display error message | Display error message |
 ## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#successful-cancellation">TC-3: Successful order cancellation </a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
@@ -42,6 +26,7 @@
 | A2       | Button                    | Cancel    | Cancel button displayed | Cancel button displayed |
 | S3       | Email                     | Sent      | Email about cancellation sent to the user | Email about cancellation sent to the user|
 
+
 ## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#prevent-cancellation-cancelled">TC-5: Cancellation of "Delivering" order </a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
@@ -49,3 +34,47 @@
 | S1       | Order Status              | Delivering | Delivering status displayed | Delivering status displayed |
 | A2       | Button                    | Cancel    | Cancel button not displayed | Cancel button not displayed |
 | S3       | Email                     | Sent      | Email about cancellation not sent to the user | Email about cancellation not sent to the user |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-existing-order">TC-6: Checking the status of an existing order</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | Existing  | Navigate to Track order | Navigate to Track order |
+| A2       | Input field               | Filled    | Order information   | Order information |
+| S3       | Order Status              | Pending   | -                   | -            |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-nonexisting-order">TC-7: Checking the status of a non-existing order</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | Nonexisting | Navigate to Track order | Navigate to Track order |
+| A2       | Input field               | Filled    | Error message       | Error message |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#login">TC-8: Login</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Login and password fields | Exist     | Login page          | Login page   |
+| A2       | Login and password        | 'batyrz@mail.ru', 'zaq123' | Filled login and password fields | Filled login and password fields |
+| A3       | Login Button              | Pressed   | Successfull Login   | Successfull Login |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#login-with-empty-or-incorrect-fields">TC-9: Login with empty or incorrect fields</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Login and password fields | Exist     | Display Login page  | Display Login page |
+| A2       | Login and password        | empty, empty | Empty login and password fields | Empty login and password fields |
+| A3       | Login Button              | Pressed   | Error message       | Error message |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#login-with-incorrect-password-or-nonexisiting-account">TC-10: Login with incorrect password or non-exisiting account</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Login and password fields | Exist     | Display Login page  | Display Login page |
+| A2       | Login and password        | 'not@exitsting.email', '123' | Filled login and password fields | Filled login and password fields |
+| A3       | Login Button              | Pressed   | Error message       | Error message |
