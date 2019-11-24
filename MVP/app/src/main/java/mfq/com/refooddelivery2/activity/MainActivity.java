@@ -157,8 +157,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (mFab.isExpanded()) {
             mFab.setExpanded(false);
             mBottomBar.setVisibility(View.VISIBLE);
-        } else
+        } else {
             super.onBackPressed();
+        }
     }
 
     private void closeDrawer() {
@@ -197,5 +198,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    
+
+
 }

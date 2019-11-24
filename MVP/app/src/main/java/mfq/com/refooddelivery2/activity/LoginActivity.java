@@ -153,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
         private RequestStatus status;
         private Triple<Boolean, Map<String,Object>, DocumentReference> retValue;
 
-        UserLoginTask(String email, String password) {
+         UserLoginTask(String email, String password) {
             mLogin = email;
             mPassword = password;
             retValue = new Triple<>(false, null, null);
