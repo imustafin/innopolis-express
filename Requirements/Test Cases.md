@@ -67,7 +67,7 @@
         <tr>
             <td>TC-2-SE1</td>
             <td>Mobile application navigates client to invoice information about existing order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
