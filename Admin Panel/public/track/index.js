@@ -23,29 +23,36 @@ function findOrder(orderId) {
     document.getElementById('loader').style.display = 'block';
     document.getElementById('Result').innerHTML = '';
     document.querySelector('.track__result').style.display = 'none';
+    document.getElementById('notFound').style.display = 'none';
 
     var db = firebase.firestore();
 
     db.collection("invoices").where("id", "==", orderId).get()
         .then(function (querySnapshot) {
+            var found = false;
+
             querySnapshot.forEach(function (doc) {
+                found = true;
                 renderResult(doc.data());
             })
+
+            if (found) {
+                document.getElementById('notFound').style.display = 'none';
+            } else {
+                document.getElementById('orderId').innerText = orderId;
+                document.getElementById('notFound').style.display = 'block';
+                document.getElementById('TrackForm').style.display = 'block';
+                document.getElementById('loader').style.display = 'none';
+            }
         });
 }
 
 function renderResult(data) {
     var result = '<table class="track__result-table">' +
-        '<tr><th>ID</th>' +
-        '<th>Date</th>' +
-        '<th>Products</th>' +
-        '<th>Status</th>' +
-        '</tr>';
-
-    result += '<tr><td>' + data.id +
-        '</td><td>' + data.date +
-        '</td><td>' + renderProducts(data.products) +
-        '</td><td>' + data.status +
+        '<tr><td>ID</td><td>' + data.id +
+        '</td></tr></tr><td>Date</td><td>' + data.date +
+        '</td></tr></tr><td>Products</td><td>' + renderProducts(data.products) +
+        '</td></tr></tr><td>Status</td><td>' + data.status +
         '</td></tr></table>'
 
     document.getElementById('Result').innerHTML = result;
@@ -57,7 +64,7 @@ function renderResult(data) {
 function renderProducts(products) {
     var html = '';
 
-    products.forEach((product, index) => {
+    products.forEach(function (product, index) {
         if (index > 0) {
             html += '<br>';
         }

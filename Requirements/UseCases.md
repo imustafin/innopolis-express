@@ -137,6 +137,19 @@ Unit tests: [productQuantityTest](https://github.com/BatyrSeven/innopolis-expres
  | Alternative flows and exceptions | User cancels order.                                  |
  |                                  |                                                      |
 
+## Change order status
+
+ | **Use Case #8**                  | **Change order status**                              |
+ |:--------------------------------:|:-----------------------------------------------------|
+ | Actors                           | Administrator                                        |
+ | Precondition                     | 1\. Administrator is signed in to the Admin Panel.   |
+ | Flow of enents                   | 1\. Administrator sees the list of orders            |
+ |                                  | 2\. Administrator picks the order which status must  |
+ |                                  | be changed                                           |
+ |                                  | 4\. Administrator changes the status of the order    |
+ | Postcondition                    | Status of the order is changed and user is notified  | 
+ |                                  | by email                                             |
+
 
 ## Use Case Diagram
 
@@ -148,4 +161,7 @@ Unit tests: [productQuantityTest](https://github.com/BatyrSeven/innopolis-expres
 1.  **Client** - a person who orders food from the system.
 
 2.  **Administrator** - manages the system and adds new users to the system
+
+3.  **Status** - state of the order. Possible values - Pending, Delivering, Delivered
+
 
