@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>No Access | Innopolis Express</title>
+
+    <link type="text/css" rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <span class="header__logo-name">Innopolis Express</span>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="no-access__wrapper">
+            <p class="no-access__message">You are not allowed to see this page.</p>
+            <p class="no-access__message">Please, contact the administrator.</p>
+        </div>
+    </main>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.4.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.4.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.auth().signOut().catch(function (error) {
+                window.location.href = "/";
+            });
+        });
+    </script>
+</body>
+
+</html>

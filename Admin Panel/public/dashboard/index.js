@@ -1,18 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
-            init();
-        } else {
+        if (!user) {
             window.location.href = "/";
             return;
         }
+
+        // User is signed in.
+        checkAccess(user.email);
     });
 });
-
-function init() {
-    fetchOrders();
-}
 
 function fetchOrders() {
     var db = firebase.firestore();
@@ -48,8 +44,6 @@ function fetchOrders() {
 function renderTable(orders) {
     var table = document.getElementById("orderTable");
     var coloredRow = false;
-
-    console.log('orders', orders);
 
     if (!orders || !orders.length) {
         document.getElementById("tableEmpty").style.display = "block";
@@ -192,4 +186,22 @@ function getStatusClass(status) {
             break;
     }
     return statusClass;
+}
+
+function checkAccess(email) {
+    var db = firebase.firestore();
+    var exists = false;
+
+    db.collection("admin_list").where("email", "==", email).get()
+        .then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                exists = true;
+            });
+
+            if (exists) {
+                fetchOrders();
+            } else {
+                window.location.href = "/no-access";
+            }
+        });
 }
