@@ -222,10 +222,23 @@ public class InvoiceActivity extends AppCompatActivity {
 
                 Toast.makeText(InvoiceActivity.this, "Order was canceled", Toast.LENGTH_LONG).show();
 
+                Intent intent = new Intent(InvoiceActivity.this, MainActivity.class);
+                startActivity(intent);
                 InvoiceActivity.super.finish();
+
             } else {
                 Toast.makeText(InvoiceActivity.this, "Something went wrong. Try again", Toast.LENGTH_LONG).show();
             }
         }
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }
