@@ -11,7 +11,7 @@
 | Sign up               |               |                    |                       |       |                   |           |                      |                     |
 | Check out             | RC - cart     |                    |                       |       |                   |           |                      |                     |
 | Order detail Invoice  |               |                    |                       |       |                   |           |                      | RC - order status   |
-| Change order status   | RC - order    |                    |                       |       |                   |           |                      |                     |
+| Change order status   |               | RC - order         |                       |       |                   |           |                      |                     |
 
 
 ## Checking the status of an nonexisting order (Checking order status + Order process)
@@ -157,6 +157,32 @@
         <tr>
             <td>TC-21-SE1</td>
             <td>If the status was changed - status on the mobile screen is changed</td>
+            <td>Passed</td>
+        </tr>
+    </tbody>
+</table>
+
+## "Delivered"/"Cancelled" status changed (Order Cancellation + Change order status)
+| **Test case name** | "Delivered"/"Cancelled" status changed |
+|--------------------|---------------------------------------------------------------|
+| **Test ID**        | TC-23 |
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#change-order-status">Change order status</a> | 
+| **Set up**         | Login to the Admin Panel and exisiting orders with "delivered" statuses |
+| **Status** | Passed | 
+| **Date complete** | 24-11-19 | 
+
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Description</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>TC-23-SE1</td>
+            <td>System hides status change button if order has "Delivered"/"Cancelled" status</td>
             <td>Passed</td>
         </tr>
     </tbody>
