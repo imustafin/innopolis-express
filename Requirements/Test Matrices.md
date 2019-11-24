@@ -218,3 +218,65 @@
     </tbody>
 </table>
 
+## Check out
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-15</th>
+            <th>TC-16</th>
+            <th>TC-17</th>
+            <th>TC-18</th>
+            <th>TC-19</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Meals in cart</td>
+            <td>Added at least one</td>
+            <td>Added at least one</td>
+            <td>The same meal added several times</td>
+            <td>Added at least one</td>
+            <td>Empty</td>
+        </tr>
+        <tr>
+        	<td>S2</td>
+        	<td>Price</td>
+        	<td>Calculated correctly</td>
+        	<td>Calculated correctly</td>
+        	<td>Calculated correctly</td>
+        	<td>Calculated correctly</td>
+        	<td>-</td>
+        </tr>
+        <tr>
+        	<td>A3</td>
+        	<td>Address and phone number</td>
+        	<td>Regular</td>
+        	<td>One/both empty</td>
+        	<td>Regular</td>
+        	<td>Regular</td>
+        	<td>-</td>
+        </tr>
+        <tr>
+        	<td>A4</td>
+        	<td>Submit button</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
+        	<td>-</td>
+        </tr>
+        <tr>
+        	<td>AE3</td>
+        	<td>Meal delete button</td>
+        	<td>-</td>
+        	<td>-</td>
+        	<td>-</td>
+        	<td>Pressed</td>
+        	<td>-</td>
+        </tr>
+    </tbody>
+</table>
+
