@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
+import ai.api.util.StringUtils;
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
@@ -150,8 +151,12 @@ public class InvoiceActivity extends AppCompatActivity {
     }
 
     public void onCancelClick(View v) {
-        mCancelTask = new InvoiceActivity.OrderCancelTask(getIntent().getExtras().getString("invoice_key"));
-        mCancelTask.execute((Void) null);
+        if(!mStatus.getText().equals("Delivering")) {
+            mCancelTask = new InvoiceActivity.OrderCancelTask(getIntent().getExtras().getString("invoice_key"));
+            mCancelTask.execute((Void) null);
+        }else{
+            Toast.makeText(InvoiceActivity.this, "Invoice cannot be cancelled!!!", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void onStatusCheck(View v) {

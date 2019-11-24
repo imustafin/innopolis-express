@@ -27,6 +27,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -195,7 +196,7 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 CollectionReference invoices = db.collection("invoices");
                 Task<QuerySnapshot> querySnapshotTask = invoices.whereEqualTo("userEmail", mLogin)
-                        .whereEqualTo("status", "Pending").get();
+                        .whereIn("status", Arrays.asList("Pending", "Delivering")).get();
 
                 do {
                     try {
