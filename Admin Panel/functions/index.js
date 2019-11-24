@@ -33,7 +33,7 @@ async function sendStatusChangeEmail(modifiedOrder) {
         to: modifiedOrder.userEmail,
     };
 
-    mailOptions.subject = `Your order status change on ${APP_NAME}`;
+    mailOptions.subject = `Order ${modifiedOrder.id} on ${APP_NAME}`;
     mailOptions.text = `The status of your order with ID '${modifiedOrder.id}' was changed to '${modifiedOrder.status}'. \nYou can track it here: https://admin-inno-express.firebaseapp.com/track/?orderId=${modifiedOrder.id}`;
     await mailTransport.sendMail(mailOptions);
     console.log('Status change email sent to:', modifiedOrder.userEmail);
@@ -46,7 +46,7 @@ async function sendNewOrderEmail(newOrder) {
         to: newOrder.userEmail,
     };
 
-    mailOptions.subject = `New order on ${APP_NAME}`;
+    mailOptions.subject = `Order ${newOrder.id} on ${APP_NAME}`;
     mailOptions.text = `You created a new order on ${APP_NAME}! \n\nIts current status is '${newOrder.status}'. You can track it here: https://admin-inno-express.firebaseapp.com/track/?orderId=${newOrder.id} \n\nThank you for your order.`;
     await mailTransport.sendMail(mailOptions);
     console.log('New order email sent to:', newOrder.userEmail);
