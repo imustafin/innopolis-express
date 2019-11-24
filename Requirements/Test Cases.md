@@ -25,22 +25,22 @@
         <tr>
             <td>TC-1-A1</td>
             <td>Browse menu of the mobile application</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-1-A2</td>
             <td>Add meals to the cart</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-1-A3</td>
             <td>Client check-outs the cart</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-1-S4</td>
             <td>System creates order with status "Pending"</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
