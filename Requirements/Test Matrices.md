@@ -306,3 +306,41 @@
     </tbody>
 </table>
 
+## Change order status
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-22</th>
+            <th>TC-23</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Order list</td>
+            <td>Not empty</td>
+            <td>Not empty</td>
+        </tr>
+        <tr>
+        	<td>A2</td>
+        	<td>Order status</td>
+        	<td>Regular</td>
+        	<td>"Delivered"/"Cancelled"</td>
+        </tr>
+        <tr>
+        	<td>A3</td>
+        	<td>Status change button</td>
+        	<td>Displayed</td>
+        	<td>Hidden</td>
+        </tr>
+        <tr>
+        	<td>S4</td>
+        	<td>Email notification</td>
+        	<td>Sent</td>
+        	<td>-</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -139,9 +139,9 @@ Unit tests: [productQuantityTest](https://github.com/BatyrSeven/innopolis-expres
  |                                  | A2\. Administrator picks the order which status must |
  |                                  | be changed                                           |
  |                                  | A3\. Administrator changes the status of the order   |
- |                                  | S2\. System sends notifies clients by email		   |
+ |                                  | S4\. System sends notifies clients by email		   |
  | Postcondition                    | Status of the order is changed 				       |  
- | Alternative flows and exceptions | SE1\. "Delivered" status can't be changed            |
+ | Alternative flows and exceptions | SE1\. "Delivered" or "Cancelled" status can't be changed            |
 
 ## Use Case Diagram
 

@@ -864,8 +864,8 @@
     </tbody>
 </table>
 
-## "Delivered" status changed
-| **Test case name** | "Delivered" status changed |
+## "Delivered"/"Cancelled" status changed
+| **Test case name** | "Delivered"/"Cancelled" status changed |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-23 |
 | **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#change-order-status">Change order status</a> | 
@@ -884,7 +884,7 @@
     <tbody>
         <tr>
             <td>TC-23-SE1</td>
-            <td>System hides status change button if order has "Delivered" status</td>
+            <td>System hides status change button if order has "Delivered"/"Cancelled" status</td>
             <td>Passed</td>
         </tr>
     </tbody>
