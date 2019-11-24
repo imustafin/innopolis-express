@@ -25,22 +25,22 @@
         <tr>
             <td>TC-1-A1</td>
             <td>Browse menu of the mobile application</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-1-A2</td>
             <td>Add meals to the cart</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-1-A3</td>
             <td>Client check-outs the cart</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-1-S4</td>
             <td>System creates order with status "Pending"</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -67,7 +67,7 @@
         <tr>
             <td>TC-2-SE1</td>
             <td>Mobile application navigates client to invoice information about existing order</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -815,22 +815,22 @@
         <tr>
             <td>TC-22-S1</td>
             <td>System shows the list of orders with information abouth them: client info, status, date, meals</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-22-A2</td>
             <td>Administrator finds order which status he/she wants to change</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-22-A3</td>
             <td>Administrator clicks on the button to change status</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-22-S4</td>
             <td>System sends email to the client about changes</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
