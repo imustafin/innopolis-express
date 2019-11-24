@@ -23,14 +23,27 @@ function findOrder(orderId) {
     document.getElementById('loader').style.display = 'block';
     document.getElementById('Result').innerHTML = '';
     document.querySelector('.track__result').style.display = 'none';
+    document.getElementById('notFound').style.display = 'none';
 
     var db = firebase.firestore();
 
     db.collection("invoices").where("id", "==", orderId).get()
         .then(function (querySnapshot) {
+            var found = false;
+
             querySnapshot.forEach(function (doc) {
+                found = true;
                 renderResult(doc.data());
             })
+
+            if (found) {
+                document.getElementById('notFound').style.display = 'none';
+            } else {
+                document.getElementById('orderId').innerText = orderId;
+                document.getElementById('notFound').style.display = 'block';
+                document.getElementById('TrackForm').style.display = 'block';
+                document.getElementById('loader').style.display = 'none';
+            }
         });
 }
 
