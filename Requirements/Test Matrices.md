@@ -260,20 +260,20 @@
         	<td>-</td>
         </tr>
         <tr>
-        	<td>A4</td>
-        	<td>Submit button</td>
-        	<td>Pressed</td>
-        	<td>Pressed</td>
-        	<td>Pressed</td>
-        	<td>Pressed</td>
-        	<td>-</td>
-        </tr>
-        <tr>
         	<td>AE3</td>
         	<td>Meal delete button</td>
         	<td>-</td>
         	<td>-</td>
         	<td>-</td>
+        	<td>Pressed</td>
+        	<td>-</td>
+        </tr>
+        <tr>
+        	<td>A4</td>
+        	<td>Submit button</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
         	<td>Pressed</td>
         	<td>-</td>
         </tr>

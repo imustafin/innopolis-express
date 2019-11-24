@@ -79,13 +79,6 @@
 | A2       | Login and password        | 'not@exitsting.email', '123' | Filled login and password fields | Filled login and password fields |
 | A3       | Login Button              | Pressed   | Error message       | Error message |
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#login-with-incorrect-password-or-nonexisiting-account">TC-10: Login with incorrect password or non-exisiting account</a>
-
-| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
-|----------|---------------------------|-----------|---------------------|--------------|
-| S1       | Login and password fields | Exist     | Display Login page  | Display Login page |
-| A2       | Login and password        | 'not@exitsting.email', '123' | Filled login and password fields | Filled login and password fields |
-| A3       | Login Button              | Pressed   | Error message       | Error message |
 
 ## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#sign-up">TC-11: Sign up</a>
 
@@ -100,7 +93,8 @@
 | A7       | Submit button             | Pressed | Redirect to next activity | Redirect to next activity |
 | S8       | User account              | Created | Filled user is added to database | Filled user is added to database |
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-empty-fields">TC-11: Signup with empty fields</a>
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-empty-fields">TC-12: Signup with empty fields</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -113,7 +107,7 @@
 | A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
 | S8       | User account              | Created | User is not created | User is not created |
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-not-similar-passwords">TC-13: Signup with empty fields</a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-not-similar-passwords">TC-13: Signup with not similar passwords</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -126,7 +120,7 @@
 | A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
 | S8       | User account              | Created | User is not created | User is not created |
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-existing-email">TC-14: Signup with empty fields</a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-existing-email">TC-14: Signup with existing email</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -139,3 +133,62 @@
 | A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
 | S8       | User account              | Created | User is not created | User is not created |
 
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#show-invoice-after-order-is-made">TC-20: Show invoice after order is made</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | PBYFC | Order Id displayed | Order Id displayed |
+| S2       | Invoice information       | Displayed | Invoice information displayed | Invoice information displayed |
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#client-sees-how-status-was-changed">TC-21: Client sees how status was changed</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | PBYFC | Order Id displayed | Order Id displayed |
+| S2       | Invoice information       | Status changed | Invoice status changed | Invoice status changed |
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#check-out">TC-15: Check out</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Meals in cart             | Freekeh x2 | Non-empty cart     | Non-empty cart |
+| S2       | Price                     | Calculated correctly | 600      | 600          |
+| A3       | Address and phone number  | '2-222', '89265757832' | -      | -            |
+| A4       | Submit button             | Pressed   | Successful checkout | Successful checkout |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#empty-address-orand-phone-number-fields-in-cart-check-out">TC-16: Empty address or/and phone number fields in cart check out</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Meals in cart             | Freekeh x2 | Non-empty cart     | Non-empty cart |
+| S2       | Price                     | Calculated correctly | 600      | 600          |
+| A3       | Address and phone number  | empty, empty | -                | -            |
+| A4       | Submit button             | Pressed   | Error message       | Error message |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#the-same-meal-added-several-times-to-the-cart-before-check-out">TC-17: The same meal added several times to the cart before check out</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Meals in cart             | Freekeh x2, then Freekeh x3 | Freekeh x5 | Freekeh x5 |
+| S2       | Price                     | Calculated correctly | 1500      | 1500          |
+| A3       | Address and phone number  | '2-222', '89265757832' | -      | -            |
+| A4       | Submit button             | Pressed   | Successful checkout | Successful checkout |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#client-deletes-meals-during-check-out">TC-18: Client deletes meals during check out</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Meals in cart             | Freekeh x2, Ozi x1 | Non-empty cart | Non-empty cart |
+| S2       | Price                     | Calculated correctly | 850      | 850          |
+| A3       | Address and phone number  | '2-222', '89265757832' | -      | -            |
+| AE3      | Meal delete button        | Pressed on Ozi | Ozi is deleted from cart | Ozi is deleted from cart |
+| A4       | Submit button             | Pressed   | Successful checkout | Successful checkout |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#empty-cart-check-out">TC-19: Empty cart check out</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Meals in cart             | Not Selected | Empty cart       | Empty cart   |
