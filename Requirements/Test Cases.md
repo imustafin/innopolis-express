@@ -748,12 +748,12 @@
         <tr>
             <td>TC-20-S1</td>
             <td>System generates unique ID of the order and displays it to the client</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-20-S2</td>
             <td>System shows all the information about the order: meal list, total price, qunatity and status</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
