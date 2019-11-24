@@ -70,3 +70,36 @@
     </tbody>
 </table>
 
+## Checking order status
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-6</th>
+            <th>TC-7</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Order ID</td>
+            <td>Existing</td>
+            <td>Nonexisting</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>Input field</td>
+            <td>Filled</td>
+            <td>Filled</td>
+        </tr>
+        <tr>
+            <td>S3</td>
+            <td>Order Status</td>
+            <td>Regular</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+
