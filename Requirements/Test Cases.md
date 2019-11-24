@@ -586,27 +586,27 @@
         <tr>
             <td>TC-16-S1</td>
             <td>Mobile application shows meals that were added to the cart</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-16-S2</td>
             <td>Mobile application calculates total price and dislpays it </td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-16-A3</td>
             <td>Client leaves empty one or both of the fields (address/phone number)</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-16-A4</td>
             <td>Client clicks on submit button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-16-SE4</td>
             <td>Mobile application shows message that some of the fields should be completed</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
