@@ -6,7 +6,7 @@
 | **Test case name** | Successful order request                                      |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-1 |
-| **Test suite**     | Order process | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#order-process">Order Process</a> |
 | **Set up**         | Login into mobile application and make sure the cart is empty |
 | **Teardown**       | Cancel order and empty the cart | 
 | **Status**         | Passed | 
@@ -50,7 +50,7 @@
 | **Test case name** | Prevent order request                                         |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-2 |
-| **Test suite**     | Order process | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#order-process">Order Process</a> |
 | **Set up**         | Login into mobile application with existing order in status "Pending" or "Delivering"|
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 | 
@@ -78,7 +78,7 @@
 | **Test case name** | Successful order cancellation                                 |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-3 |
-| **Test suite**     | Order Cancellation | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#order-cancellation">Order Cancellation</a> | 
 | **Set up**         | Login into mobile application with a created order |
 | **Teardown**       | Create another order | 
 | **Status**         | Passed | 
@@ -117,7 +117,7 @@
 | **Test case name** | Cancellation of "Delivering" order |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-5 |
-| **Test suite**     | Order Cancellation | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#order-cancellation">Order Cancellation</a> | 
 | **Set up**         | Login into mobile application with a created order in status "Delivering" |
 | **Teardown**       | Close mobile application | 
 | **Status**         | Passed | 
@@ -151,7 +151,7 @@
 | **Test case name** | Checking the status of an existing order |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-6 |
-| **Test suite**     | Checking order status | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#checking-order-status">Checking order status</a> | 
 | **Set up**         | Order must be created |
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 |
@@ -189,7 +189,7 @@
 | **Test case name** | Checking the status of a nonexisting order |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-7 |
-| **Test suite**     | Checking order status | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#checking-order-status">Checking order status</a> | 
 | **Set up**         | Random ID which doesn't match to any ID of exixting orders |
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 |
@@ -222,7 +222,7 @@
 | **Test case name** | Login                                                         |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-8 |
-| **Test suite**     | Login | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#login">Login</a> | 
 | **Set up**         | Existing account |
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 |
@@ -260,7 +260,7 @@
 | **Test case name** | Login with empty or incorrect fields |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-9 |
-| **Test suite**     | Login | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#login">Login</a> | 
 | **Set up**         | Inappropriate login data |
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 |
@@ -309,7 +309,7 @@
 | **Test case name** | Login with incorrect password or nonexisiting account |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-10 |
-| **Test suite**     | Login |
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#login">Login</a> |
 | **Set up**         | Inappropriate login data |
 | **Status** | Passed |
 | **Date complete** | 24-11-19 |
@@ -362,7 +362,7 @@
 | **Test case name** | Sign up |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-11 |
-| **Test suite**     | Sign up | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#sign-up">Sign up</a> | 
 | **Set up**         | Email which was not signed up before |
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 |
@@ -404,7 +404,7 @@
 | **Test case name** | Signup with empty fields |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-12 |
-| **Test suite**     | Sign Up | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#sign-up">Sign up</a> | 
 | **Set up**         | Inappropriate signup data |
 | **Status**         | Passed | 
 | **Date complete**  | 24-11-19 |
@@ -445,9 +445,9 @@
 | **Test case name** | Signup with not similar passwords |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-13 |
-| **Test suite**     | Login | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#sign-up">Sign up</a> | 
 | **Set up**         | Different passwords |
-| **Status**         | Passed | 
+| **Status**         | Failed | 
 | **Date complete**  | 24-11-19 |
 
 <table>
