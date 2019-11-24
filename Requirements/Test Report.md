@@ -45,7 +45,7 @@
 | S3       | Order Status              | Pending   | -                   | -            |
 
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-nonexisting-order">TC-7: Checking the status of a non-existing order</a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Interaction%20Test%20Cases.md#checking-the-status-of-an-nonexisting-order-checking-order-status--order-process">TC-7: Checking the status of a non-existing order</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -71,7 +71,7 @@
 | A3       | Login Button              | Pressed   | Error message       | Error message |
 
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#login-with-incorrect-password-or-nonexisiting-account">TC-10: Login with incorrect password or non-exisiting account</a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Interaction%20Test%20Cases.md#login-with-incorrect-password-or-nonexisiting-account-sign-up--login">TC-10: Login with incorrect password or non-exisiting account</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -133,19 +133,7 @@
 | A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
 | S8       | User account              | Created | User is not created | User is not created |
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#show-invoice-after-order-is-made">TC-20: Show invoice after order is made</a>
 
-| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
-|----------|---------------------------|-----------|---------------------|--------------|
-| S1       | Order ID                  | PBYFC | Order Id displayed | Order Id displayed |
-| S2       | Invoice information       | Displayed | Invoice information displayed | Invoice information displayed |
-
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#client-sees-how-status-was-changed">TC-21: Client sees how status was changed</a>
-
-| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
-|----------|---------------------------|-----------|---------------------|--------------|
-| S1       | Order ID                  | PBYFC | Order Id displayed | Order Id displayed |
-| S2       | Invoice information       | Status changed | Invoice status changed | Invoice status changed |
 ## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#check-out">TC-15: Check out</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
@@ -187,8 +175,43 @@
 | A4       | Submit button             | Pressed   | Successful checkout | Successful checkout |
 
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#empty-cart-check-out">TC-19: Empty cart check out</a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Interaction%20Test%20Cases.md#empty-cart-check-out-check-out--order-process">TC-19: Empty cart check out</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
 | S1       | Meals in cart             | Not Selected | Empty cart       | Empty cart   |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#show-invoice-after-order-is-made">TC-20: Show invoice after order is made</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | PBYFC | Order Id displayed | Order Id displayed |
+| S2       | Invoice information       | Displayed | Invoice information displayed | Invoice information displayed |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Interaction%20Test%20Cases.md#client-sees-how-status-was-changed-order-detail-invoice--change-order-status">TC-21: Client sees how status was changed</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | PBYFC | Order Id displayed | Order Id displayed |
+| S2       | Invoice information       | Status changed | Invoice status changed | Invoice status changed |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#change-order-status">TC-22: Change order status</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order list                | Not empty | Order processed     | Order processed |
+| A2       | Order status              | Pending   | Status change button visible | Status change button visible |
+| A3       | Status change button      | Clicked   | Status changed      | Status changed |
+| S4       | Email notification        | Sent      | Email sent to client | Email sent to client |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Interaction%20Test%20Cases.md#deliveredcancelled-status-changed-order-cancellation--change-order-status">TC-23: "Delivered" status changed</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order list                | Not empty | Order processed     | Order processed |
+| A2       | Order status              | "Pending"/"Delivering" | Status change button not visible | Status change button not visible |
+| A3       | Status change button      | "Delivered"/"Cancelled" | Status not changed | Status not changed |
