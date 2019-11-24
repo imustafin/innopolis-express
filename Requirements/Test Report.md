@@ -1,7 +1,7 @@
 # Test Report
 
 
-## TC-1
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#successful-order-request">TC-1: Successful order request</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -11,7 +11,7 @@
 | A4       | Status                    | Pending   | Invoice is displayed | Invoice is displayed |
 
 
-## TC-2
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#prevent-order-request">TC-2: Prevent order request</a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
