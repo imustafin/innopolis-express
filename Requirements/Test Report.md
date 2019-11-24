@@ -17,3 +17,20 @@
 |----------|---------------------------|-----------|---------------------|--------------|
 | A1       | Meal list                 | Not available | Meal list is not displayed | Meal list is not displayed |
 
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-existing-order">TC-6: Checking the status of an existing order</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | Existing  | Navigate to Track order | Navigate to Track order |
+| A2       | Input field               | Filled    | Display order information | Display order information |
+| S3       | Order Status              | Pending   | -                   | -            |
+
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#checking-the-status-of-an-nonexisting-order">TC-7: Checking the status of a non-existing order</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Order ID                  | Nonexisting | Navigate to Track order | Navigate to Track order |
+| A2       | Input field               | Filled    | Display error message | Display error message |
