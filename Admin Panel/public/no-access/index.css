@@ -1,5 +1,9 @@
 @import "../common/css/layout.css";
 
-#loader {
+.no-access__wrapper {
+
+}
+
+.no-access__message {
     text-align: center;
 }

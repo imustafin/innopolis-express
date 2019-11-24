@@ -228,7 +228,7 @@ public class CartFragment extends Fragment {
                 assert user != null;
 
                 Date currentDate = Calendar.getInstance().getTime();
-                SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
+                SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
                 String strDate = formatter.format(currentDate);
 
                 Invoices newInvoice = new Invoices(new RandomString(5, new Random()).nextString().toUpperCase(), strDate, "Pending", user.getEmail(), user.getDisplayName(), products, address, phone);
@@ -280,6 +280,9 @@ public class CartFragment extends Fragment {
             mCartTask = null;
         }
     }
+
+
+
 
 
 }

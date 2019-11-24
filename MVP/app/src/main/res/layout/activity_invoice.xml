@@ -199,6 +199,7 @@
                                 android:textColor="@color/colorPrimary" />
                             <TextView
                                 style="@style/TextAppearance.AppCompat.Body2"
+                                android:id="@+id/cancel_button"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

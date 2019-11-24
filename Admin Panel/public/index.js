@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            console.log('User:', user);
             window.location.href = "/dashboard";
         } else {
-            console.log('User is not authenticated');
             renderUI();
         }
     });

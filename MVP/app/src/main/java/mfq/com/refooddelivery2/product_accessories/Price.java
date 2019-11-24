@@ -46,6 +46,10 @@ public class Price implements Parcelable {
     public Price() {
     }
 
+    public Price(double value) {
+        this.value = value;
+    }
+
     protected Price(Parcel in) {
         this.value = in.readDouble();
         this.formattedValue = in.readString();

@@ -18,11 +18,26 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 import mfq.com.refooddelivery2.R;
+import mfq.com.refooddelivery2.utils.Pair;
 import mfq.com.refooddelivery2.utils.RequestStatus;
+import mfq.com.refooddelivery2.utils.Triple;
 
 /**
  * Use Case: Login Use Case
@@ -131,38 +146,39 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * Asynchronous login task
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserLoginTask extends AsyncTask<Void, Void, Triple<Boolean, Map<String,Object>, DocumentReference>> {
 
         private final String mLogin;
         private final String mPassword;
         private RequestStatus status;
+        private Triple<Boolean, Map<String,Object>, DocumentReference> retValue;
 
         UserLoginTask(String email, String password) {
             mLogin = email;
             mPassword = password;
+            retValue = new Triple<>(false, null, null);
         }
 
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected Triple<Boolean,Map<String,Object>,DocumentReference> doInBackground(Void... params) {
             AtomicReference<Boolean> result = new AtomicReference<>(false);
             status = RequestStatus.WAIT;
 
 
             mAuth = FirebaseAuth.getInstance();
             mAuth.signInWithEmailAndPassword(mLogin, mPassword)
-                .addOnCompleteListener(LoginActivity.this,  new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("INFO", "signInWithEmail:success");
-                            status = RequestStatus.SUCCESS;
-                            result.set(true);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("ERROR", "signInWithEmail:failure", task.getException());
-                            status = RequestStatus.FAIL;
-                        }
+                .addOnCompleteListener(LoginActivity.this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("INFO", "signInWithEmail:success");
+                        status = RequestStatus.SUCCESS;
+                        result.set(true);
+                        retValue.setFirst(true);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("ERROR", "signInWithEmail:failure", task.getException());
+                        status = RequestStatus.FAIL;
+                        retValue.setFirst(false);
                     }
                 });
 
@@ -174,15 +190,52 @@ public class LoginActivity extends AppCompatActivity {
                 }
             } while (status == RequestStatus.WAIT);
 
-            return result.get();
+
+            if(status == RequestStatus.SUCCESS) {
+
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                CollectionReference invoices = db.collection("invoices");
+                Task<QuerySnapshot> querySnapshotTask = invoices.whereEqualTo("userEmail", mLogin)
+                        .whereIn("status", Arrays.asList("Pending", "Delivering")).get();
+
+                do {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (!querySnapshotTask.isComplete());
+
+                if (querySnapshotTask.isSuccessful()) {
+                    QuerySnapshot queryResult = querySnapshotTask.getResult();
+                    if(queryResult != null){
+                        List<DocumentSnapshot> documents = queryResult.getDocuments();
+                        if (documents.size() != 0) {
+                            DocumentSnapshot documentSnapshot = documents.get(0);
+                            retValue.setSecond(documentSnapshot.getData());
+                            retValue.setThird(documentSnapshot.getReference());
+                            System.out.println(documentSnapshot.getReference().getId());
+                        }
+                    }
+                }
+            }
+
+
+            return retValue;
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(final Triple<Boolean, Map<String,Object>, DocumentReference> result) {
             mAuthTask = null;
 
-            if (success) {
-                finish();
+            if (result.getFirst()) {
+                Map<String, Object> invoice = result.getSecond();
+                if(invoice != null){
+                    finish(true, invoice, result.getThird());
+                }else{
+                    finish(false, null, null);
+                }
+
             } else {
                 showProgressBar(false);
                 mPasswordView.setError("Invalid password");
@@ -196,15 +249,24 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     public void onBackPressed() {
         super.finish();
     }
 
-    @Override
-    public void finish() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void finish(boolean result, Map<String, Object> data, DocumentReference documentReference) {
+        if(result) {
+            Intent intent = new Intent(this, InvoiceActivity.class);
+            intent.putExtra("data", (Serializable) data);
+            intent.putExtra("invoice_key", documentReference.getId());
+            startActivity(intent);
+        }else{
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
         super.finish();
     }
+
+
 }

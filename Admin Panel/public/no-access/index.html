@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Track your order | Innopolis Express</title>
+    <title>No Access | Innopolis Express</title>
 
     <link type="text/css" rel="stylesheet" href="index.css" />
 </head>
@@ -18,28 +18,9 @@
 
     <main class="main">
 
-        <div class="track__wrapper">
-
-            <div class="track__result">
-                <h2 class="track__title">Result</h2>
-                <div id="Result"></div>
-            </div>
-
-            <h2 class="track__title">Track your order</h2>
-
-            <div id="loader" class="track__loader">Loading...</div>
-
-            <div id="notFound" class="track__not-found-message">
-                Order with ID '<strong><span id="orderId"></span></strong>' was not found
-            </div>
-
-            <form id="TrackForm" class="track__form">
-                <div class="track__input-group">
-                    <label class="track__label" for="TrackInput">Order ID:</label>
-                    <input class="track__input" id="TrackInput" type="text" />
-                </div>
-                <button class="track__submit" type="submit">Find Order</button>
-            </form>
+        <div class="no-access__wrapper">
+            <p class="no-access__message">You are not allowed to see this page.</p>
+            <p class="no-access__message">Please, contact the administrator.</p>
         </div>
     </main>
 
@@ -54,7 +35,13 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
-    <script src="index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.auth().signOut().catch(function (error) {
+                window.location.href = "/";
+            });
+        });
+    </script>
 </body>
 
 </html>
