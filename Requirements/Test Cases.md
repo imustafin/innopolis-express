@@ -490,7 +490,7 @@
 | **Test case name** | Sign up                                                         |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-14 |
-| **Test suite**     | Sign up | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#sign-up">Sign up</a> | 
 | **Set up**         | Exisiting email of an acocunt |
 | **Status** | Warning | 
 | **Date complete** | 24-11-19 |
@@ -560,7 +560,7 @@
 | **Test case name** | Check out                                                         |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-15 |
-| **Test suite**     | Check out | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#check-out">Check out</a> | 
 | **Set up**         | Non-empty cart |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 |
@@ -602,7 +602,7 @@
 | **Test case name** | Empty cart check out                                          |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-16 |
-| **Test suite**     | Check out | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#check-out">Check out</a> | 
 | **Set up**         | Non-empty cart |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -649,7 +649,7 @@
 | **Test case name** | The same meal added several times to the cart before check out|
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-17 |
-| **Test suite**     | Check out | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#check-out">Check out</a> | 
 | **Set up**         | Non-empty cart where client added the same meal several times |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -690,7 +690,7 @@
 | **Test case name** | The same meal added several times to the cart before check out|
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-18 |
-| **Test suite**     | Check out | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#check-out">Check out</a> | 
 | **Set up**         | Non-empty cart where client added the same meal several times |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -738,7 +738,7 @@
 | **Test case name** | Empty cart check out                                          |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-19 |
-| **Test suite**     | Check out | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#check-out">Check out</a> | 
 | **Set up**         | Empty cart |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -764,7 +764,7 @@
 | **Test case name** | Show invoice after order is made|
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-20 |
-| **Test suite**     | Order Detail invoice | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#order-detail-invoice">Order Detail invoice</a> |
 | **Set up**         | Submitted order |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -795,7 +795,7 @@
 | **Test case name** | Client sees how status was changed |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-21 |
-| **Test suite**     | Order Detail invoice | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#order-detail-invoice">Order Detail invoice</a> |
 | **Set up**         | Submitted order and changing status |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -831,7 +831,7 @@
 | **Test case name** | Change order status |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-22 |
-| **Test suite**     | Change order status | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#change-order-status">Change order status</a> | 
 | **Set up**         | Login to the Admin Panel and exisiting orders with different statuses |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
@@ -872,7 +872,7 @@
 | **Test case name** | "Delivered" status changed |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-23 |
-| **Test suite**     | Change order status | 
+| **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#change-order-status">Change order status</a> | 
 | **Set up**         | Login to the Admin Panel and exisiting orders with "delivered" statuses |
 | **Status** | Passed | 
 | **Date complete** | 24-11-19 | 
