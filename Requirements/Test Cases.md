@@ -25,22 +25,22 @@
         <tr>
             <td>TC-1-A1</td>
             <td>Browse menu of the mobile application</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-1-A2</td>
             <td>Add meals to the cart</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-1-A3</td>
             <td>Client check-outs the cart</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-1-S4</td>
             <td>System creates order with status "Pending"</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -67,7 +67,7 @@
         <tr>
             <td>TC-2-SE1</td>
             <td>Mobile application navigates client to invoice information about existing order</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -95,17 +95,17 @@
         <tr>
             <td>TC-3-S1</td>
             <td>Mobile application displays cancel-button and current status of the order</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-3-A2</td>
             <td>Client clicks on the cancel-button</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
         <tr>
             <td>TC-3-S3</td>
             <td>Administrator recieves alert about cancellation in Admin Panel</td>
-            <td>Passed</td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -779,17 +779,17 @@
         <tr>
             <td>TC-21-S1</td>
             <td>System generates unique ID of the order and displays it to the client</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-21-S2</td>
             <td>System shows all the information about the order: meal list, total price, qunatity and status</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-21-SE1</td>
             <td>If the status was changed - status on the mobile screen is changed</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
@@ -815,22 +815,22 @@
         <tr>
             <td>TC-22-S1</td>
             <td>System shows the list of orders with information abouth them: client info, status, date, meals</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-22-A2</td>
             <td>Administrator finds order which status he/she wants to change</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-22-A3</td>
             <td>Administrator clicks on the button to change status</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-22-S4</td>
             <td>System sends email to the client about changes</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
