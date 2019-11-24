@@ -2,6 +2,7 @@ package mfq.com.refooddelivery2.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.ColorUtils;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -48,6 +50,7 @@ public class InvoiceActivity extends AppCompatActivity {
     private TextView mTotal;
     private TextView mStatus;
     private TextView mInvoiceId;
+    private TextView mCancelButton;
     private String invoiceId;
     private DocumentReference docRef;
     private OrderCancelTask mCancelTask = null;
@@ -58,6 +61,7 @@ public class InvoiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoice);
 
+        mCancelButton = findViewById(R.id.cancel_button);
         mStatus = findViewById(R.id.status);
         mInvoiceId = findViewById(R.id.invoice_id);
 
@@ -74,6 +78,21 @@ public class InvoiceActivity extends AppCompatActivity {
                 invoiceId = snapshot.getData().get("id").toString();
                 mInvoiceId.setText("ID: " + invoiceId);
                 mStatus.setText((String) snapshot.getData().get("status"));
+
+                String statusText = mStatus.getText().toString();
+                if (statusText.equals("Delivering") ||
+                        statusText.equals("Delivered")) {
+                    mCancelButton.setVisibility(View.GONE);
+                } else {
+                    mCancelButton.setVisibility(View.VISIBLE);
+                }
+
+                if (statusText.equals("Delivered")) {
+                    mStatus.setTextColor(Color.GREEN);
+                } else {
+                    mStatus.setTextColor(Color.rgb(240, 115,108));
+                }
+
             }
 
             if (e != null) {
@@ -84,16 +103,15 @@ public class InvoiceActivity extends AppCompatActivity {
         });
 
 
-
         mOrderDate = findViewById(R.id.date);
         mTotal = findViewById(R.id.total);
 
         Cart cart = Cart.getInstance();
 
-        if(data != null){
+        if (data != null) {
             cart.getProducts().clear();
             List<Map<String, Object>> products = (List<Map<String, Object>>) data.get("products");
-            for(Map<String, Object> product : products){
+            for (Map<String, Object> product : products) {
                 cart.addProduct(
                         new Product(
                                 product.get("name").toString(),
@@ -105,10 +123,10 @@ public class InvoiceActivity extends AppCompatActivity {
         mTotal.setText(cart.getTotalSum() + " \u20BD");
 
         Date date = Calendar.getInstance().getTime();
-        if(data == null) {
+        if (data == null) {
             mOrderDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(date));
-        }else{
-            mOrderDate.setText(data.get("date").toString().substring(0,10));
+        } else {
+            mOrderDate.setText(data.get("date").toString().substring(0, 10));
         }
 
         TableLayout tableLayout = findViewById(R.id.table);
@@ -151,12 +169,8 @@ public class InvoiceActivity extends AppCompatActivity {
     }
 
     public void onCancelClick(View v) {
-        if(!mStatus.getText().equals("Delivering")) {
-            mCancelTask = new InvoiceActivity.OrderCancelTask(getIntent().getExtras().getString("invoice_key"));
-            mCancelTask.execute((Void) null);
-        }else{
-            Toast.makeText(InvoiceActivity.this, "Invoice cannot be cancelled!!!", Toast.LENGTH_LONG).show();
-        }
+        mCancelTask = new InvoiceActivity.OrderCancelTask(getIntent().getExtras().getString("invoice_key"));
+        mCancelTask.execute((Void) null);
     }
 
     public void onStatusCheck(View v) {
