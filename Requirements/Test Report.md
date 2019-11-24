@@ -18,7 +18,7 @@
 | A1       | Meal list                 | Not available | Meal list is not displayed | Meal list is not displayed |
 
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#successful-cancellation">TC-3: Successful order cancellation </a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#successful-order-cancellation">TC-3: Successful order cancellation </a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -27,7 +27,7 @@
 | S3       | Email                     | Sent      | Email about cancellation sent to the user | Email about cancellation sent to the user|
 
 
-## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#prevent-cancellation-cancelled">TC-5: Cancellation of "Delivering" order </a>
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#cancellation-of-delivering-order">TC-5: Cancellation of "Delivering" order </a>
 
 | **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
 |----------|---------------------------|-----------|---------------------|--------------|
@@ -78,3 +78,64 @@
 | S1       | Login and password fields | Exist     | Display Login page  | Display Login page |
 | A2       | Login and password        | 'not@exitsting.email', '123' | Filled login and password fields | Filled login and password fields |
 | A3       | Login Button              | Pressed   | Error message       | Error message |
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#login-with-incorrect-password-or-nonexisiting-account">TC-10: Login with incorrect password or non-exisiting account</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| S1       | Login and password fields | Exist     | Display Login page  | Display Login page |
+| A2       | Login and password        | 'not@exitsting.email', '123' | Filled login and password fields | Filled login and password fields |
+| A3       | Login Button              | Pressed   | Error message       | Error message |
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#sign-up">TC-11: Sign up</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| A1       | Name                      | Kirill    | Error focus is not shown | Error focus is not shown |
+| A2       | Email                     | test@test.ru | Error focus is not shown | Error focus is not shown |
+| A3       | Password                  | Qwerty123   | Error focus is not shown | Error focus is not shown |
+| A4       | Password                  | true   | Error focus is not shown | Error focus is not shown |
+| A5       | Phone number              | 77777777777 | Error focus is not shown | Error focus is not shown |
+| A6       | Address                   | 1/4 404 | Error focus is not shown | Error focus is not shown |
+| A7       | Submit button             | Pressed | Redirect to next activity | Redirect to next activity |
+| S8       | User account              | Created | Filled user is added to database | Filled user is added to database |
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-empty-fields">TC-11: Signup with empty fields</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| A1       | Name                      | Empty    | Error focus is shown | Error focus is shown |
+| A2       | Email                     | Empty | Error focus is shown | Error focus is shown |
+| A3       | Password                  | Qwerty123   | Error focus is not shown | Error focus is not shown |
+| A4       | Password                  | true   | Error focus is not shown | Error focus is not shown |
+| A5       | Phone number              | 77777777777 | Error focus is not shown | Error focus is not shown |
+| A6       | Address                   | 1/4 404 | Error focus is not shown | Error focus is not shown |
+| A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
+| S8       | User account              | Created | User is not created | User is not created |
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-not-similar-passwords">TC-13: Signup with empty fields</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| A1       | Name                      | Kirill    | Error focus is not shown | Error focus is not shown |
+| A2       | Email                     | test@test.ru | Error focus is not shown | Error focus is not shown |
+| A3       | Password                  | Qwerty123   | Error focus is not shown | Error focus is not shown |
+| A4       | Password                  | fasle   | Error focus is shown | Error focus is shown |
+| A5       | Phone number              | 77777777777 | Error focus is not shown | Error focus is not shown |
+| A6       | Address                   | 1/4 404 | Error focus is not shown | Error focus is not shown |
+| A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
+| S8       | User account              | Created | User is not created | User is not created |
+
+## <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/Test%20Cases.md#signup-with-existing-email">TC-14: Signup with empty fields</a>
+
+| **Step** | **Variable or selection** | **Value** | **Expected result** | **Obtained** |
+|----------|---------------------------|-----------|---------------------|--------------|
+| A1       | Name                      | Kirill    | Error focus is not shown | Error focus is not shown |
+| A2       | Email                     | test@test.ru (existing) | Error focus is not shown | Error focus is not shown |
+| A3       | Password                  | Qwerty123   | Error focus is not shown | Error focus is not shown |
+| A4       | Password                  | fasle   | Error focus is shown | Error focus is shown |
+| A5       | Phone number              | 77777777777 | Error focus is not shown | Error focus is not shown |
+| A6       | Address                   | 1/4 404 | Error focus is not shown | Error focus is not shown |
+| A7       | Submit button             | Pressed | Error focus is shown | Error focus is shown |
+| S8       | User account              | Created | User is not created | User is not created |
+
