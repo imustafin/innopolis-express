@@ -280,3 +280,29 @@
     </tbody>
 </table>
 
+## Order Detail invoice
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-20</th>
+            <th>TC-21</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Order ID</td>
+            <td>Displayed</td>
+            <td>Displayed</td>
+        </tr>
+        <tr>
+        	<td>S2</td>
+        	<td>Invoice information</td>
+        	<td>Displayed and static</td>
+        	<td>Disaplyed but status changed</td>
+        </tr>
+    </tbody>
+</table>
+
