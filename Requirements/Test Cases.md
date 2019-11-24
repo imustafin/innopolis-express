@@ -856,7 +856,7 @@
         <tr>
             <td>TC-23-SE1</td>
             <td>System hides status change button if order has "Delivered" status</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
