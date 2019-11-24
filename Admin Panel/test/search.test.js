@@ -1,5 +1,6 @@
 var firebase = require("firebase/app");
 var firebaseConfig = require("../config");
+var invoiceStub = require('./stub/invoice');
 var {
     getCollectionByParam
 } = require('../util/getCollection');
@@ -9,24 +10,13 @@ require("firebase/firestore");
 describe('Search', function () {
     before(function () {
 
-        firebase.initializeApp(firebaseConfig);
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
 
         var db = firebase.firestore();
 
-        db.collection("test-invoices").doc('TI1').set({
-                id: 'TEST_ID',
-                userName: 'Test Name',
-                userEmail: 'test@email.com',
-                address: 'Test Address, 1',
-                phoneNumber: '+79265757783',
-                date: '24-11-2019',
-                products: [{
-                    name: 'Test Product 1',
-                    price: '300',
-                    quantity: '2'
-                }],
-                status: 'Pending'
-            })
+        db.collection("test-invoices").doc('TI1').set(invoiceStub)
             .catch(function (error) {
                 console.error("Error writing document: ", error);
             });
@@ -69,7 +59,7 @@ describe('Search', function () {
     });
 
     describe('by user email', function () {
-        it('should show the list of user orders with passed email', function (done) {
+        it('should show the list of user orders with the passed email', function (done) {
             const orderId = 'TEST_ID';
     
             getCollectionByParam("test-invoices", "id", orderId)
@@ -82,7 +72,7 @@ describe('Search', function () {
                 });
         });
     
-        it('should inform client that ID is incorrect and there is no such order', function (done) {
+        it('should inform client that there is no orders with such email', function (done) {
             const orderId = 'NONEXISTING_ID';
     
             getCollectionByParam("test-invoices", "id", orderId)
