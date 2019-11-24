@@ -102,4 +102,39 @@
     </tbody>
 </table>
 
+## Login
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Variable or selection</th>
+            <th>TC-8</th>
+            <th>TC-9</th>
+            <th>TC-10</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>S1</td>
+            <td>Login and password fields</td>
+            <td>Exist</td>
+            <td>Exist</td>
+            <td>Exist</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>Login and password</td>
+            <td>Regular</td>
+            <td>Empty (one/both)</td>
+            <td>Incorrect</td>
+        </tr>
+        <tr>
+            <td>A3</td>
+            <td>Login Button</td>
+            <td>Pressed</td>
+            <td>Pressed</td>
+        </tr>
+    </tbody>
+</table>
+
 
