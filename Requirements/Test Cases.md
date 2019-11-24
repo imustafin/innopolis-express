@@ -722,7 +722,7 @@
         <tr>
             <td>TC-19-SE1</td>
             <td>Mobile application shows client that the cart is empty</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
