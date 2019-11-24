@@ -37,6 +37,19 @@ function fetchOrders() {
                     });
                 });
                 renderTable(result);
+
+                querySnapshot.docChanges().forEach(function(change) {
+                    if (change.type !== "modified") {
+                        return;
+                    }
+
+                    var modifiedOrder = change.doc.data();
+                    if (modifiedOrder.status !== 'Cancelled') {
+                        return;
+                    }
+
+                    alert('Order with ID "' + modifiedOrder.id + '" was cancelled by client');
+                });
             });
     });
 }
