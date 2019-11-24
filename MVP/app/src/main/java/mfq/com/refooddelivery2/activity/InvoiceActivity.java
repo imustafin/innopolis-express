@@ -21,6 +21,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -32,6 +33,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import mfq.com.refooddelivery2.R;
 import mfq.com.refooddelivery2.models.Cart;
 import mfq.com.refooddelivery2.models.Product;
+import mfq.com.refooddelivery2.product_accessories.Price;
 import mfq.com.refooddelivery2.utils.RequestStatus;
 
 
@@ -59,14 +61,18 @@ public class InvoiceActivity extends AppCompatActivity {
         mInvoiceId = findViewById(R.id.invoice_id);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        docRef = db.collection("invoices").document(getIntent().getExtras().getString("invoice_key"));
-        Log.w("Info", getIntent().getExtras().getString("invoice_key"));
+
+        String invoice_key = getIntent().getExtras().getString("invoice_key");
+        Map<String, Object> data = (Map<String, Object>) getIntent().getExtras().getSerializable("data");
+
+        docRef = db.collection("invoices").document(invoice_key);
+        Log.w("Info", invoice_key);
         docRef.addSnapshotListener((snapshot, e) -> {
 
-            if(snapshot != null) {
+            if (snapshot != null) {
                 invoiceId = snapshot.getData().get("id").toString();
                 mInvoiceId.setText("ID: " + invoiceId);
-                mStatus.setText((String)snapshot.getData().get("status"));
+                mStatus.setText((String) snapshot.getData().get("status"));
             }
 
             if (e != null) {
@@ -77,30 +83,48 @@ public class InvoiceActivity extends AppCompatActivity {
         });
 
 
+
         mOrderDate = findViewById(R.id.date);
         mTotal = findViewById(R.id.total);
 
         Cart cart = Cart.getInstance();
+
+        if(data != null){
+            cart.getProducts().clear();
+            List<Map<String, Object>> products = (List<Map<String, Object>>) data.get("products");
+            for(Map<String, Object> product : products){
+                cart.addProduct(
+                        new Product(
+                                product.get("name").toString(),
+                                new Price(Double.parseDouble(product.get("price").toString())),
+                                Integer.parseInt(product.get("quantity").toString())));
+            }
+        }
+
         mTotal.setText(cart.getTotalSum() + " \u20BD");
 
         Date date = Calendar.getInstance().getTime();
-        mOrderDate.setText(new SimpleDateFormat("dd/MM/yyyy").format(date));
+        if(data == null) {
+            mOrderDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(date));
+        }else{
+            mOrderDate.setText(data.get("date").toString().substring(0,10));
+        }
 
         TableLayout tableLayout = findViewById(R.id.table);
         List<Product> productList = cart.getProducts();
 
-        for (int i=0;i<productList.size();i++) {
+        for (int i = 0; i < productList.size(); i++) {
             TableRow tableRow = new TableRow(this);
             tableRow.setLayoutParams(new TableLayout.LayoutParams(
                     TableLayout.LayoutParams.MATCH_PARENT,
                     TableLayout.LayoutParams.WRAP_CONTENT));
 
-            tableRow.setPadding(0 , 10, 0, 0);
+            tableRow.setPadding(0, 10, 0, 0);
 
             TextView tvName = new TextView(this);
             tvName.setTextColor(Color.BLACK);
             tvName.setId(i + 10000);
-            tvName.setGravity(Gravity.START|Gravity.CENTER);
+            tvName.setGravity(Gravity.START | Gravity.CENTER);
             tvName.setText(productList.get(i).getName());
             tableRow.addView(tvName);
 
@@ -114,7 +138,7 @@ public class InvoiceActivity extends AppCompatActivity {
             TextView tvPrice = new TextView(this);
             tvPrice.setTextColor(Color.BLACK);
             tvPrice.setId(i + 30000);
-            tvPrice.setGravity(Gravity.END|Gravity.CENTER);
+            tvPrice.setGravity(Gravity.END | Gravity.CENTER);
             tvPrice.setText(String.valueOf(productList.get(i).getPrice().getValue()));
             tableRow.addView(tvPrice);
 
@@ -155,16 +179,16 @@ public class InvoiceActivity extends AppCompatActivity {
 
                 Task<Void> set = db.collection("invoices").document(getIntent().getExtras().getString("invoice_key")).set(data, SetOptions.merge());
 
-                do{
+                do {
                     Thread.sleep(100);
                 } while (!set.isComplete());
 
 
-                if(set.isSuccessful()){
+                if (set.isSuccessful()) {
                     result.set(true);
                 }
 
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
