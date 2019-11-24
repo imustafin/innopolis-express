@@ -52,7 +52,7 @@
         <tr>
             <td>S1</td>
             <td>Order status</td>
-            <td>Regular</td>
+            <td>Pending</td>
             <td>Delivering</td>
         </tr>
         <tr>
