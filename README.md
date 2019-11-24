@@ -27,3 +27,9 @@ Prerequisites: you need to create an account using mobile application ("Sign Up"
 6. You'll see the address on which the server was set up (usually, http://localhost:5000)
 7. (Optional) the web platform can be accessed on https://admin-inno-express.firebaseapp.com/ 
 
+# How to run admin web panel web tests:
+Prerequisites: If you don't have Node.js and npm installed on your computer, please download it and install according to the instructions on https://nodejs.org/en/download/
+1. Navigate to the folder “../innopolis-express/Admn Panel” in your terminal
+2. Install all dependencies: `npm install` (If you have mac or linux use **sudo** before the command)
+3. Run all tests: `npm run test`
+4. Results will be displayed in terminal
