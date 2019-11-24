@@ -674,27 +674,27 @@
         <tr>
             <td>TC-18-S1</td>
             <td>Mobile application shows meals that were added to the cart</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-18-AE3</td>
             <td>Client deletes meal by clicking on button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-18-S2</td>
             <td>Mobile application calculates total price and dislpays it </td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-18-A3</td>
             <td>Client enters address and phone number</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-18-A4</td>
             <td>Client clicks on submit button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
