@@ -15,15 +15,16 @@
 
 ## Order Process 
 Unit tests: [cartAddItemTest](https://github.com/BatyrSeven/innopolis-express/blob/master/MVP/app/src/test/java/mfq/com/refooddelivery2/ParametrizedCartTest.java#L83)
+
  | **Use Case #1**                  | **Order Process**                                                  |
- |:--------------------------------:|:-------------------------------------------------------------------|
- | Actors                           | Client                                              				 |
+ |:--------------------------------:|:------------------------------------------------------------------:|
+ | Actors                           | Client                                              				           |
  | Pre-conditions                   | Meal plans are shown in the system                                 |
  | Flow of events                   | A1\. Client browses menu                                           |
  |                                  | A2\. Client adds meals to delivery cart                            |
  |                                  | A3\. Client makes checkout for all items in the cart (UC#6)        |
  |                                  | S4\. New order created and will be shown in the cafe dashboard     |
- | Post-conditions                  | Order will be created with status "Pending" and processed by 		 |
+ | Post-conditions                  | Order will be created with status "Pending" and processed by 		    |
  | Alternative flows and exceptions | SE1\. Client can't browse if there is exisitng order with status   |
  |                                  | "pending" or "delivering" - Invoice information will be shown instead|
 
