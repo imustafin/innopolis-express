@@ -633,22 +633,22 @@
         <tr>
             <td>TC-17-SE2</td>
             <td>Mobile application shows meals that were added to the cart and sums the quantity of the meal which was added several times</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-17-S2</td>
             <td>Mobile application calculates total price and dislpays it </td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-17-A3</td>
             <td>Client enters address and phone number</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-17-A4</td>
             <td>Client clicks on submit button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
