@@ -1,4 +1,3 @@
-
 # Test Cases
 
 
@@ -9,9 +8,9 @@
 | **Test ID**        | TC-1 |
 | **Test suite**     | Order process | 
 | **Set up**         | Login into mobile application and make sure the cart is empty |
-| **Teardown** | Cancel order and empty the cart | 
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 | 
+| **Teardown**       | Cancel order and empty the cart | 
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 | 
 
 <table>
     <thead>
@@ -25,25 +24,26 @@
         <tr>
             <td>TC-1-A1</td>
             <td>Browse menu of the mobile application</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-1-A2</td>
             <td>Add meals to the cart</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-1-A3</td>
             <td>Client check-outs the cart</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-1-S4</td>
             <td>System creates order with status "Pending"</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
+
 
 ## Prevent order request
 
@@ -52,8 +52,8 @@
 | **Test ID**        | TC-2 |
 | **Test suite**     | Order process | 
 | **Set up**         | Login into mobile application with existing order in status "Pending" or "Delivering"|
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 | 
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 | 
 
 <table>
     <thead>
@@ -67,10 +67,11 @@
         <tr>
             <td>TC-2-SE1</td>
             <td>Mobile application navigates client to invoice information about existing order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
+
 
 ## Successful order cancellation
 
@@ -79,9 +80,9 @@
 | **Test ID**        | TC-3 |
 | **Test suite**     | Order Cancellation | 
 | **Set up**         | Login into mobile application with a created order |
-| **Teardown** | Create another order | 
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 | 
+| **Teardown**       | Create another order | 
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 | 
 
 <table>
     <thead>
@@ -95,59 +96,32 @@
         <tr>
             <td>TC-3-S1</td>
             <td>Mobile application displays cancel-button and current status of the order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-3-A2</td>
             <td>Client clicks on the cancel-button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-3-S3</td>
             <td>Administrator recieves alert about cancellation in Admin Panel</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
 
-## No-order cancellation
-
-| **Test case name** | No-order cancellation                                         |
-|--------------------|---------------------------------------------------------------|
-| **Test ID**        | TC-4 |
-| **Test suite**     | Order Cancellation | 
-| **Set up**         | Login into mobile application without a created order |
-| **Teardown** | Close mobile application | 
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 | 
-
-<table>
-    <thead>
-        <tr>
-            <th>Step</th>
-            <th>Description</th>
-            <th>Result</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>TC-4-SE2</td>
-            <td>Mobile application loads page with meal lists</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
 
 ## Cancellation of "Delivering" order
 
-| **Test case name** | No-order cancellation                                         |
+| **Test case name** | Cancellation of "Delivering" order |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-5 |
 | **Test suite**     | Order Cancellation | 
-| **Set up**         | Login into mobile application without a created order in status "Delivering" |
-| **Teardown** | Close mobile application | 
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 | 
+| **Set up**         | Login into mobile application with a created order in status "Delivering" |
+| **Teardown**       | Close mobile application | 
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 | 
 
 <table>
     <thead>
@@ -161,12 +135,12 @@
         <tr>
             <td>TC-5-S1</td>
             <td>Mobile application displays current status and information about the order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-5-SE1</td>
             <td>Mobile application hides cancel-button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
@@ -174,13 +148,13 @@
 
 ## Checking the status of an existing order
 
-| **Test case name** | No-order cancellation                                         |
+| **Test case name** | Checking the status of an existing order |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-6 |
 | **Test suite**     | Checking order status | 
 | **Set up**         | Order must be created |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
@@ -194,17 +168,17 @@
         <tr>
             <td>TC-6-S1</td>
             <td>Systems sends email to the client with information about odrder and invoice</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-6-A2</td>
             <td>Client enters ID of the order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-6-S3</td>
             <td>System shows the status and information abouth the order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
@@ -212,13 +186,13 @@
 
 ## Checking the status of an nonexisting order
 
-| **Test case name** | No-order cancellation                                         |
+| **Test case name** | Checking the status of a nonexisting order |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-7 |
 | **Test suite**     | Checking order status | 
 | **Set up**         | Random ID which doesn't match to any ID of exixting orders |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
@@ -232,15 +206,16 @@
         <tr>
             <td>TC-7-A2</td>
             <td>Client enters nonexisting ID</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-7-S3</td>
             <td>System informs client that ID is incorrect and there is no such order</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
+
 
 ## Login
 
@@ -249,8 +224,8 @@
 | **Test ID**        | TC-8 |
 | **Test suite**     | Login | 
 | **Set up**         | Existing account |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
@@ -264,30 +239,31 @@
         <tr>
             <td>TC-8-S1</td>
             <td>System shows inputs for email and password</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-8-A1</td>
             <td>Clients enters correctly email and password</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-8-A2</td>
             <td>Client presses login button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
 
+
 ## Login with empty or incorrect fields 
 
-| **Test case name** | Login                                                         |
+| **Test case name** | Login with empty or incorrect fields |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-9 |
 | **Test suite**     | Login | 
 | **Set up**         | Inappropriate login data |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
@@ -301,7 +277,7 @@
         <tr>
             <td>TC-9-S1</td>
             <td>System shows inputs for email and password</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-9-A1</td>
@@ -312,29 +288,30 @@
             		<li>Client enters incorrect email (without '@' or domain)</li>
             	</ul>
             </td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-9-A2</td>
             <td>Client presses login button</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
         <tr>
             <td>TC-9-SE1</td>
             <td>System shows the message on which field a mistake was made</td>
-            <td></td>
+            <td>Passed</td>
         </tr>
     </tbody>
 </table>
 
+
 ## Login with incorrect password or nonexisiting account
 
-| **Test case name** | Login                                                         |
+| **Test case name** | Login with incorrect password or nonexisiting account |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-10 |
-| **Test suite**     | Login | 
+| **Test suite**     | Login |
 | **Set up**         | Inappropriate login data |
-| **Status** | Passed | 
+| **Status** | Passed |
 | **Date complete** | 24-11-19 |
 
 <table>
@@ -343,13 +320,15 @@
             <th>Step</th>
             <th>Description</th>
             <th>Result</th>
+            <th>Error</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>TC-10-S1</td>
             <td>System shows inputs for email and password</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
         <tr>
             <td>TC-10-A1</td>
@@ -359,30 +338,34 @@
             		<li>Client enters incorrect password for existing account</li>
             	</ul>
             </td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
         <tr>
             <td>TC-10-A2</td>
             <td>Client presses login button</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
         <tr>
             <td>TC-10-SE2</td>
             <td>System shows the message with description of the error</td>
-            <td></td>
+            <td>Warning</td>
+            <td>Systems always shows error only with invalid password but not with nonexisiting account</td>
         </tr>
     </tbody>
 </table>
 
+
 ## Sign up
 
-| **Test case name** | Login                                                         |
+| **Test case name** | Sign up |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-11 |
-| **Test suite**     | Login | 
+| **Test suite**     | Sign up | 
 | **Set up**         | Email which was not signed up before |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
@@ -390,36 +373,41 @@
             <th>Step</th>
             <th>Description</th>
             <th>Result</th>
+            <th>Error</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>TC-11-A1 ... TC-11-A6</td>
             <td>Client enters name, email, phone number, password and address </td>
-            <td></td>
+            <td>Warning</td>
+            <td>The password confiramtion field does not exist</td>
         </tr>
         <tr>
             <td>TC-11-A7</td>
             <td>Clients clicks on submit button</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
         <tr>
             <td>TC-11-SE1</td>
             <td>System creates an account with given email and password</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
     </tbody>
 </table>
 
+
 ## Signup with empty fields
 
-| **Test case name** | Login                                                         |
+| **Test case name** | Signup with empty fields |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-12 |
-| **Test suite**     | Login | 
+| **Test suite**     | Sign Up | 
 | **Set up**         | Inappropriate signup data |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
@@ -427,67 +415,75 @@
             <th>Step</th>
             <th>Description</th>
             <th>Result</th>
+            <th>Error</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>TC-12-A1 ... TC-12-A6</td>
             <td>Client leaves one/some/all fields empty </td>
-            <td></td>
+            <td>Warning</td>
+            <td>The password confiramtion field does not exist</td>
         </tr>
         <tr>
             <td>TC-12-A7</td>
             <td>Clients clicks on submit button</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
         <tr>
             <td>TC-12-SE3</td>
             <td>System shows error message and which fields should be completed</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
     </tbody>
 </table>
 
 ## Signup with not similar passwords
 
-| **Test case name** | Login                                                         |
+| **Test case name** | Signup with not similar passwords |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-13 |
 | **Test suite**     | Login | 
 | **Set up**         | Different passwords |
-| **Status** | Passed | 
-| **Date complete** | 24-11-19 |
+| **Status**         | Passed | 
+| **Date complete**  | 24-11-19 |
 
 <table>
     <thead>
         <tr>
             <th>Step</th>
             <th>Description</th>
-            <th>Result</th>
+            <th>Warning</th>
+            <th>Error</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>TC-13-A1 ... TC-13-A6</td>
             <td>Client enters everything correctly except second password </td>
-            <td></td>
+            <td>Failed</td>
+            <td>The password confiramtion field does not exist</td>
         </tr>
         <tr>
             <td>TC-13-A7</td>
             <td>Clients clicks on submit button</td>
-            <td></td>
+            <td>Passed</td>
+            <td>-</td>
         </tr>
         <tr>
             <td>TC-13-SE2</td>
             <td>System shows that password must be similar</td>
-            <td></td>
+            <td>Blocked</td>
+            <td>-</td>
         </tr>
     </tbody>
 </table>
 
 ## Signup with existing email
 
-| **Test case name** | Sign up                                                         |
+| **Test case name** | Signup with existing email |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-14 |
 | **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#sign-up">Sign up</a> | 

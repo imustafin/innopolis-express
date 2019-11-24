@@ -40,7 +40,6 @@ Unit tests: [cartAddItemTest](https://github.com/BatyrSeven/innopolis-express/bl
  | Post-conditions                  | Order's status is "Cancelled" 									 |
  | Alternative flows and exceptions | SE1\. Order can't be cancelled if it already has status            |
  | 									| "delivering".  													 |
- |                                  | SE2\. If there is no order to cancel - client will see meal list   |
  
 
 ## Checking order status
