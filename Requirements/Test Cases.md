@@ -596,7 +596,7 @@
 </table>
 
 ## Client deletes meals during check out
-| **Test case name** | The same meal added several times to the cart before check out|
+| **Test case name** | Client deletes meals during check out |
 |--------------------|---------------------------------------------------------------|
 | **Test ID**        | TC-18 |
 | **Test suite**     | <a href="https://github.com/BatyrSeven/innopolis-express/blob/firebase/Requirements/UseCases.md#check-out">Check out</a> | 

@@ -177,7 +177,7 @@
         </tr>
         <tr>
             <td>A4</td>
-            <td>Phone number</td>
+            <td>Password</td>
             <td>Regular</td>
             <td>Empty/Filled</td>
             <td>Regular</td>
@@ -185,19 +185,19 @@
         </tr>
         <tr>
             <td>A5</td>
-            <td>Password</td>
-            <td>Regular</td>
-            <td>Empty/Filled</td>
-            <td>Regular</td>
-            <td>Regular</td>
-        </tr>
-		<tr>
-            <td>A6</td>
             <td>Password (repeated)</td>
             <td>Matches</td>
             <td>Empty/Filled</td>
             <td>Doesn't match</td>
             <td>Matches</td>
+        </tr>
+	<tr>
+            <td>A6</td>
+            <td>Address</td>
+            <td>Regular</td>
+            <td>Empty/Filled</td>
+            <td>Regular</td>
+            <td>Regular</td>
         </tr>
         <tr>
             <td>A7</td>
@@ -260,20 +260,20 @@
         	<td>-</td>
         </tr>
         <tr>
-        	<td>A4</td>
-        	<td>Submit button</td>
-        	<td>Pressed</td>
-        	<td>Pressed</td>
-        	<td>Pressed</td>
-        	<td>Pressed</td>
-        	<td>-</td>
-        </tr>
-        <tr>
         	<td>AE3</td>
         	<td>Meal delete button</td>
         	<td>-</td>
         	<td>-</td>
         	<td>-</td>
+        	<td>Pressed</td>
+        	<td>-</td>
+        </tr>
+        <tr>
+        	<td>A4</td>
+        	<td>Submit button</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
+        	<td>Pressed</td>
         	<td>Pressed</td>
         	<td>-</td>
         </tr>
