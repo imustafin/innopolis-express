@@ -1,5 +1,6 @@
 package mfq.com.refooddelivery2.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +17,6 @@ public class CartActivity extends AppCompatActivity {
 
         CartFragment fragment = new CartFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment, CartFragment.class.getSimpleName()).commit();
-
     }
 
 }

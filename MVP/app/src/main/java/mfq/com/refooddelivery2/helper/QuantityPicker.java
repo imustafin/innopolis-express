@@ -101,4 +101,13 @@ public class QuantityPicker extends LinearLayout implements View.OnClickListener
     public void afterTextChanged(Editable editable) {
 
     }
+
+    public void setQuantity(int quantity){
+        mQty = quantity <= 0 ? 1 : quantity;
+        mQtyEditText.setText(mQty);
+    }
+
+    public int getQuantity(){
+        return mQty;
+    }
 }

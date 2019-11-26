@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Track your order | Innopolis Express</title>
+    <title>Search | Innopolis Express</title>
 
     <link type="text/css" rel="stylesheet" href="index.css" />
 </head>
@@ -25,21 +25,22 @@
                 <div id="Result"></div>
             </div>
 
-            <h2 class="track__title">Track your order</h2>
+            <h2 class="track__title">Find order by email</h2>
 
             <div id="loader" class="track__loader">Loading...</div>
 
             <div id="notFound" class="track__not-found-message">
-                Order with ID '<strong><span id="orderId"></span></strong>' was not found
+                Orders with email '<span id="email"></span>' was not found
             </div>
 
             <form id="TrackForm" class="track__form">
                 <div class="track__input-group">
-                    <label class="track__label" for="TrackInput">Order ID:</label>
+                    <label class="track__label" for="TrackInput">Email:</label>
                     <input class="track__input" id="TrackInput" type="text" />
                 </div>
                 <button class="track__submit" type="submit">Find Order</button>
             </form>
+
         </div>
     </main>
 

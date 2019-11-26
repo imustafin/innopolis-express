@@ -122,6 +122,12 @@ public class Product implements Parcelable {
         this.isSelected = p.isSelected;
     }
 
+    public Product(String name, Price price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     @Override
     public int describeContents() {
         return 0;

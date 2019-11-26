@@ -14,10 +14,8 @@
 }
 
 .track__not-found-message {
-    margin: 15px 0;
     display: none;
     text-align: center;
-    color: red;
 }
 
 .track__form {
@@ -42,7 +40,7 @@
     border-bottom: 1px solid #3f51b5;
     outline: none;
     padding: 5px 10px;
-    width: 90px;
+    width: 150px;
 }
 
 .track__submit {
@@ -58,16 +56,49 @@
 
 .track__result {
     display: none;
+    margin: 0 0 30px;
 }
 
-.track__result-table {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 30px;
-    text-align: center;
+table {
+    margin: 0 auto;
 }
 
-table td, table th {
+table th {
     padding: 5px 10px;
     background: #ffffff;
+}
+
+table td {
+    padding: 5px;
+}
+
+.orders__colored-row {
+    background: #ffffff;
+}
+
+.orders__ordinary-row {
+    background: #f7f7f7;
+}
+
+.oreders__status--pending {
+    color: #FF5722;
+}
+
+.oreders__status--delivering {
+    color: #38823b;
+}
+
+.oreders__status--cancelled {
+    color: #c1372d;
+}
+
+.oreders__status--delivered {
+    color: #3f51b5;
+}
+
+.track__not-found-message {
+    display: none;
+    margin: 15px 0;
+    text-align: center;
+    color: red;
 }

@@ -37,6 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText mNameView;
     private EditText mLoginView;
     private EditText mPasswordView;
+    private EditText mPasswordConfirmView;
     private EditText mPhoneView;
     private EditText mAddressView;
     private ProgressBar mProgressBar;
@@ -55,6 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
         mAddressView = findViewById(R.id.address);
         mPhoneView = findViewById(R.id.phone);
         mProgressBar = findViewById(R.id.signup_progress);
+        mPasswordConfirmView = findViewById(R.id.up_password_repeat);
         mAddressView.setOnEditorActionListener((textView, id, keyEvent) -> {
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                 signUp();
@@ -103,6 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
         mNameView.setError(null);
         mPhoneView.setError(null);
         mAddressView.setError(null);
+        mPasswordConfirmView.setError(null);
 
 
         String email = mLoginView.getText().toString();
@@ -110,6 +113,7 @@ public class SignUpActivity extends AppCompatActivity {
         String name = mNameView.getText().toString();
         String phone = mPhoneView.getText().toString();
         String address = mAddressView.getText().toString();
+        String confirmPassword = mPasswordConfirmView.getText().toString();
 
 
         boolean cancel = false;
@@ -122,6 +126,12 @@ public class SignUpActivity extends AppCompatActivity {
         } else if(!isPasswordValid(password)){
             mPasswordView.setError(getString(R.string.error_incorrect_password));
             focusView = mPasswordView;
+            cancel = true;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            mPasswordConfirmView.setError("Passwords not match");
+            focusView = mPasswordConfirmView;
             cancel = true;
         }
 

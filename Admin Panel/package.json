@@ -1,0 +1,13 @@
+{
+    "name": "inno-express-admin-panel",
+    "description": "Inno-Express Admin Panel",
+    "scripts": {
+        "test": "mocha --reporter spec"
+    },
+    "devDependencies": {
+        "mocha": "^6.2.2"
+    },
+    "dependencies": {
+        "firebase": "^7.5.0"
+    }
+}
