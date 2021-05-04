@@ -6,6 +6,10 @@ details of the meals you will order, and order multiple meals for you and your
 friends, just by using our App, it simple to use , Add item to cart and make a
 one step checkout !
 
+Written in Java for Android with Firebase.
+
+A university project.
+
 # How to run Mobile Application 
 Prerequisites: Android Studio 
 1. Open Android Studio 
